@@ -1,0 +1,11 @@
+C:\Users\74459\Desktop\基于网络爬虫的股票信息预警系统的设计与实现\软件\QuantTrade\.vs\QuantTrade\7808\b\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\Users\74459\Desktop\基于网络爬虫的股票信息预警系统的设计与实现\软件\QuantTrade\.vs\QuantTrade\7808\b\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\Users\74459\Desktop\基于网络爬虫的股票信息预警系统的设计与实现\软件\QuantTrade\.vs\QuantTrade\7808\b\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\Users\74459\Desktop\基于网络爬虫的股票信息预警系统的设计与实现\软件\QuantTrade\.vs\QuantTrade\7808\b\zh-Hans\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.resources.dll
+C:\Users\74459\Desktop\基于网络爬虫的股票信息预警系统的设计与实现\软件\QuantTrade\.vs\QuantTrade\7808\b\zh-Hans\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.resources.dll
+C:\Users\74459\Desktop\基于网络爬虫的股票信息预警系统的设计与实现\软件\QuantTrade\.vs\QuantTrade\7808\b\zh-Hans\Microsoft.VisualStudio.TestPlatform.TestFramework.resources.dll
+C:\Users\74459\Desktop\基于网络爬虫的股票信息预警系统的设计与实现\软件\QuantTrade\.vs\QuantTrade\7808\b\QuantTradeDLL.Tests.dll
+C:\Users\74459\Desktop\基于网络爬虫的股票信息预警系统的设计与实现\软件\QuantTrade\.vs\QuantTrade\7808\b\QuantTradeDLL.Tests.pdb
+C:\Users\74459\Desktop\基于网络爬虫的股票信息预警系统的设计与实现\软件\QuantTrade\.vs\QuantTrade\7808\i\QuantTradeDLL.Tests\Debug\QuantTradeDLL.Tests.csprojResolveAssemblyReference.cache
+C:\Users\74459\Desktop\基于网络爬虫的股票信息预警系统的设计与实现\软件\QuantTrade\.vs\QuantTrade\7808\i\QuantTradeDLL.Tests\Debug\QuantTradeDLL.Tests.dll
+C:\Users\74459\Desktop\基于网络爬虫的股票信息预警系统的设计与实现\软件\QuantTrade\.vs\QuantTrade\7808\i\QuantTradeDLL.Tests\Debug\QuantTradeDLL.Tests.pdb

@@ -18,9 +18,21 @@ namespace QuantTradeDLL
         /// <returns></returns>
         public static bool Sent(string EmailAdress, string Message)
         {
+            if (Message.Equals(string.Empty))
+            {
+                return false;
+            }
             MailAddress from, to;
             from = new MailAddress("lmjlio@foxmail.com", "admin");
-            to = new MailAddress(EmailAdress, "user");
+            try
+            {
+                to = new MailAddress(EmailAdress, "user");
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+            
 
             MailMessage mail = new MailMessage()
             {
@@ -38,14 +50,8 @@ namespace QuantTradeDLL
                 UseDefaultCredentials = true,
                 Credentials = new NetworkCredential("744596028@qq.com", "`6y4r7u0p9o4r")
             };
-            try
-            {
-                client.Send(mail);
-            }
-            catch (Exception e)
-            {
-                return false;
-            }
+
+            client.Send(mail);
             
             return true;
         }
