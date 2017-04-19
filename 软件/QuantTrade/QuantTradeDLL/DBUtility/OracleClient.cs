@@ -9,7 +9,7 @@ namespace QuantTradeDLL.DBUtility
 {
     public class OracleClient
     {
-        private static string PowerConnect = "Data Source=( DESCRIPTION = ( ADDRESS = ( PROTOCOL = TCP ) ( HOST = 10.18.3.229 ) ( PORT = 1521 ) ) ( CONNECT_DATA = ( SERVICE_NAME=ORCL ) ) );user id=lioliu;password=647094;";
+        private static string PowerConnect = "Data Source=( DESCRIPTION = ( ADDRESS = ( PROTOCOL = TCP ) ( HOST = 10.18.3.229 ) ( PORT = 1521 ) ) ( CONNECT_DATA = ( SERVICE_NAME=ORCL ) ) );user id=lioliu;password=when1994;";
 
         #region Execute sql
         /// <summary>
