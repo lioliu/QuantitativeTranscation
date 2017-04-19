@@ -8,6 +8,11 @@ namespace QuantTradeDLL.JsonFormater
 {
     public class HisData
     {
+        /// <summary>
+        /// Format the website's string to Json
+        /// </summary>
+        /// <param name="str"></param>
+        /// <returns></returns>
         public static string Formater(string str)
         {
             str = str.Remove(0, str.IndexOf("(") + 1).Replace(")", "");
