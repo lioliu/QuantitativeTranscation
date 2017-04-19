@@ -48,10 +48,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BaseCrawler.cs" />
     <Compile Include="DBUtility\ODA.cs" />
     <Compile Include="DBUtility\OleDB.cs" />
     <Compile Include="Email.cs" />
     <Compile Include="DBUtility\OracleClient.cs" />
+    <Compile Include="HttpHelper.cs" />
     <Compile Include="Message.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -16,6 +16,7 @@ namespace QuantTradeDLL.DBUtility.Tests
         [TestMethod()]
         public void ExecuteSQLTest()
         {
+            
             Assert.AreEqual(OracleClient.ExecuteSQL("SELECT SYSDATE FROM DUAL"), -1);
 
         }
