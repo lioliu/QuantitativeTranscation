@@ -8,7 +8,7 @@ namespace QuantTradeDLL.JsonFormater
 {
     public class LineData
     {
-        public static string JsonFormater(string str)
+        public static string Formater(string str)
         {
             str = str.Remove(0, str.IndexOf("(") + 1).Replace(")", "");
             //change '[' / ']' to '{'/'}' except the first and the last one
