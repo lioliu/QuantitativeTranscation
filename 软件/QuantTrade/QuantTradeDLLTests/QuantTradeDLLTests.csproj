@@ -62,6 +62,7 @@
     <Compile Include="DBUtility\OracleClientTests.cs" />
     <Compile Include="EmailTests.cs" />
     <Compile Include="HttpHelperTests.cs" />
+    <Compile Include="JsonFormater\HisDataTests.cs" />
     <Compile Include="MessageTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

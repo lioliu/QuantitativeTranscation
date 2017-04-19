@@ -54,8 +54,13 @@
     <Compile Include="Email.cs" />
     <Compile Include="DBUtility\OracleClient.cs" />
     <Compile Include="HttpHelper.cs" />
+    <Compile Include="JsonFormater\HisData.cs" />
+    <Compile Include="JsonFormater\LineData.cs" />
+    <Compile Include="Kline.cs" />
     <Compile Include="Message.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StockHisData.cs" />
+    <Compile Include="StockList.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

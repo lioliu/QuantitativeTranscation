@@ -24,5 +24,8 @@ namespace QuantTradeDLL.Tests
         {
             StringAssert.Contains(new BaseCrawler().Run("http://yunhq.sse.com.cn:32041/v1/sh1/list/self/000001?select=code%2Cname%2Clast%2Cchg_rate%2Camount%2Copen%2Cprev_close"), "上证指数");
         }
+
+
+       
     }
 }
