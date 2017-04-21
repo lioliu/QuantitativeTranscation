@@ -10,7 +10,7 @@ namespace QuantTradeDLL
 {
     public class Message
     {
-       
+       // given url
         const string APIUri = "http://sms.sspu.edu.cn/api/sms/";
 
         const string SendUri = APIUri + "send";

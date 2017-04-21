@@ -6,3 +6,4 @@ C:\Users\74459\Desktop\基于网络爬虫的股票信息预警系统的设计与
 C:\Users\74459\Desktop\基于网络爬虫的股票信息预警系统的设计与实现\软件\QuantTrade\QuantTradeDLL\bin\Debug\Newtonsoft.Json.dll
 C:\Users\74459\Desktop\基于网络爬虫的股票信息预警系统的设计与实现\软件\QuantTrade\QuantTradeDLL\bin\Debug\SunyahSMS.SSPU.WebAPI.Message.dll
 C:\Users\74459\Desktop\基于网络爬虫的股票信息预警系统的设计与实现\软件\QuantTrade\QuantTradeDLL\bin\Debug\Oracle.DataAccess.dll
+C:\Users\74459\Desktop\基于网络爬虫的股票信息预警系统的设计与实现\软件\QuantTrade\QuantTradeDLL\bin\Debug\Newtonsoft.Json.xml

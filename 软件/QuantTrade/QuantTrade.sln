@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuantTradeDLL", "QuantTrade
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuantTradeDLLTests", "QuantTradeDLLTests\QuantTradeDLLTests.csproj", "{AD33F18B-9ADB-4CC0-BC21-921B57CFA8DA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleDemo", "ConsoleDemo\ConsoleDemo.csproj", "{76BD48AD-7167-43AC-A00D-241EE8ED9567}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{AD33F18B-9ADB-4CC0-BC21-921B57CFA8DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AD33F18B-9ADB-4CC0-BC21-921B57CFA8DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AD33F18B-9ADB-4CC0-BC21-921B57CFA8DA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{76BD48AD-7167-43AC-A00D-241EE8ED9567}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{76BD48AD-7167-43AC-A00D-241EE8ED9567}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{76BD48AD-7167-43AC-A00D-241EE8ED9567}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{76BD48AD-7167-43AC-A00D-241EE8ED9567}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
