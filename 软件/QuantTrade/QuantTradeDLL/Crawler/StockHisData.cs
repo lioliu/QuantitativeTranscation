@@ -59,6 +59,19 @@ namespace QuantTradeDLL.Crawler
             return DBUtility.OracleClient.ExecuteSQL(insertscript);
         }
 
+        public static int SaveToDB(DataTable dt)
+        {
+            string insert = string.Empty;
+            List<string> insertscript = new List<string>();
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                insert = "INSERT INTO STOCK_HIS_DATA VALUES" + $"('{dt.Rows[i]["CODE"]}','{dt.Rows[i]["DAYS"]}','{dt.Rows[i]["OPEN"]}','{dt.Rows[i]["HIGH"]}','{dt.Rows[i]["LOW"]}','{dt.Rows[i]["CLOSE"]}','{dt.Rows[i]["AMOUNT"]}')";
+                insertscript.Add(insert);
+            }
+            return DBUtility.OracleClient.ExecuteSQL(insertscript);
+        }
+
+
 
         private static DataTable ToDataTable(StockHisData data)
         {

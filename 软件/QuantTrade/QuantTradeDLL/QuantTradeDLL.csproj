@@ -48,7 +48,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Crawler\BaseCrawler.cs" />
+    <Compile Include="Crawler\StockLineData.cs" />
     <Compile Include="Crawler\StockSuggest.cs" />
+    <Compile Include="Line.cs" />
     <Compile Include="Suggest.cs" />
     <Compile Include="DBUtility\ODA.cs" />
     <Compile Include="DBUtility\OleDB.cs" />

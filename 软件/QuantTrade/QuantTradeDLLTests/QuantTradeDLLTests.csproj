@@ -60,6 +60,8 @@
   <ItemGroup>
     <Compile Include="Crawler\BaseCrawlerTests.cs" />
     <Compile Include="Crawler\StockHisDataTests.cs" />
+    <Compile Include="Crawler\StockLineDataTests.cs" />
+    <Compile Include="Crawler\StockListTests.cs" />
     <Compile Include="Crawler\StockSuggestTests.cs" />
     <Compile Include="DBUtility\OracleClientTests.cs" />
     <Compile Include="EmailTests.cs" />
