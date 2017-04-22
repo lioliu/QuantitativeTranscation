@@ -12,8 +12,26 @@ namespace ConsoleDemo
     class Program
     {
         static void Main(string[] args)
-        { 
-                //clearn the data in database 
+        {
+            //load all line data
+            string[] stockList = QuantTradeDLL.Crawler.StockList.GetCode();
+            for (int i = 0; i < stockList.Length; i++)
+            {
+                
+                QuantTradeDLL.Crawler.StockLineData data =  QuantTradeDLL.Crawler.StockLineData.GetLineDataObject(stockList[i]);
+                Task.Factory.StartNew(() => QuantTradeDLL.Crawler.StockLineData.SaveToDB(data));
+                Console.WriteLine($"{stockList[i]}");
+                Thread.Sleep(200);
+            }
+            Task.WaitAll();
+            Console.WriteLine("finished");
+
+
+
+            //load all his data
+
+
+          /*      //clearn the data in database 
                 QuantTradeDLL.DBUtility.OracleClient.ExecuteSQL("DELETE FROM STOCK_HIS_DATA");
 
                 //get the stock list
@@ -22,22 +40,20 @@ namespace ConsoleDemo
                 for (int i = 0; i < stockList.Length; i++)
                 {
                 temp = stockList[i];
-                Console.WriteLine(temp.ToString());
-                Thread.Sleep(1000);
-                Task.Factory.StartNew(() => funcation(temp));
-
+                DataTable dt = 
+                QuantTradeDLL.Crawler.StockHisData.ToDataTable(
+                QuantTradeDLL.Crawler.StockHisData.GetHisData(temp));
+                    Task.Factory.StartNew(() => QuantTradeDLL.Crawler.StockHisData.SaveToDB(dt));
+                // Task.Factory.StartNew(() => funcation(temp));
+                //Thread.Sleep(2000);
+                Console.WriteLine($"{temp}");
                 }
                 Task.WaitAll();
 
-          
+          */
             Console.ReadLine();
         }
 
-        private static void funcation(string code)
-        {
-            QuantTradeDLL.Crawler.StockHisData.SaveToDB(QuantTradeDLL.Crawler.StockHisData.GetHisData(code));
-                Console.WriteLine($"{code} finished");
-            
-        }
+ 
     }
 }

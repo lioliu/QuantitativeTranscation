@@ -21,7 +21,7 @@ namespace QuantTradeDLL.Crawler
         //take 4 mins
         
 
-        private static DataTable ToDataBase(StockLineData data)
+        public static DataTable ToDataTable(StockLineData data)
         {
             DataTable dt = new DataTable("Line_data");
             dt.Columns.Add("CODE", Type.GetType("System.String"));
@@ -73,7 +73,7 @@ namespace QuantTradeDLL.Crawler
         {
             string insert = string.Empty;
             List<string> insertscript = new List<string>();
-            DataTable dt = ToDataBase(data);
+            DataTable dt = ToDataTable(data);
             for (int i = 0; i < dt.Rows.Count; i++)
             {
                 insert = $"INSERT INTO STOCK_LINE_DATA VALUES{$"('{dt.Rows[i]["CODE"]}','{dt.Rows[i]["DAYS"]}','{dt.Rows[i]["TIME"]}','{dt.Rows[i]["PRICE"]}','{dt.Rows[i]["VOLUME"]}')"}";

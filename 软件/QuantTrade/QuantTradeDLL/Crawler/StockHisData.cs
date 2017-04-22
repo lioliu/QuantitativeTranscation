@@ -73,7 +73,7 @@ namespace QuantTradeDLL.Crawler
 
 
 
-        private static DataTable ToDataTable(StockHisData data)
+        public static DataTable ToDataTable(StockHisData data)
         {
             DataTable dt = new DataTable("StockData");
             dt.Columns.Add("CODE", Type.GetType("System.String"));
