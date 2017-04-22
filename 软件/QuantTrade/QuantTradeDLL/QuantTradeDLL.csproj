@@ -48,6 +48,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Crawler\BaseCrawler.cs" />
+    <Compile Include="Result.cs" />
+    <Compile Include="Dapandata.cs" />
+    <Compile Include="Data.cs" />
+    <Compile Include="Gopicture.cs" />
+    <Compile Include="Crawler\SnapData.cs" />
     <Compile Include="Crawler\StockLineData.cs" />
     <Compile Include="Crawler\StockSuggest.cs" />
     <Compile Include="Line.cs" />

@@ -59,6 +59,7 @@
   </Choose>
   <ItemGroup>
     <Compile Include="Crawler\BaseCrawlerTests.cs" />
+    <Compile Include="Crawler\SnapDataTests.cs" />
     <Compile Include="Crawler\StockHisDataTests.cs" />
     <Compile Include="Crawler\StockLineDataTests.cs" />
     <Compile Include="Crawler\StockListTests.cs" />
