@@ -61,7 +61,7 @@ namespace QuantTradeDLL.Crawler
                 {
                     //formate the date;
                     string date = DateTime.Now.Year.ToString() + "-" + data.Days;
-                    DBUtility.OracleClient.ExecuteSQL($"Insert INTO Announcement VALUES ('{data.Code}','{data.Title}','{data.Url}',TO_DATE('{date}','YYYY-MM-DD'))");
+                    DBUtility.OracleClient.ExecuteSQL($"Insert INTO Announcement VALUES ('{data.Code}','{data.Title}','{data.Url}',TO_DATE('{date}','YYYY-MM-DD'),'0')");
                     Console.WriteLine(code + " "+tag);
                 }
             }

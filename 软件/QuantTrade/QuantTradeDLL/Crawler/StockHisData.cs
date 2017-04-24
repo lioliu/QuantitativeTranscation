@@ -18,6 +18,31 @@ namespace QuantTradeDLL.Crawler
         public string End { set; get; }
         public Kline[] Kline { set; get; }
 
+        /// <summary>
+        /// Convert today's Line data to His data 
+        /// </summary>
+        /// <returns></returns>
+        public int ConvertLine()
+        {
+            return  DBUtility.OracleClient.ExecuteSQL("insert into STOCK_HIS_DATA select base.code, base.days, op.price, max(base.price), min(base.price), cl.price, sum(volume)" +
+                    "from STOCK_LINE_DATA base left join " +
+                    "(select code, price from stock_line_data where days = to_char(sysdate, 'yyyymmdd') and time = '93000') op on base.code = op.code " +
+                    "left join (select code, price from stock_line_data where days = to_char(sysdate, 'yyyymmdd') and time = '150000')cl " +
+                    "on  base.code = cl.code where base.days = to_char(sysdate, 'yyyymmdd') group by base.code, days, op.price, cl.price");            
+        }
+        /// <summary>
+        /// Convert Line data to His data at the given date
+        /// </summary>
+        /// <param name="date">formated as yyyymmdd</param>
+        /// <returns></returns>
+        public int ConvertLine(string date)
+        {
+            return DBUtility.OracleClient.ExecuteSQL($"insert into STOCK_HIS_DATA select base.code, base.days, op.price, max(base.price), min(base.price), cl.price, sum(volume)" +
+                    "from STOCK_LINE_DATA base left join " +
+                    $"(select code, price from stock_line_data where days = '{date}' and time = '93000') op on base.code = op.code " +
+                    $"left join (select code, price from stock_line_data where days =  '{date}' and time = '150000')cl " +
+                    $"on  base.code = cl.code where base.days =  '{date}' group by base.code, days, op.price, cl.price");
+        }
 
         /// <summary>
         /// Get all stock Kline data by given code
@@ -32,7 +57,7 @@ namespace QuantTradeDLL.Crawler
             return JsonConvert.DeserializeObject<StockHisData>(json);
         }
         /// <summary>
-        /// 
+        /// load 
         /// </summary>
         /// <param name="code"></param>
         /// <param name="begin"></param>
