@@ -1,6 +1,7 @@
 ﻿using HtmlAgilityPack;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,6 +24,12 @@ namespace QuantTradeDLL.Crawler
                 Load(item);
             }
             return true;
+        }
+
+        public static DataTable Get(string Code)
+        {
+
+            return DBUtility.OracleClient.GetData($"Select * from (select * from announcement where code ='{Code}' order by days desc) where rownum<=10").Tables[0];
         }
         
         public static bool Load(string code)

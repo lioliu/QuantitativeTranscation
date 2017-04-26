@@ -43,6 +43,28 @@ namespace QuantTradeDLL.Crawler
             return dt;
         }
 
+        public static DataTable ForCharts(StockLineData data)
+        {
+            DataTable dt = new DataTable("Line_data");
+            dt.Columns.Add("CODE", Type.GetType("System.String"));
+            dt.Columns.Add("TIME", Type.GetType("System.String"));
+            dt.Columns.Add("PRICE", Type.GetType("System.Double"));
+            dt.Columns.Add("VOLUME", Type.GetType("System.Double"));
+            DataRow Newrow;
+            foreach (var item in data.Line)
+            {
+                Newrow = dt.NewRow();
+                Newrow["CODE"] = data.Code;
+                Newrow["TIME"] = item.Time.Substring(0, item.Time.Length - 4)+":"+ item.Time.Substring(item.Time.Length - 4, 2);
+                Newrow["PRICE"] = item.Price;
+                Newrow["VOLUME"] = item.Volume;
+                dt.Rows.Add(Newrow);
+            }
+            return dt;
+        }
+
+
+
         public static StockLineData GetLineDataObject(string code)
         {
             Random rnd = new Random();
