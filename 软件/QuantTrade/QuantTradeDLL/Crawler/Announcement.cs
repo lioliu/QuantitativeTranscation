@@ -64,6 +64,7 @@ namespace QuantTradeDLL.Crawler
                     DBUtility.OracleClient.ExecuteSQL($"Insert INTO Announcement VALUES ('{data.Code}','{data.Title}','{data.Url}',TO_DATE('{date}','YYYY-MM-DD'),'0')");
                     Console.WriteLine(code + " "+tag);
                 }
+                else { Console.WriteLine(code + " nomore announcement" ); }
             }
             return true;
         }
