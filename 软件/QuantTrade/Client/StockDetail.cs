@@ -17,7 +17,7 @@ namespace Client
         private string Yesterday { set; get; }
         private string Code { set; get; }
 
-        private bool flag = false;
+        //private bool flag = false;
 
         public StockDetail(string code)
         {
@@ -26,7 +26,7 @@ namespace Client
             LoadSnap();
             LoadAnn();
             LoadChart();
-            flag = true;
+            //flag = true;
             TimerLine.Enabled = true;
             TimerSnap.Enabled = true;
         }

@@ -31,7 +31,7 @@ namespace QuantTradeDLL.Crawler
 
             return DBUtility.OracleClient.GetData($"Select * from (select * from announcement where code ='{Code}' order by days desc) where rownum<=10").Tables[0];
         }
-        
+
         public static bool Load(string code)
         {
             HtmlWeb web = new HtmlWeb()
@@ -62,16 +62,20 @@ namespace QuantTradeDLL.Crawler
                     Console.WriteLine(e);
                     continue;
                 }
-               
+
 
                 if (DBUtility.OracleClient.GetData($"SELECT COUNT(*) FROM Announcement where Code = '{data.Code}' and Url = '{data.Url}' ").Tables[0].Rows[0][0].ToString() == "0")
                 {
                     //formate the date;
                     string date = DateTime.Now.Year.ToString() + "-" + data.Days;
                     DBUtility.OracleClient.ExecuteSQL($"Insert INTO Announcement VALUES ('{data.Code}','{data.Title}','{data.Url}',TO_DATE('{date}','YYYY-MM-DD'),'0')");
-                    Console.WriteLine(code + " "+tag);
+                    Console.WriteLine(code + " " + tag);
                 }
-                else { Console.WriteLine(code + " nomore announcement" ); }
+                else
+                {
+                    Console.WriteLine(code + " nomore announcement");
+                    break;
+                }
             }
             return true;
         }

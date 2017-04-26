@@ -15,10 +15,10 @@ namespace ConsoleDemo
         public static int i = 0;
         static void Main(string[] args)
         {
-            Console.WriteLine(
-            QuantTradeDLL.DBUtility.OracleClient.GetData("select sysdate from dual").Tables[0].Rows[0][0].ToString());
+            //Console.WriteLine(
+            //QuantTradeDLL.DBUtility.OracleClient.GetData("select sysdate from dual").Tables[0].Rows[0][0].ToString());
 
-            //Announcement.Load();
+            Announcement.Load();
 
             //string[] stockList = StockList.GetCode();
 
@@ -168,12 +168,12 @@ namespace ConsoleDemo
             //Task.WaitAll();
             //Console.WriteLine("finished");
             //QuantTradeDLL.DBUtility.OracleClient.ExecuteSQL("insert into STOCK_HIS_DATA " +
-                               //"select base.code ,base.days,op.price,max(base.price),min(base.price),cl.price ,sum(volume) from STOCK_LINE_DATA base, " +
-                               //"(select code, price from stock_line_data where days = to_char(sysdate, 'yyyymmdd') and time = '93000') op," +
-                               //"(select code, price from stock_line_data where days = to_char(sysdate, 'yyyymmdd') and time = '150000')cl" +
-                               //" where base.code = op.code and base.code = cl.code " +
-                               //"and base.days = to_char(sysdate, 'yyyymmdd') " +
-                               //"group by base.code ,days,op.price,cl.price");
+            //                   "select base.code ,base.days,op.price,max(base.price),min(base.price),cl.price ,sum(volume) from STOCK_LINE_DATA base, " +
+            //                   "(select code, price from stock_line_data where days = to_char(sysdate, 'yyyymmdd') and time = '93000') op," +
+            //                   "(select code, price from stock_line_data where days = to_char(sysdate, 'yyyymmdd') and time = '150000')cl" +
+            //                   " where base.code = op.code and base.code = cl.code " +
+            //                   "and base.days = to_char(sysdate, 'yyyymmdd') " +
+            //                   "group by base.code ,days,op.price,cl.price");
 
 
             //load all his data
