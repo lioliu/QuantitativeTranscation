@@ -39,42 +39,42 @@
             this.LabName = new System.Windows.Forms.Label();
             this.LabCode = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.LabDate = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.LabOpen = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
+            this.LabHigh = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
+            this.LabLow = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
+            this.LabClose = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
+            this.LabIncrease = new System.Windows.Forms.Label();
+            this.LabIncrePer = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
+            this.LabAmount = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ChartMain)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.label18);
+            this.groupBox1.Controls.Add(this.LabAmount);
             this.groupBox1.Controls.Add(this.label17);
-            this.groupBox1.Controls.Add(this.label16);
-            this.groupBox1.Controls.Add(this.label15);
+            this.groupBox1.Controls.Add(this.LabIncrePer);
+            this.groupBox1.Controls.Add(this.LabIncrease);
             this.groupBox1.Controls.Add(this.label14);
             this.groupBox1.Controls.Add(this.label13);
-            this.groupBox1.Controls.Add(this.label12);
+            this.groupBox1.Controls.Add(this.LabClose);
             this.groupBox1.Controls.Add(this.label11);
-            this.groupBox1.Controls.Add(this.label10);
+            this.groupBox1.Controls.Add(this.LabLow);
             this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Controls.Add(this.label8);
+            this.groupBox1.Controls.Add(this.LabHigh);
             this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Controls.Add(this.LabOpen);
             this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.LabDate);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Location = new System.Drawing.Point(12, 81);
             this.groupBox1.Name = "groupBox1";
@@ -86,17 +86,7 @@
             // ChartMain
             // 
             chartArea1.Name = "ChartArea1";
-            chartArea1.Position.Auto = false;
-            chartArea1.Position.Height = 75F;
-            chartArea1.Position.Width = 90F;
-            chartArea1.Position.X = 3F;
-            chartArea1.Position.Y = 3F;
             chartArea2.Name = "ChartArea2";
-            chartArea2.Position.Auto = false;
-            chartArea2.Position.Height = 18.5F;
-            chartArea2.Position.Width = 90F;
-            chartArea2.Position.X = 3F;
-            chartArea2.Position.Y = 81.5F;
             this.ChartMain.ChartAreas.Add(chartArea1);
             this.ChartMain.ChartAreas.Add(chartArea2);
             legend1.Alignment = System.Drawing.StringAlignment.Far;
@@ -110,11 +100,12 @@
             series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Candlestick;
             series1.IsXValueIndexed = true;
             series1.Legend = "Legend1";
-            series1.Name = "Series1";
+            series1.Name = "K线";
             series1.YValuesPerPoint = 4;
             series2.ChartArea = "ChartArea2";
+            series2.IsXValueIndexed = true;
             series2.Legend = "Legend1";
-            series2.Name = "Series2";
+            series2.Name = "交易量";
             this.ChartMain.Series.Add(series1);
             this.ChartMain.Series.Add(series2);
             this.ChartMain.Size = new System.Drawing.Size(1196, 652);
@@ -123,6 +114,7 @@
             title1.Name = "Title1";
             title1.Text = "K线";
             this.ChartMain.Titles.Add(title1);
+            this.ChartMain.MouseMove += new System.Windows.Forms.MouseEventHandler(this.ChartMain_MouseMove);
             // 
             // LabName
             // 
@@ -153,14 +145,14 @@
             this.label3.TabIndex = 0;
             this.label3.Text = "时间";
             // 
-            // label4
+            // LabDate
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 59);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(29, 12);
-            this.label4.TabIndex = 1;
-            this.label4.Text = "时间";
+            this.LabDate.AutoSize = true;
+            this.LabDate.Location = new System.Drawing.Point(6, 59);
+            this.LabDate.Name = "LabDate";
+            this.LabDate.Size = new System.Drawing.Size(29, 12);
+            this.LabDate.TabIndex = 1;
+            this.LabDate.Text = "时间";
             // 
             // label5
             // 
@@ -171,14 +163,14 @@
             this.label5.TabIndex = 2;
             this.label5.Text = "开盘";
             // 
-            // label6
+            // LabOpen
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(6, 120);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(29, 12);
-            this.label6.TabIndex = 3;
-            this.label6.Text = "开盘";
+            this.LabOpen.AutoSize = true;
+            this.LabOpen.Location = new System.Drawing.Point(6, 120);
+            this.LabOpen.Name = "LabOpen";
+            this.LabOpen.Size = new System.Drawing.Size(29, 12);
+            this.LabOpen.TabIndex = 3;
+            this.LabOpen.Text = "开盘";
             // 
             // label7
             // 
@@ -189,14 +181,14 @@
             this.label7.TabIndex = 4;
             this.label7.Text = "最高";
             // 
-            // label8
+            // LabHigh
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(6, 166);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(29, 12);
-            this.label8.TabIndex = 5;
-            this.label8.Text = "最高";
+            this.LabHigh.AutoSize = true;
+            this.LabHigh.Location = new System.Drawing.Point(6, 166);
+            this.LabHigh.Name = "LabHigh";
+            this.LabHigh.Size = new System.Drawing.Size(29, 12);
+            this.LabHigh.TabIndex = 5;
+            this.LabHigh.Text = "最高";
             // 
             // label9
             // 
@@ -207,14 +199,14 @@
             this.label9.TabIndex = 6;
             this.label9.Text = "最低 ";
             // 
-            // label10
+            // LabLow
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(6, 248);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(35, 12);
-            this.label10.TabIndex = 7;
-            this.label10.Text = "最低 ";
+            this.LabLow.AutoSize = true;
+            this.LabLow.Location = new System.Drawing.Point(6, 248);
+            this.LabLow.Name = "LabLow";
+            this.LabLow.Size = new System.Drawing.Size(35, 12);
+            this.LabLow.TabIndex = 7;
+            this.LabLow.Text = "最低 ";
             // 
             // label11
             // 
@@ -225,14 +217,14 @@
             this.label11.TabIndex = 8;
             this.label11.Text = "收盘";
             // 
-            // label12
+            // LabClose
             // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(26, 316);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(29, 12);
-            this.label12.TabIndex = 9;
-            this.label12.Text = "收盘";
+            this.LabClose.AutoSize = true;
+            this.LabClose.Location = new System.Drawing.Point(26, 316);
+            this.LabClose.Name = "LabClose";
+            this.LabClose.Size = new System.Drawing.Size(29, 12);
+            this.LabClose.TabIndex = 9;
+            this.LabClose.Text = "收盘";
             // 
             // label13
             // 
@@ -252,23 +244,23 @@
             this.label14.TabIndex = 11;
             this.label14.Text = "涨幅";
             // 
-            // label15
+            // LabIncrease
             // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(26, 383);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(29, 12);
-            this.label15.TabIndex = 12;
-            this.label15.Text = "涨跌";
+            this.LabIncrease.AutoSize = true;
+            this.LabIncrease.Location = new System.Drawing.Point(26, 383);
+            this.LabIncrease.Name = "LabIncrease";
+            this.LabIncrease.Size = new System.Drawing.Size(29, 12);
+            this.LabIncrease.TabIndex = 12;
+            this.LabIncrease.Text = "涨跌";
             // 
-            // label16
+            // LabIncrePer
             // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(26, 447);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(29, 12);
-            this.label16.TabIndex = 13;
-            this.label16.Text = "涨幅";
+            this.LabIncrePer.AutoSize = true;
+            this.LabIncrePer.Location = new System.Drawing.Point(26, 447);
+            this.LabIncrePer.Name = "LabIncrePer";
+            this.LabIncrePer.Size = new System.Drawing.Size(29, 12);
+            this.LabIncrePer.TabIndex = 13;
+            this.LabIncrePer.Text = "涨幅";
             // 
             // label17
             // 
@@ -279,14 +271,14 @@
             this.label17.TabIndex = 14;
             this.label17.Text = "总手";
             // 
-            // label18
+            // LabAmount
             // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(31, 505);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(29, 12);
-            this.label18.TabIndex = 15;
-            this.label18.Text = "总手";
+            this.LabAmount.AutoSize = true;
+            this.LabAmount.Location = new System.Drawing.Point(31, 505);
+            this.LabAmount.Name = "LabAmount";
+            this.LabAmount.Size = new System.Drawing.Size(29, 12);
+            this.LabAmount.TabIndex = 15;
+            this.LabAmount.Text = "总手";
             // 
             // StockKline
             // 
@@ -310,21 +302,21 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label LabAmount;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label LabIncrePer;
+        private System.Windows.Forms.Label LabIncrease;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label LabClose;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label LabLow;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label LabHigh;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label LabOpen;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label LabDate;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataVisualization.Charting.Chart ChartMain;
         private System.Windows.Forms.Label LabCode;

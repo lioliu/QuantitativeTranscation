@@ -1,22 +1,22 @@
-﻿//using OleDb.DataAccess.Client;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Oracle.DataAccess.Client;
 using System.Data;
-using System.Data.OleDb;
+
 namespace QuantTradeDLL.DBUtility
 {
-    /// <summary>
-    ///  connect to the database
-    /// </summary>
-    public class OleDb
 
+    /// <summary>
+    /// unable to use under Server
+    /// </summary>
+    public class DataAccess
     {
-        /// <summary>
-        ///  connect string  normal for Query , power connect for Update\Delete\Insert   Oracle
-        /// </summary>
-        private static string connect_string = "Provider=OraOLEDB.Oracle.1;Server=localhost;Data Source = (DESCRIPTION = (ADDRESS_LIST = (ADDRESS = (PROTOCOL = TCP)(HOST = 10.18.3.229)(PORT = 1521)))(CONNECT_DATA = (SERVICE_NAME = ORCL)));User ID = lioliu; Password = when1994; ";
-        private static string PowerConnect = "Provider=OraOLEDB.Oracle.1;Server=localhost;Data Source = (DESCRIPTION = (ADDRESS_LIST = (ADDRESS = (PROTOCOL = TCP)(HOST = 10.18.3.229)(PORT = 1521)))(CONNECT_DATA = (SERVICE_NAME = ORCL)));User ID = lioliu; Password = when1994; ";
-         #region Execute sql
+        private static string PowerConnect = "Data Source=( DESCRIPTION = ( ADDRESS = ( PROTOCOL = TCP ) ( HOST = 10.18.3.229 ) ( PORT = 1521 ) ) ( CONNECT_DATA = ( SERVICE_NAME=ORCL ) ) );user id=lioliu;password=when1994;";
+
+        #region Execute sql
         /// <summary>
         /// Execute SQL statement 
         /// </summary>
@@ -25,11 +25,11 @@ namespace QuantTradeDLL.DBUtility
         public static int ExecuteSQL(string sql)
         {
             int count = 0;
-            OleDbConnection con = new OleDbConnection(PowerConnect);
+            OracleConnection con = new OracleConnection(PowerConnect);
             try
             {
                 con.Open();
-                OleDbCommand cmd = new OleDbCommand(sql, con);
+                OracleCommand cmd = new OracleCommand(sql, con);
                 count = cmd.ExecuteNonQuery();
             }
             catch (Exception e)
@@ -51,13 +51,13 @@ namespace QuantTradeDLL.DBUtility
         public static int ExecuteSQL(List<string> sqlList)
         {
             int count = 0;
-            OleDbConnection con = new OleDbConnection(PowerConnect);
+            OracleConnection con = new OracleConnection(PowerConnect);
             con.Open();
-            OleDbCommand cmd = new OleDbCommand()
+            OracleCommand cmd = new OracleCommand()
             {
                 Connection = con
             };
-            OleDbTransaction transaction = con.BeginTransaction();
+            OracleTransaction transaction = con.BeginTransaction();
             cmd.Transaction = transaction;
             try
             {
@@ -93,10 +93,10 @@ namespace QuantTradeDLL.DBUtility
         {
             DataSet dataSet = new DataSet();
             DataTable dataTable = new DataTable();
-            OleDbDataAdapter oda = null;
+            OracleDataAdapter oda = null;
             try
             {
-                oda = new OleDbDataAdapter(sql, PowerConnect);
+                oda = new OracleDataAdapter(sql, PowerConnect);
                 oda.Fill(dataTable);
                 dataSet.Tables.Add(dataTable);
                 oda.Dispose();
@@ -123,19 +123,19 @@ namespace QuantTradeDLL.DBUtility
         {
             DataSet dataSet = new DataSet();
             DataTable dataTable = new DataTable();
-            OleDbDataAdapter oda = null;
-            OleDbConnection con = new OleDbConnection(PowerConnect);
+            OracleDataAdapter oda = null;
+            OracleConnection con = new OracleConnection(PowerConnect);
             try
             {
                 con.Open();
-                OleDbCommand cmd = new OleDbCommand()
+                OracleCommand cmd = new OracleCommand()
                 {
                     Connection = con
                 };
                 foreach (string sql in sqlList)
                 {
                     cmd.CommandText = sql;
-                    oda = new OleDbDataAdapter(cmd);
+                    oda = new OracleDataAdapter(cmd);
                     oda.Fill(dataTable);
                     dataSet.Tables.Add(dataTable);
                     dataTable = new DataTable();
@@ -158,20 +158,18 @@ namespace QuantTradeDLL.DBUtility
 
         #endregion
         /// <summary>
-        /// 执行存储过程返回数据存储在OleDbParameter中
+        /// 执行存储过程返回数据存储在OracleParameter中
         /// </summary>
         /// <param name="ProName">存储过程名称</param>
         /// <param name="parm">输入参数</param>
-        /// <returns>OleDbParameter集</returns>
-        public static OleDbParameter[] ProceureToParameter(string ProName, OleDbParameter[] parm)
+        /// <returns>OracleParameter集</returns>
+        public static OracleParameter[] ProceureToParameter(string ProName, OracleParameter[] parm)
         {
             DataTable dt = new DataTable();
-            OleDbConnection con = new OleDbConnection(PowerConnect);
-            OleDbCommand cmd = new OleDbCommand()
-            {
-                CommandType = CommandType.StoredProcedure,
-                CommandText = ProName
-            };
+            OracleConnection con = new OracleConnection(PowerConnect);
+            OracleCommand cmd = new OracleCommand();
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.CommandText = ProName;
             DataSet ds = new DataSet();
             try
             {
@@ -203,12 +201,12 @@ namespace QuantTradeDLL.DBUtility
         /// <param name="ProName">存储过程名称</param>
         /// <param name="parm">输入参数</param>
         /// <returns>表格集</returns>
-        public static DataSet ProceureToTable(string ProName, OleDbParameter[] parm)
+        public static DataSet ProceureToTable(string ProName, OracleParameter[] parm)
         {
             DataTable dt = new DataTable();
-            OleDbDataAdapter dr = new OleDbDataAdapter();
-            OleDbConnection con = new OleDbConnection(PowerConnect);
-            OleDbCommand cmd = new OleDbCommand()
+            OracleDataAdapter dr = new OracleDataAdapter();
+            OracleConnection con = new OracleConnection(PowerConnect);
+            OracleCommand cmd = new OracleCommand()
             {
                 CommandType = CommandType.StoredProcedure,
                 CommandText = ProName
@@ -242,5 +240,7 @@ namespace QuantTradeDLL.DBUtility
             }
             return ds;
         }
+
+
     }
 }

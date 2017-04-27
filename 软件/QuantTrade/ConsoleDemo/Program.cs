@@ -12,13 +12,85 @@ namespace ConsoleDemo
 {
     class Program
     {
+
+
+        static string LanChange(string str)
+        {
+            Encoding utf8;
+            Encoding gb2312;
+            utf8 = Encoding.GetEncoding("UTF-16");
+            gb2312 = Encoding.Default;
+            byte[] gb = gb2312.GetBytes(str);
+            gb = Encoding.Convert(gb2312, utf8, gb);
+            return utf8.GetString(gb);
+        }
+
+
         public static int i = 0;
         static void Main(string[] args)
         {
+            //   Console.WriteLine(QuantTradeDLL.DBUtility.OracleClient.GetData("select sysdate from dual").Tables[0].Rows[0][0].ToString());
+            //   Console.WriteLine(QuantTradeDLL.DBUtility.DataAccess.GetData("select sysdate from dual").Tables[0].Rows[0][0].ToString()); unable use under server
+
+            //            Console.WriteLine(QuantTradeDLL.DBUtility.OleDb.GetData("select sysdate from dual").Tables[0].Rows[0][0].ToString());
+
+
+            //var code = "600000";
+            //HtmlWeb web = new HtmlWeb()
+            //{
+            //    OverrideEncoding = Encoding.Default
+            //};
+            //HtmlDocument doc = web.Load($"http://quote.eastmoney.com/sh{code}.html");
+            //HtmlNode Document, Time;
+            //Announcement data;
+            //int tag = 1;
+            //for (tag = 1; tag <= 5; tag++)
+            //{
+            //    Document = doc.DocumentNode.SelectSingleNode($"/html/body/div[13]/div[2]/div[3]/div[2]/div[2]/div/ul/li[{tag}]/a");
+            //    Time = doc.DocumentNode.SelectSingleNode($"/html/body/div[13]/div[2]/div[3]/div[2]/div[2]/div/ul/li[{tag}]/span");
+
+            //       data = new Announcement()
+            //        {
+            //            Code = code,
+            //            Title = Document.Attributes["title"].Value,
+            //            Url = Document.Attributes["href"].Value,
+            //            Days = Time.InnerHtml
+            //        };
+            //    Console.WriteLine(Encoding.Default);
+            //    Console.OutputEncoding = Encoding.GetEncoding(936);
+            //    Console.WriteLine(data.Title);
+            //    string date = DateTime.Now.Year.ToString() + "-" + data.Days;
+            //    //    //Console.WriteLine(insert);
+
+            //    string temp = LanChange($"Insert INTO Announcement VALUES ('{data.Code}','{data.Title}','{data.Url}',TO_DATE('{date}','YYYY-MM-DD'),'0')");
+            //        QuantTradeDLL.DBUtility.OleDb.ExecuteSQL(temp);
+            //if (QuantTradeDLL.DBUtility.OracleClient.GetData($"SELECT COUNT(*) FROM Announcement where Code = '{data.Code}' and Url = '{data.Url}' ").Tables[0].Rows[0][0].ToString() == "0")
+            //{
+            //    Console.WriteLine();
+
+            //    //formate the date;
+            //    string date = DateTime.Now.Year.ToString() + "-" + data.Days;
+            //    //Console.WriteLine(insert);
+            //    QuantTradeDLL.DBUtility.OracleClient.ExecuteSQL($"Insert INTO Announcement VALUES ('{data.Code}','{data.Title}','{data.Url}',TO_DATE('{date}','YYYY-MM-DD'),'0')");
+            //    Console.WriteLine(code + " " + tag + data.Title);
+            //}
+            //else
+            //{
+            //    Console.WriteLine(code + " nomore announcement");
+            //    break;
+            //}
+
+
+
+
+
+
+
+
             //Console.WriteLine(
             //QuantTradeDLL.DBUtility.OracleClient.GetData("select sysdate from dual").Tables[0].Rows[0][0].ToString());
 
-            Announcement.Load();
+            //Announcement.Load();
 
             //string[] stockList = StockList.GetCode();
 
@@ -251,7 +323,7 @@ namespace ConsoleDemo
 
         //    int result = QuantTradeDLL.DBUtility.OracleClient.ExecuteSQL(update);
 
-            
+
 
 
         //    Console.WriteLine(result + stock );

@@ -40,8 +40,8 @@ namespace Client
             ChartMain.DataBind();
             ChartMain.Series[0].YValueMembers = "PRICE";
             ChartMain.Series[0].YValueType = ChartValueType.Double;
-            ChartMain.ChartAreas[0].AxisY.Minimum = Convert.ToDouble(LabTodayMin.Text) - Convert.ToDouble(LabTodayMax.Text) + Convert.ToDouble(LabTodayMin.Text);
-            ChartMain.ChartAreas[0].AxisY.Maximum = Convert.ToDouble(LabTodayMax.Text) + Convert.ToDouble(LabTodayMax.Text) - Convert.ToDouble(LabTodayMin.Text);
+            ChartMain.ChartAreas[0].AxisY.Minimum = (Convert.ToDouble(LabTodayMin.Text) - Convert.ToDouble(LabTodayMax.Text))*0.1 + Convert.ToDouble(LabTodayMin.Text);
+            ChartMain.ChartAreas[0].AxisY.Maximum = Convert.ToDouble(LabTodayMax.Text) + (Convert.ToDouble(LabTodayMax.Text) - Convert.ToDouble(LabTodayMin.Text))*0.1;
 
 
 
@@ -253,6 +253,7 @@ namespace Client
         {
             #region load announcement
             DataTable dt = Announcement.Get(Code);
+            
             LinkAnn1.Text = dt.Rows[0]["TITLE"].ToString().Substring(7);
 
             LinkAnn1.Links.Add(0, LinkAnn1.Text.Length, dt.Rows[0]["URL"].ToString());
@@ -270,7 +271,7 @@ namespace Client
             {
                 LinkAnn2.Text = $"{LinkAnn2.Text.Substring(0, 35)}...";
             }
-
+            
             LinkAnn3.Text = dt.Rows[2]["TITLE"].ToString().Substring(7);
 
             LinkAnn3.Links.Add(0, LinkAnn3.Text.Length, dt.Rows[2]["URL"].ToString());

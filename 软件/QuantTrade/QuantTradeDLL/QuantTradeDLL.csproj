@@ -37,6 +37,10 @@
     <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.10.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="Oracle.DataAccess, Version=2.121.2.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\作业\基于网络爬虫的股票信息预警系统的设计与实现\Quantitaive_transaction\QuantitaiveTransactionDLL\QuantitaiveTransactionDLL\bin\Oracle.DataAccess.dll</HintPath>
+    </Reference>
     <Reference Include="SunyahSMS.SSPU.WebAPI.Message">
       <HintPath>dll\SunyahSMS.SSPU.WebAPI.Message.dll</HintPath>
     </Reference>
@@ -63,8 +67,8 @@
     <Compile Include="Crawler\StockSuggest.cs" />
     <Compile Include="Line.cs" />
     <Compile Include="Suggest.cs" />
-    <Compile Include="DBUtility\ODA.cs" />
-    <Compile Include="DBUtility\OleDB.cs" />
+    <Compile Include="DBUtility\OleDb.cs" />
+    <Compile Include="DBUtility\DataAccess.cs" />
     <Compile Include="Email.cs" />
     <Compile Include="DBUtility\OracleClient.cs" />
     <Compile Include="HttpHelper.cs" />

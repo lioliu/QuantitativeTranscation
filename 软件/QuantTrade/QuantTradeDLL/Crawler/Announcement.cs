@@ -66,10 +66,12 @@ namespace QuantTradeDLL.Crawler
 
                 if (DBUtility.OracleClient.GetData($"SELECT COUNT(*) FROM Announcement where Code = '{data.Code}' and Url = '{data.Url}' ").Tables[0].Rows[0][0].ToString() == "0")
                 {
+                    
                     //formate the date;
                     string date = DateTime.Now.Year.ToString() + "-" + data.Days;
-                    DBUtility.OracleClient.ExecuteSQL($"Insert INTO Announcement VALUES ('{data.Code}','{data.Title}','{data.Url}',TO_DATE('{date}','YYYY-MM-DD'),'0')");
-                    Console.WriteLine(code + " " + tag);
+                    //Console.WriteLine(insert);
+                    DBUtility.OleDb.ExecuteSQL($"Insert INTO Announcement VALUES ('{data.Code}','{data.Title}','{data.Url}',TO_DATE('{date}','YYYY-MM-DD'),'0')");
+                    Console.WriteLine(code + " " + tag  );
                 }
                 else
                 {
