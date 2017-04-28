@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title3 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.ChartMain = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
@@ -115,6 +115,11 @@
             this.label47 = new System.Windows.Forms.Label();
             this.TimerSnap = new System.Windows.Forms.Timer(this.components);
             this.TimerLine = new System.Windows.Forms.Timer(this.components);
+            this.BtnViewKline = new System.Windows.Forms.Button();
+            this.BtnStar = new System.Windows.Forms.Button();
+            this.BtnLastStock = new System.Windows.Forms.Button();
+            this.BtnNextStock = new System.Windows.Forms.Button();
+            this.BtnClose = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.ChartMain)).BeginInit();
             this.panel1.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -126,49 +131,53 @@
             // 
             // ChartMain
             // 
-            chartArea5.Name = "Line";
-            chartArea5.Position.Auto = false;
-            chartArea5.Position.Height = 60F;
-            chartArea5.Position.Width = 96.5F;
-            chartArea5.Position.Y = 15.76424F;
-            chartArea6.Name = "Value";
-            chartArea6.Position.Auto = false;
-            chartArea6.Position.Height = 20F;
-            chartArea6.Position.Width = 96.5F;
-            chartArea6.Position.Y = 75F;
-            this.ChartMain.ChartAreas.Add(chartArea5);
-            this.ChartMain.ChartAreas.Add(chartArea6);
-            legend3.Alignment = System.Drawing.StringAlignment.Far;
-            legend3.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Top;
-            legend3.Name = "Legend1";
-            this.ChartMain.Legends.Add(legend3);
+            chartArea1.Name = "Line";
+            chartArea1.Position.Auto = false;
+            chartArea1.Position.Height = 60F;
+            chartArea1.Position.Width = 96.5F;
+            chartArea1.Position.Y = 15.76424F;
+            chartArea2.Name = "Value";
+            chartArea2.Position.Auto = false;
+            chartArea2.Position.Height = 20F;
+            chartArea2.Position.Width = 96.5F;
+            chartArea2.Position.Y = 75F;
+            this.ChartMain.ChartAreas.Add(chartArea1);
+            this.ChartMain.ChartAreas.Add(chartArea2);
+            legend1.Alignment = System.Drawing.StringAlignment.Far;
+            legend1.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Top;
+            legend1.Name = "Legend1";
+            this.ChartMain.Legends.Add(legend1);
             this.ChartMain.Location = new System.Drawing.Point(86, 21);
             this.ChartMain.Name = "ChartMain";
-            series5.ChartArea = "Line";
-            series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series5.Legend = "Legend1";
-            series5.Name = "股票价格";
-            series5.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Time;
-            series5.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
-            series6.ChartArea = "Value";
-            series6.Legend = "Legend1";
-            series6.LegendText = "成交量";
-            series6.Name = "Series2";
-            series6.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Time;
-            series6.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
-            this.ChartMain.Series.Add(series5);
-            this.ChartMain.Series.Add(series6);
+            series1.ChartArea = "Line";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series1.Legend = "Legend1";
+            series1.Name = "股票价格";
+            series1.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Time;
+            series1.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
+            series2.ChartArea = "Value";
+            series2.Legend = "Legend1";
+            series2.LegendText = "成交量";
+            series2.Name = "Series2";
+            series2.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Time;
+            series2.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
+            this.ChartMain.Series.Add(series1);
+            this.ChartMain.Series.Add(series2);
             this.ChartMain.Size = new System.Drawing.Size(965, 554);
             this.ChartMain.TabIndex = 0;
             this.ChartMain.Text = "chart1";
-            title3.Alignment = System.Drawing.ContentAlignment.TopCenter;
-            title3.Name = "日间行情";
-            title3.Text = "日间行情";
-            this.ChartMain.Titles.Add(title3);
+            title1.Alignment = System.Drawing.ContentAlignment.TopCenter;
+            title1.Name = "日间行情";
+            title1.Text = "日间行情";
+            this.ChartMain.Titles.Add(title1);
             this.ChartMain.MouseMove += new System.Windows.Forms.MouseEventHandler(this.ChartMain_MouseMove);
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.BtnNextStock);
+            this.panel1.Controls.Add(this.BtnLastStock);
+            this.panel1.Controls.Add(this.BtnStar);
+            this.panel1.Controls.Add(this.BtnViewKline);
             this.panel1.Controls.Add(this.groupBox3);
             this.panel1.Controls.Add(this.groupBox2);
             this.panel1.Controls.Add(this.groupBox1);
@@ -949,17 +958,69 @@
             this.TimerLine.Interval = 60000;
             this.TimerLine.Tick += new System.EventHandler(this.TimerLine_Tick);
             // 
+            // BtnViewKline
+            // 
+            this.BtnViewKline.Location = new System.Drawing.Point(23, 481);
+            this.BtnViewKline.Name = "BtnViewKline";
+            this.BtnViewKline.Size = new System.Drawing.Size(75, 23);
+            this.BtnViewKline.TabIndex = 9;
+            this.BtnViewKline.Text = "查看K线";
+            this.BtnViewKline.UseVisualStyleBackColor = true;
+            this.BtnViewKline.Click += new System.EventHandler(this.BtnViewKline_Click);
+            // 
+            // BtnStar
+            // 
+            this.BtnStar.Location = new System.Drawing.Point(162, 481);
+            this.BtnStar.Name = "BtnStar";
+            this.BtnStar.Size = new System.Drawing.Size(75, 23);
+            this.BtnStar.TabIndex = 10;
+            this.BtnStar.Text = "收藏";
+            this.BtnStar.UseVisualStyleBackColor = true;
+            this.BtnStar.Click += new System.EventHandler(this.BtnStar_Click);
+            // 
+            // BtnLastStock
+            // 
+            this.BtnLastStock.Location = new System.Drawing.Point(23, 525);
+            this.BtnLastStock.Name = "BtnLastStock";
+            this.BtnLastStock.Size = new System.Drawing.Size(75, 23);
+            this.BtnLastStock.TabIndex = 11;
+            this.BtnLastStock.Text = "上一个";
+            this.BtnLastStock.UseVisualStyleBackColor = true;
+            this.BtnLastStock.Click += new System.EventHandler(this.BtnLastStock_Click);
+            // 
+            // BtnNextStock
+            // 
+            this.BtnNextStock.Location = new System.Drawing.Point(162, 525);
+            this.BtnNextStock.Name = "BtnNextStock";
+            this.BtnNextStock.Size = new System.Drawing.Size(75, 23);
+            this.BtnNextStock.TabIndex = 12;
+            this.BtnNextStock.Text = "下一个";
+            this.BtnNextStock.UseVisualStyleBackColor = true;
+            this.BtnNextStock.Click += new System.EventHandler(this.BtnNextStock_Click);
+            // 
+            // BtnClose
+            // 
+            this.BtnClose.Location = new System.Drawing.Point(5, 630);
+            this.BtnClose.Name = "BtnClose";
+            this.BtnClose.Size = new System.Drawing.Size(75, 23);
+            this.BtnClose.TabIndex = 4;
+            this.BtnClose.Text = "关闭";
+            this.BtnClose.UseVisualStyleBackColor = true;
+            this.BtnClose.Click += new System.EventHandler(this.BtnClose_Click);
+            // 
             // StockDetail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1345, 717);
+            this.Controls.Add(this.BtnClose);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.ChartMain);
             this.Name = "StockDetail";
             this.Text = "Form1";
+            this.Shown += new System.EventHandler(this.StockDetail_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.ChartMain)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -1059,6 +1120,11 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Timer TimerSnap;
         private System.Windows.Forms.Timer TimerLine;
+        private System.Windows.Forms.Button BtnNextStock;
+        private System.Windows.Forms.Button BtnLastStock;
+        private System.Windows.Forms.Button BtnStar;
+        private System.Windows.Forms.Button BtnViewKline;
+        private System.Windows.Forms.Button BtnClose;
     }
 }
 

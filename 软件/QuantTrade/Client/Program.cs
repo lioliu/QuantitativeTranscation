@@ -16,7 +16,9 @@ namespace Client
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new StockKline("600000"));
+            //Application.Run(new StockDetail("600000",new string[2] { "600000","600004"} ));
+            Application.Run(new  Main());
+
         }
     }
 }

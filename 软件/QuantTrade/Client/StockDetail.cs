@@ -17,18 +17,35 @@ namespace Client
         private string Yesterday { set; get; }
         private string Code { set; get; }
 
+        private string[] StockList { set; get; }
         //private bool flag = false;
-
-        public StockDetail(string code)
+        private int Index { set; get; }
+        public StockDetail(string code, string[] stockList)
         {
+            StockList = stockList;
+
+            for (int i = 0; i < StockList.Length; i++)
+            {
+                if (Code == StockList[i])
+                {
+                    Index = i;              //get the index
+                    break;
+                }
+            }
+
+
             Code = code;
             InitializeComponent();
             LoadSnap();
             LoadAnn();
             LoadChart();
+            
             //flag = true;
             TimerLine.Enabled = true;
             TimerSnap.Enabled = true;
+            LinkAnn1.LinkClicked += new LinkLabelLinkClickedEventHandler(LinkClicked);
+            LinkAnn2.LinkClicked += new LinkLabelLinkClickedEventHandler(LinkClicked);
+            LinkAnn3.LinkClicked += new LinkLabelLinkClickedEventHandler(LinkClicked);
         }
 
         private void LoadChart()
@@ -40,8 +57,8 @@ namespace Client
             ChartMain.DataBind();
             ChartMain.Series[0].YValueMembers = "PRICE";
             ChartMain.Series[0].YValueType = ChartValueType.Double;
-            ChartMain.ChartAreas[0].AxisY.Minimum = (Convert.ToDouble(LabTodayMin.Text) - Convert.ToDouble(LabTodayMax.Text))*0.1 + Convert.ToDouble(LabTodayMin.Text);
-            ChartMain.ChartAreas[0].AxisY.Maximum = Convert.ToDouble(LabTodayMax.Text) + (Convert.ToDouble(LabTodayMax.Text) - Convert.ToDouble(LabTodayMin.Text))*0.1;
+            ChartMain.ChartAreas[0].AxisY.Minimum = (Convert.ToDouble(LabTodayMin.Text) - Convert.ToDouble(LabTodayMax.Text)) * 0.1 + Convert.ToDouble(LabTodayMin.Text);
+            ChartMain.ChartAreas[0].AxisY.Maximum = Convert.ToDouble(LabTodayMax.Text) + (Convert.ToDouble(LabTodayMax.Text) - Convert.ToDouble(LabTodayMin.Text)) * 0.1;
 
 
 
@@ -59,6 +76,20 @@ namespace Client
             ChartMain.Invalidate();
 
             #endregion
+
+            #region check Btn Text
+            BtnStar.Text = IsStared() ? "取消收藏" : "收藏";
+            #endregion
+
+        }
+
+        private bool IsStared()
+        {
+            if (QuantTradeDLL.DBUtility.OleDb.GetData($"SELECT * FROM FOCUS_LIST WHERE code ='{Code}'").Tables[0].Rows.Count > 0)
+
+                return true;
+            else
+                return false;
         }
 
         private void LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -92,7 +123,7 @@ namespace Client
                 return;
             }
 
-            if (index > 0 && index < ChartMain.Series[0].Points.Count)
+            if (index >= 0 && index < ChartMain.Series[0].Points.Count)
             {
                 // Find selected data point  
                 DataPoint point = ChartMain.Series[0].Points[index];
@@ -103,15 +134,18 @@ namespace Client
                 LabIncrease2.Text = (Convert.ToDouble(LabPri.Text) - Convert.ToDouble(Yesterday)).ToString("F2");
                 LabIncrePer2.Text = ((Convert.ToDouble(LabPri.Text) - Convert.ToDouble(Yesterday)) / Convert.ToDouble(Yesterday) * 100).ToString("F2") + "%";
                 LabValue2.Text = ChartMain.Series[1].Points[index].YValues[0].ToString();
+
+
+                #region mark color  
+                LabPri.ForeColor = Convert.ToDouble(LabPri.Text) > Convert.ToDouble(Yesterday) ? Color.Red :
+                    Convert.ToDouble(LabPri.Text) == Convert.ToDouble(Yesterday) ? Color.Black : Color.Green;
+
+                LabIncrease2.ForeColor = LabPri.ForeColor;
+                LabIncrePer2.ForeColor = LabPri.ForeColor;
+                #endregion
             }
 
-            #region mark color  
-            LabPri.ForeColor = Convert.ToDouble(LabPri.Text) > Convert.ToDouble(Yesterday) ? Color.Red :
-                Convert.ToDouble(LabPri.Text) == Convert.ToDouble(Yesterday) ? Color.Black : Color.Green;
 
-            LabIncrease2.ForeColor = LabPri.ForeColor;
-            LabIncrePer2.ForeColor = LabPri.ForeColor;
-            #endregion
 
 
 
@@ -251,12 +285,15 @@ namespace Client
 
         private void LoadAnn()
         {
+       
+            
             #region load announcement
             DataTable dt = Announcement.Get(Code);
-            
-            LinkAnn1.Text = dt.Rows[0]["TITLE"].ToString().Substring(7);
 
-            LinkAnn1.Links.Add(0, LinkAnn1.Text.Length, dt.Rows[0]["URL"].ToString());
+            LinkAnn1.Text = dt.Rows[0]["TITLE"].ToString().Substring(7);
+            LinkAnn1.Links.Remove(LinkAnn1.Links[0]);
+            LinkAnn1.Links.Add(0, LinkAnn1.Text.Length);
+            LinkAnn1.Links[0].LinkData = dt.Rows[0]["URL"].ToString();
             LabAnnDate1.Text = Convert.ToDateTime(dt.Rows[0]["days"].ToString()).ToString("M");
             if (LinkAnn1.Text.Length > 35)
             {
@@ -264,27 +301,99 @@ namespace Client
             }
 
             LinkAnn2.Text = dt.Rows[1]["TITLE"].ToString().Substring(7);
-
-            LinkAnn2.Links.Add(0, LinkAnn2.Text.Length, dt.Rows[1]["URL"].ToString());
+            LinkAnn2.Links.Remove(LinkAnn2.Links[0]);
+            LinkAnn2.Links.Add(0, LinkAnn2.Text.Length);
+            LinkAnn2.Links[0].LinkData = dt.Rows[1]["URL"].ToString();
             LabAnnDate2.Text = Convert.ToDateTime(dt.Rows[1]["days"].ToString()).ToString("M");
             if (LinkAnn2.Text.Length > 35)
             {
                 LinkAnn2.Text = $"{LinkAnn2.Text.Substring(0, 35)}...";
             }
-            
+
             LinkAnn3.Text = dt.Rows[2]["TITLE"].ToString().Substring(7);
 
-            LinkAnn3.Links.Add(0, LinkAnn3.Text.Length, dt.Rows[2]["URL"].ToString());
+            LinkAnn3.Links.Remove(LinkAnn3.Links[0]);
+            LinkAnn3.Links.Add(0, LinkAnn3.Text.Length);
+            LinkAnn3.Links[0].LinkData = dt.Rows[2]["URL"].ToString();
             LabAnnDate3.Text = Convert.ToDateTime(dt.Rows[2]["days"].ToString()).ToString("M");
             if (LinkAnn3.Text.Length > 35)
             {
                 LinkAnn3.Text = $"{LinkAnn3.Text.Substring(0, 35)}...";
             }
 
-            LinkAnn1.LinkClicked += new LinkLabelLinkClickedEventHandler(LinkClicked);
-            LinkAnn2.LinkClicked += new LinkLabelLinkClickedEventHandler(LinkClicked);
-            LinkAnn3.LinkClicked += new LinkLabelLinkClickedEventHandler(LinkClicked);
+         
             #endregion
+        }
+
+        private void BtnViewKline_Click(object sender, EventArgs e)
+        {
+            new StockKline(Code).ShowDialog();
+        }
+
+        private void BtnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            this.Dispose();
+        }
+
+        private void BtnStar_Click(object sender, EventArgs e)
+        {
+
+            QuantTradeDLL.DBUtility.OleDb.ExecuteSQL(
+                    IsStared() ? $"Delete from FOCUS_LIST where code ='{Code}'" : $"insert into FOCUS_LIST VALUES ('{Code}')"
+                );
+
+            BtnStar.Text = IsStared() ? "取消收藏" : "收藏";
+        }
+
+        private void BtnLastStock_Click(object sender, EventArgs e)
+        {
+            Index--;
+            if (Index < 0)
+                Index = StockList.Length - 1;
+            Code = StockList[Index];
+            LoadSnap();
+            LoadChart();
+            LoadAnn();
+            InitDetail();
+
+        }
+
+        private void BtnNextStock_Click(object sender, EventArgs e)
+        {
+            Index++;
+            if (Index == StockList.Length )
+                Index = 0;
+            Code = StockList[Index];
+            LoadSnap();
+            LoadChart();
+            LoadAnn();
+            InitDetail();
+        }
+
+
+
+        private void InitDetail()
+        {
+            // Find selected data point  
+            //DataPoint point = ChartMain.Series[0].Points[0];
+
+
+            LabTime.Text = "--";
+            LabPri.Text = "--";
+            LabIncrease2.Text = "--";
+            LabIncrePer2.Text = "--";
+            #region mark color  
+            LabPri.ForeColor = Color.Black;
+
+            LabIncrease2.ForeColor = Color.Black;
+            LabIncrePer2.ForeColor = Color.Black;
+            #endregion
+        }
+
+        private void StockDetail_Shown(object sender, EventArgs e)
+        {
+            InitDetail();
         }
     }
 }
