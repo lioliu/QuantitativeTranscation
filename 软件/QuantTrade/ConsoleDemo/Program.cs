@@ -161,7 +161,7 @@ namespace ConsoleDemo
             //      QuantTradeDLL.DBUtility.OracleClient.ExecuteSQL($"Insert INTO Announcement VALUES ('{data.Code}','{data.Title}','{data.Url}',TO_DATE('{date}','YYYY-MM-DD'))");
             //  }
 
-            QuantTradeDLL.Crawler.ECNOData.Update();
+            //QuantTradeDLL.Crawler.ECNOData.Update();
 
 
             // Regex reg = new Regex(@"[+-]?\d+(\.\d+)?");
