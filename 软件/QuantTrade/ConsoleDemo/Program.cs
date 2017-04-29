@@ -161,7 +161,7 @@ namespace ConsoleDemo
             //      QuantTradeDLL.DBUtility.OracleClient.ExecuteSQL($"Insert INTO Announcement VALUES ('{data.Code}','{data.Title}','{data.Url}',TO_DATE('{date}','YYYY-MM-DD'))");
             //  }
 
-            //QuantTradeDLL.Crawler.ECNOData.Update();
+            QuantTradeDLL.Crawler.ECNOData.Update();
 
 
             // Regex reg = new Regex(@"[+-]?\d+(\.\d+)?");
@@ -241,10 +241,10 @@ namespace ConsoleDemo
             //Console.WriteLine("finished");
             //QuantTradeDLL.DBUtility.OracleClient.ExecuteSQL("insert into STOCK_HIS_DATA " +
             //                   "select base.code ,base.days,op.price,max(base.price),min(base.price),cl.price ,sum(volume) from STOCK_LINE_DATA base, " +
-            //                   "(select code, price from stock_line_data where days = to_char(sysdate, 'yyyymmdd') and time = '93000') op," +
-            //                   "(select code, price from stock_line_data where days = to_char(sysdate, 'yyyymmdd') and time = '150000')cl" +
+            //                   "(select code, price from stock_line_data where days = to_char(sysdate -1, 'yyyymmdd') and time = '93000') op," +
+            //                   "(select code, price from stock_line_data where days = to_char(sysdate -1, 'yyyymmdd') and time = '150000')cl" +
             //                   " where base.code = op.code and base.code = cl.code " +
-            //                   "and base.days = to_char(sysdate, 'yyyymmdd') " +
+            //                   "and base.days = to_char(sysdate -1, 'yyyymmdd') " +
             //                   "group by base.code ,days,op.price,cl.price");
 
 

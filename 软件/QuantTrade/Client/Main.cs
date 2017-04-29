@@ -249,5 +249,28 @@ namespace Client
             LoadList();
             SetButon();
         }
+
+        private void 设置ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new Setting().ShowDialog();
+        }
+
+        private void DataViewAll_DoubleClick(object sender, EventArgs e)
+        {
+            Console.WriteLine(DataViewAll.SelectedCells[0].RowIndex);
+            int index = DataViewAll.SelectedCells[0].RowIndex;
+            new StockDetail(AllTable.Rows[index]["Code"].ToString(), AllList).ShowDialog();
+        }
+
+        private void DataViewFocus_DoubleClick(object sender, EventArgs e)
+        {
+            int index = DataViewFocus.SelectedCells[0].RowIndex;
+            new StockDetail(FocusTable.Rows[index]["Code"].ToString(), FocusList).ShowDialog();
+        }
+
+        private void 基础选股ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new SelectStockBase().ShowDialog();
+        }
     }
 }

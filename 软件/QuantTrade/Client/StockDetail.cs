@@ -23,7 +23,7 @@ namespace Client
         public StockDetail(string code, string[] stockList)
         {
             StockList = stockList;
-
+            Code = code;
             for (int i = 0; i < StockList.Length; i++)
             {
                 if (Code == StockList[i])
@@ -34,7 +34,7 @@ namespace Client
             }
 
 
-            Code = code;
+            
             InitializeComponent();
             LoadSnap();
             LoadAnn();

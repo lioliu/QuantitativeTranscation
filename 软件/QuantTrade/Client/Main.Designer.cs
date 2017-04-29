@@ -32,7 +32,10 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.设置ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.选股ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.基础选股ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.进阶选股ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.预警ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.投资组合ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.TabPageAll = new System.Windows.Forms.TabPage();
             this.DataViewAll = new System.Windows.Forms.DataGridView();
@@ -46,6 +49,8 @@
             this.BtnJump = new System.Windows.Forms.Button();
             this.TbxPageNum = new System.Windows.Forms.TextBox();
             this.LabNowPage = new System.Windows.Forms.Label();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
+            this.famaFrenchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.TabPageAll.SuspendLayout();
@@ -59,7 +64,8 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.设置ToolStripMenuItem,
             this.选股ToolStripMenuItem,
-            this.预警ToolStripMenuItem});
+            this.预警ToolStripMenuItem,
+            this.投资组合ToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1166, 25);
@@ -71,18 +77,43 @@
             this.设置ToolStripMenuItem.Name = "设置ToolStripMenuItem";
             this.设置ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
             this.设置ToolStripMenuItem.Text = "设置";
+            this.设置ToolStripMenuItem.Click += new System.EventHandler(this.设置ToolStripMenuItem_Click);
             // 
             // 选股ToolStripMenuItem
             // 
+            this.选股ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.基础选股ToolStripMenuItem,
+            this.进阶选股ToolStripMenuItem,
+            this.toolStripMenuItem1,
+            this.famaFrenchToolStripMenuItem});
             this.选股ToolStripMenuItem.Name = "选股ToolStripMenuItem";
             this.选股ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
             this.选股ToolStripMenuItem.Text = "选股";
+            // 
+            // 基础选股ToolStripMenuItem
+            // 
+            this.基础选股ToolStripMenuItem.Name = "基础选股ToolStripMenuItem";
+            this.基础选股ToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.基础选股ToolStripMenuItem.Text = "基础选股";
+            this.基础选股ToolStripMenuItem.Click += new System.EventHandler(this.基础选股ToolStripMenuItem_Click);
+            // 
+            // 进阶选股ToolStripMenuItem
+            // 
+            this.进阶选股ToolStripMenuItem.Name = "进阶选股ToolStripMenuItem";
+            this.进阶选股ToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.进阶选股ToolStripMenuItem.Text = "进阶选股";
             // 
             // 预警ToolStripMenuItem
             // 
             this.预警ToolStripMenuItem.Name = "预警ToolStripMenuItem";
             this.预警ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
             this.预警ToolStripMenuItem.Text = "预警";
+            // 
+            // 投资组合ToolStripMenuItem
+            // 
+            this.投资组合ToolStripMenuItem.Name = "投资组合ToolStripMenuItem";
+            this.投资组合ToolStripMenuItem.Size = new System.Drawing.Size(68, 21);
+            this.投资组合ToolStripMenuItem.Text = "投资组合";
             // 
             // tabControl1
             // 
@@ -118,13 +149,14 @@
             this.DataViewAll.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
             this.DataViewAll.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DataViewAll.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.DataViewAll.Location = new System.Drawing.Point(8, 6);
+            this.DataViewAll.Location = new System.Drawing.Point(-25, 25);
             this.DataViewAll.MultiSelect = false;
             this.DataViewAll.Name = "DataViewAll";
             this.DataViewAll.ReadOnly = true;
             this.DataViewAll.RowTemplate.Height = 23;
             this.DataViewAll.Size = new System.Drawing.Size(1137, 622);
             this.DataViewAll.TabIndex = 0;
+            this.DataViewAll.DoubleClick += new System.EventHandler(this.DataViewAll_DoubleClick);
             // 
             // TabPageFocus
             // 
@@ -147,6 +179,7 @@
             this.DataViewFocus.RowTemplate.Height = 23;
             this.DataViewFocus.Size = new System.Drawing.Size(1139, 622);
             this.DataViewFocus.TabIndex = 0;
+            this.DataViewFocus.DoubleClick += new System.EventHandler(this.DataViewFocus_DoubleClick);
             // 
             // timer1
             // 
@@ -218,6 +251,17 @@
             this.LabNowPage.TabIndex = 8;
             this.LabNowPage.Text = "第X页";
             // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(157, 6);
+            // 
+            // famaFrenchToolStripMenuItem
+            // 
+            this.famaFrenchToolStripMenuItem.Name = "famaFrenchToolStripMenuItem";
+            this.famaFrenchToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.famaFrenchToolStripMenuItem.Text = "法码三因子选股";
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -266,5 +310,10 @@
         private System.Windows.Forms.Button BtnLastPage;
         private System.Windows.Forms.Label LabNowPage;
         private System.Windows.Forms.TextBox TbxPageNum;
+        private System.Windows.Forms.ToolStripMenuItem 投资组合ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 基础选股ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 进阶选股ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem famaFrenchToolStripMenuItem;
     }
 }
