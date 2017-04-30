@@ -23,12 +23,7 @@ namespace Client
             DataTable tb = OleDb.GetData("Select * from Base_infor").Tables[0];
             TbxPhone.Text = tb.Rows[0][0].ToString();
             TbxEmail.Text = tb.Rows[0][1].ToString();
-            TbxStamp.Text = tb.Rows[0][2].ToString();
-            TbxSec.Text = tb.Rows[0][3].ToString();
-            TbxStock.Text = tb.Rows[0][4].ToString();
-            TbxTransfer.Text = tb.Rows[0][5].ToString();
-            TbxBrokerage.Text = tb.Rows[0][6].ToString();
-
+         
             foreach (Control control in this.Controls)
             {
                 if (control is TextBox)
@@ -46,10 +41,8 @@ namespace Client
         {
             String regexPhone = "^((13[0-9])|(14[5|7])|(15([0-3]|[5-9]))|(18[0,5-9]))\\d{8}$";
             String regexEmail = "^[a-z0-9]+([._\\-]*[a-z0-9])*@([a-z0-9]+[-a-z0-9]*[a-z0-9]+.){1,63}[a-z0-9]+$";
-            String regexFlout = "^(([0-9]+\\.[0-9]*[1-9][0-9]*)|([0-9]*[1-9][0-9]*\\.[0-9]+)|([0-9]*[1-9][0-9]*))$";
-            return Regex.IsMatch(TbxPhone.Text, regexPhone) && Regex.IsMatch(TbxEmail.Text, regexEmail) && Regex.IsMatch(TbxStamp.Text, regexFlout)
-                && Regex.IsMatch(TbxSec.Text, regexFlout) && Regex.IsMatch(TbxStock.Text, regexFlout) && Regex.IsMatch(TbxTransfer.Text, regexFlout)
-                && Regex.IsMatch(TbxBrokerage.Text, regexFlout);
+            //String regexFlout = "^(([0-9]+\\.[0-9]*[1-9][0-9]*)|([0-9]*[1-9][0-9]*\\.[0-9]+)|([0-9]*[1-9][0-9]*))$";
+            return Regex.IsMatch(TbxPhone.Text, regexPhone) && Regex.IsMatch(TbxEmail.Text, regexEmail);
 
         }
 
@@ -76,17 +69,12 @@ namespace Client
             {
                 if (Check())
                 {
-                    OleDb.ExecuteSQL($"UPDATE BASE_INFOR SET PHONE='{TbxPhone.Text}',EMAIL = '{TbxEmail.Text}',STAMP_TAX='{TbxStamp.Text}',SEC_CHARGES = '{TbxSec.Text}',STOCK_TRADING_FEES='{TbxStock.Text}',TRANSFER_FEES = '{TbxTransfer.Text}'");
+                    OleDb.ExecuteSQL($"UPDATE BASE_INFOR SET PHONE='{TbxPhone.Text}',EMAIL = '{TbxEmail.Text}'");
                     Changed = false;
                     DataTable tb = OleDb.GetData("Select * from Base_infor").Tables[0];
                     TbxPhone.Text = tb.Rows[0][0].ToString();
                     TbxEmail.Text = tb.Rows[0][1].ToString();
-                    TbxStamp.Text = tb.Rows[0][2].ToString();
-                    TbxSec.Text = tb.Rows[0][3].ToString();
-                    TbxStock.Text = tb.Rows[0][4].ToString();
-                    TbxTransfer.Text = tb.Rows[0][5].ToString();
-                    TbxBrokerage.Text = tb.Rows[0][6].ToString();
-
+                  
                     foreach (Control control in this.Controls)
                     {
                         if (control is TextBox)
@@ -113,12 +101,7 @@ namespace Client
             DataTable tb = OleDb.GetData("Select * from Base_infor").Tables[0];
             TbxPhone.Text = tb.Rows[0][0].ToString();
             TbxEmail.Text = tb.Rows[0][1].ToString();
-            TbxStamp.Text = tb.Rows[0][2].ToString();
-            TbxSec.Text = tb.Rows[0][3].ToString();
-            TbxStock.Text = tb.Rows[0][4].ToString();
-            TbxTransfer.Text = tb.Rows[0][5].ToString();
-            TbxBrokerage.Text = tb.Rows[0][6].ToString();
-
+        
             foreach (Control control in this.Controls)
             {
                 if (control is TextBox)

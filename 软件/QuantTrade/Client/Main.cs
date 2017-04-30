@@ -268,9 +268,6 @@ namespace Client
             new StockDetail(FocusTable.Rows[index]["Code"].ToString(), FocusList).ShowDialog();
         }
 
-        private void 基础选股ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            new SelectStockBase().ShowDialog();
-        }
+  
     }
 }

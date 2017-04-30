@@ -49,35 +49,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="InputBox.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="InputBox.Designer.cs">
-      <DependentUpon>InputBox.cs</DependentUpon>
-    </Compile>
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
-    </Compile>
-    <Compile Include="SelectStockBase.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="SelectStockBase.Designer.cs">
-      <DependentUpon>SelectStockBase.cs</DependentUpon>
-    </Compile>
-    <Compile Include="SelectStockFama.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="SelectStockFama.Designer.cs">
-      <DependentUpon>SelectStockFama.cs</DependentUpon>
-    </Compile>
-    <Compile Include="SelectStockPrim.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="SelectStockPrim.Designer.cs">
-      <DependentUpon>SelectStockPrim.cs</DependentUpon>
     </Compile>
     <Compile Include="Setting.cs">
       <SubType>Form</SubType>
@@ -99,9 +75,6 @@
     <Compile Include="StockKline.Designer.cs">
       <DependentUpon>StockKline.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="InputBox.resx">
-      <DependentUpon>InputBox.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
@@ -114,9 +87,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="SelectStockBase.resx">
-      <DependentUpon>SelectStockBase.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Setting.resx">
       <DependentUpon>Setting.cs</DependentUpon>
     </EmbeddedResource>
