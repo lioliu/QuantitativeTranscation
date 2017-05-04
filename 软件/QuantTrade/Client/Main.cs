@@ -228,9 +228,14 @@ namespace Client
                 MessageBox.Show("请输入数字");
                 return;
             }
-            
+            if (tabControl1.SelectedIndex <0)
+            {
+                MessageBox.Show("请输入正整数");
+                return;
+            }
 
-            if (tabControl1.SelectedIndex == 0)
+
+                if (tabControl1.SelectedIndex == 0)
             {
                 if (targetPage >= AllList.Length / 25 + (AllList.Length % 25 == 0 ? 0 : 1))
                 {

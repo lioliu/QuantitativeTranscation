@@ -75,6 +75,18 @@
     <Compile Include="StockKline.Designer.cs">
       <DependentUpon>StockKline.cs</DependentUpon>
     </Compile>
+    <Compile Include="WarningAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WarningAdd.Designer.cs">
+      <DependentUpon>WarningAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WarningMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WarningMain.Designer.cs">
+      <DependentUpon>WarningMain.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
@@ -95,6 +107,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="StockKline.resx">
       <DependentUpon>StockKline.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WarningMain.resx">
+      <DependentUpon>WarningMain.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

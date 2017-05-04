@@ -22,7 +22,7 @@ namespace QuantTradeDLL.Crawler
         /// Convert today's Line data to His data 
         /// </summary>
         /// <returns></returns>
-        public int ConvertLine()
+        private int ConvertLine()
         {
             return  DBUtility.OracleClient.ExecuteSQL("insert into STOCK_HIS_DATA select base.code, base.days, op.price, max(base.price), min(base.price), cl.price, sum(volume)" +
                     "from STOCK_LINE_DATA base left join " +
@@ -35,7 +35,7 @@ namespace QuantTradeDLL.Crawler
         /// </summary>
         /// <param name="date">formated as yyyymmdd</param>
         /// <returns></returns>
-        public int ConvertLine(string date)
+        private int ConvertLine(string date)
         {
             return DBUtility.OracleClient.ExecuteSQL($"insert into STOCK_HIS_DATA select base.code, base.days, op.price, max(base.price), min(base.price), cl.price, sum(volume)" +
                     "from STOCK_LINE_DATA base left join " +
@@ -71,7 +71,7 @@ namespace QuantTradeDLL.Crawler
             return JsonConvert.DeserializeObject<StockHisData>(json);
         }
 
-        public static int SaveToDB(StockHisData hisData)
+        private static int SaveToDB(StockHisData hisData)
         {
             string insert = string.Empty;
             List<string> insertscript = new List<string>();
@@ -84,7 +84,7 @@ namespace QuantTradeDLL.Crawler
             return DBUtility.OracleClient.ExecuteSQL(insertscript);
         }
 
-        public static int SaveToDB(DataTable dt)
+        private static int SaveToDB(DataTable dt)
         {
             string insert = string.Empty;
             List<string> insertscript = new List<string>();
@@ -98,7 +98,7 @@ namespace QuantTradeDLL.Crawler
 
 
 
-        public static DataTable ToDataTable(StockHisData data)
+        private static DataTable ToDataTable(StockHisData data)
         {
             DataTable dt = new DataTable("StockData");
             dt.Columns.Add("CODE", Type.GetType("System.String"));

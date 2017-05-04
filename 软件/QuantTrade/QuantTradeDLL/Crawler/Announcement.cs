@@ -19,10 +19,12 @@ namespace QuantTradeDLL.Crawler
         public static bool Load()
         {
             string[] stockList = StockList.GetCode();
-            foreach (var item in stockList)
-            {
-                Load(item);
-            }
+            Load(stockList[0]);
+            //string[] stockList = StockList.GetCode();
+            //foreach (var item in stockList)
+            //{
+            //    Load(item);
+            //}
             return true;
         }
 
@@ -32,7 +34,7 @@ namespace QuantTradeDLL.Crawler
             return DBUtility.OracleClient.GetData($"Select * from (select * from announcement where code ='{Code}' order by days desc) where rownum<=10").Tables[0];
         }
 
-        public static bool Load(string code)
+        private static bool Load(string code)
         {
             HtmlWeb web = new HtmlWeb()
             {

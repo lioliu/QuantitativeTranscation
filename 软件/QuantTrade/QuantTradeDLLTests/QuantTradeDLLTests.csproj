@@ -48,6 +48,7 @@
     <Reference Include="Oracle.DataAccess, Version=4.112.2.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=AMD64" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.OracleClient" />
   </ItemGroup>
   <Choose>
     <When Condition="('$(VisualStudioVersion)' == '10.0' or '$(VisualStudioVersion)' == '') and '$(TargetFrameworkVersion)' == 'v3.5'">
@@ -58,6 +59,7 @@
     <Otherwise />
   </Choose>
   <ItemGroup>
+    <Compile Include="Crawler\AnnouncementTests.cs" />
     <Compile Include="Crawler\BaseCrawlerTests.cs" />
     <Compile Include="Crawler\ECNODataTests.cs" />
     <Compile Include="Crawler\SnapDataTests.cs" />
@@ -65,6 +67,8 @@
     <Compile Include="Crawler\StockLineDataTests.cs" />
     <Compile Include="Crawler\StockListTests.cs" />
     <Compile Include="Crawler\StockSuggestTests.cs" />
+    <Compile Include="DBUtility\DataAccessTests.cs" />
+    <Compile Include="DBUtility\OleDbTests.cs" />
     <Compile Include="DBUtility\OracleClientTests.cs" />
     <Compile Include="EmailTests.cs" />
     <Compile Include="HttpHelperTests.cs" />

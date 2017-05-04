@@ -120,7 +120,7 @@ namespace Client
                 DialogResult dr = MessageBox.Show("还有未确认的修改是否直接关闭?", "提示", MessageBoxButtons.OKCancel);
                 if (dr == DialogResult.OK)
                 {
-                    this.Close();
+                    
                     this.Dispose();
                 }
                 else if (dr == DialogResult.Cancel)

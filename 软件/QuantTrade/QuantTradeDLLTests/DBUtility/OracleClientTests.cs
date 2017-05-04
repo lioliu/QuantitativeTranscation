@@ -6,7 +6,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data;
-using Oracle.DataAccess.Client;
+
+using System.Data.OracleClient;
 
 namespace QuantTradeDLL.DBUtility.Tests
 {
@@ -54,8 +55,10 @@ namespace QuantTradeDLL.DBUtility.Tests
         public void ProceureToParameterTest()
         {
             OracleParameter[] parameter = new OracleParameter[1];
-            parameter[0] = new OracleParameter("PARAM1", OracleDbType.Varchar2, 200);
-            parameter[0].Direction = ParameterDirection.Output;
+            parameter[0] = new OracleParameter("PARAM1", System.Data.OracleClient.OracleType.VarChar, 200)
+            {
+                Direction = ParameterDirection.Output
+            };
             OracleClient.ProceureToParameter("LIOLIU.TESTSET.TEST", parameter);
             StringAssert.Contains("success", parameter[0].Value.ToString());
         }
@@ -64,7 +67,7 @@ namespace QuantTradeDLL.DBUtility.Tests
         public void ProceureToTableTest()
         {
             OracleParameter[] parameter = new OracleParameter[1];
-            parameter[0] = new OracleParameter("PARAM1", OracleDbType.RefCursor)    
+            parameter[0] = new OracleParameter("PARAM1",OracleType.Cursor)    
             {
                 Direction = ParameterDirection.Output
             };

@@ -22,6 +22,7 @@ namespace QuantTradeDLL.Crawler.Tests
         [TestMethod()]
         public void SaveToDBTest()
         {
+            DBUtility.OracleClient.ExecuteSQL("delete from stock_line_data where days ='20170502' and code= '600000'");
             StockLineData lineData = StockLineData.GetLineDataObject("600000");
             DataTable dt = new DataTable("Line_data");
             dt.Columns.Add("CODE", Type.GetType("System.String"));
@@ -47,6 +48,8 @@ namespace QuantTradeDLL.Crawler.Tests
         [TestMethod()]
         public void SaveToDBTest1()
         {
+            //
+            DBUtility.OracleClient.ExecuteSQL("delete from stock_line_data where days ='20170502' and code= '600000'");
             StockLineData lineData = StockLineData.GetLineDataObject("600000");
             Assert.AreEqual(StockLineData.SaveToDB(lineData), 241);
         }

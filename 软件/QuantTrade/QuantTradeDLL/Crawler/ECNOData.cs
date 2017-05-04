@@ -35,11 +35,13 @@ namespace QuantTradeDLL.Crawler
         public static bool Update()
         {
             string[] stockList = StockList.GetCode();
+            Task.Factory.StartNew(() => TaskDO(stockList[0]));
+            //string[] stockList = StockList.GetCode();
 
-            foreach (var item in stockList)
-            {
-                Task.Factory.StartNew(() => TaskDO(item));
-            }
+            //foreach (var item in stockList)
+            //{
+            //    Task.Factory.StartNew(() => TaskDO(item));
+            //}
             return true;
         }
 

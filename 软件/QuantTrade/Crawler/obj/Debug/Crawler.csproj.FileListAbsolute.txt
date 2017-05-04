@@ -1,0 +1,15 @@
+C:\Users\74459\Desktop\基于网络爬虫的股票信息预警系统的设计与实现\软件\QuantTrade\Crawler\bin\Debug\Crawler.exe.config
+C:\Users\74459\Desktop\基于网络爬虫的股票信息预警系统的设计与实现\软件\QuantTrade\Crawler\bin\Debug\Crawler.exe
+C:\Users\74459\Desktop\基于网络爬虫的股票信息预警系统的设计与实现\软件\QuantTrade\Crawler\bin\Debug\Crawler.pdb
+C:\Users\74459\Desktop\基于网络爬虫的股票信息预警系统的设计与实现\软件\QuantTrade\Crawler\bin\Debug\QuantTradeDLL.dll
+C:\Users\74459\Desktop\基于网络爬虫的股票信息预警系统的设计与实现\软件\QuantTrade\Crawler\bin\Debug\SunyahSMS.SSPU.WebAPI.Message.dll
+C:\Users\74459\Desktop\基于网络爬虫的股票信息预警系统的设计与实现\软件\QuantTrade\Crawler\bin\Debug\Oracle.DataAccess.dll
+C:\Users\74459\Desktop\基于网络爬虫的股票信息预警系统的设计与实现\软件\QuantTrade\Crawler\bin\Debug\HtmlAgilityPack.dll
+C:\Users\74459\Desktop\基于网络爬虫的股票信息预警系统的设计与实现\软件\QuantTrade\Crawler\bin\Debug\Newtonsoft.Json.dll
+C:\Users\74459\Desktop\基于网络爬虫的股票信息预警系统的设计与实现\软件\QuantTrade\Crawler\bin\Debug\QuantTradeDLL.pdb
+C:\Users\74459\Desktop\基于网络爬虫的股票信息预警系统的设计与实现\软件\QuantTrade\Crawler\bin\Debug\HtmlAgilityPack.pdb
+C:\Users\74459\Desktop\基于网络爬虫的股票信息预警系统的设计与实现\软件\QuantTrade\Crawler\bin\Debug\HtmlAgilityPack.xml
+C:\Users\74459\Desktop\基于网络爬虫的股票信息预警系统的设计与实现\软件\QuantTrade\Crawler\bin\Debug\Newtonsoft.Json.xml
+C:\Users\74459\Desktop\基于网络爬虫的股票信息预警系统的设计与实现\软件\QuantTrade\Crawler\obj\Debug\Crawler.csprojResolveAssemblyReference.cache
+C:\Users\74459\Desktop\基于网络爬虫的股票信息预警系统的设计与实现\软件\QuantTrade\Crawler\obj\Debug\Crawler.exe
+C:\Users\74459\Desktop\基于网络爬虫的股票信息预警系统的设计与实现\软件\QuantTrade\Crawler\obj\Debug\Crawler.pdb

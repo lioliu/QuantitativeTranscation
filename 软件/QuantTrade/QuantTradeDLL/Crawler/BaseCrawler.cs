@@ -8,8 +8,8 @@ namespace QuantTradeDLL.Crawler
 {
     public class BaseCrawler
     {
-        HttpHelper http;
-        HttpItem item;
+        static HttpHelper http;
+        static HttpItem item;
         public BaseCrawler()
         {
             http = new HttpHelper();
@@ -60,7 +60,7 @@ namespace QuantTradeDLL.Crawler
         /// </summary>
         /// <param name="URL">the URL wanted to crawl</param>
         /// <returns>the URL's html text</returns>
-        public string Run(string URL)
+        public  string Run(string URL)
         {
             item.URL = URL;
             HttpResult result = http.GetHtml(item);

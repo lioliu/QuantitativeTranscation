@@ -10,10 +10,7 @@ namespace QuantTradeDLL.Crawler
 
 
 
-        public StockList()
-        {
-
-        }
+       
         //wait to develop
         public static string[] GetCode()
         {

@@ -15,7 +15,7 @@ namespace QuantTradeDLL.Crawler.Tests
         public void StockSuggestTest()
         {
             StockSuggest data = StockSuggest.Get();
-            Assert.AreEqual(StockSuggest.SaveToDB(data),1303);
+            Assert.AreEqual(StockSuggest.SaveToDB(data),1308);
         }
     }
 }

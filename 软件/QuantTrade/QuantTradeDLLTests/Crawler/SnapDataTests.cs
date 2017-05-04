@@ -25,14 +25,10 @@ namespace QuantTradeDLL.Crawler.Tests
         {
             //without thread takes 3 min
             string[] list = StockList.GetCode();
-            foreach (var item in list)
-           {
-               SnapData.GetSnap(item);
-            }
-
+        
             
-            //SnapData data = SnapData.GetSnap("600000");
-            //StringAssert.Contains(data.Result[0].Data.Gid, "sh600000");
+            SnapData data = SnapData.GetSnap("600000");
+            StringAssert.Contains(data.Result[0].Data.Gid, "sh600000");
         }
 
 

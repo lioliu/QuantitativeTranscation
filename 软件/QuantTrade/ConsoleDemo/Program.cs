@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using QuantTradeDLL.Crawler;
+using QuantTradeDLL;
 using System.Data;
 using System.Threading;
 using HtmlAgilityPack;
@@ -81,8 +81,7 @@ namespace ConsoleDemo
             //}
 
 
-
-
+            Message.Send("18616835920", "您预设的针对股票代码 600000的名为‘快买入’的预警被触发了，预警的说明为“当前价格上破 10.8 元 并且交易量超过1000手”。");
 
 
 
@@ -161,7 +160,7 @@ namespace ConsoleDemo
             //      QuantTradeDLL.DBUtility.OracleClient.ExecuteSQL($"Insert INTO Announcement VALUES ('{data.Code}','{data.Title}','{data.Url}',TO_DATE('{date}','YYYY-MM-DD'))");
             //  }
 
-            QuantTradeDLL.Crawler.ECNOData.Update();
+            //QuantTradeDLL.Crawler.ECNOData.Update();
 
 
             // Regex reg = new Regex(@"[+-]?\d+(\.\d+)?");

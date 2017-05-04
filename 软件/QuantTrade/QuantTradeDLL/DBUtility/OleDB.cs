@@ -197,50 +197,6 @@ namespace QuantTradeDLL.DBUtility
             }
             return parm;
         }
-        /// <summary>
-        /// 执行存储过程返回数据放在DataSet中
-        /// </summary>
-        /// <param name="ProName">存储过程名称</param>
-        /// <param name="parm">输入参数</param>
-        /// <returns>表格集</returns>
-        public static DataSet ProceureToTable(string ProName, OleDbParameter[] parm)
-        {
-            DataTable dt = new DataTable();
-            OleDbDataAdapter dr = new OleDbDataAdapter();
-            OleDbConnection con = new OleDbConnection(PowerConnect);
-            OleDbCommand cmd = new OleDbCommand()
-            {
-                CommandType = CommandType.StoredProcedure,
-                CommandText = ProName
-            };
-            DataSet ds = new DataSet();
-
-            try
-            {
-                con.Open();
-                cmd.Connection = con;
-                for (int i = 0; i < parm.Length; i++)
-                {
-                    cmd.Parameters.Add(parm[i]);
-                }
-
-                dr.SelectCommand = cmd;
-                //cmd.ExecuteNonQuery();
-                dr.Fill(ds);
-            }
-            catch (Exception e)
-            {
-                throw e;
-            }
-            finally
-            {
-                if (con.State == ConnectionState.Open)
-                    con.Close();
-                con.Dispose();
-                cmd.Parameters.Clear();
-                cmd.Dispose();
-            }
-            return ds;
-        }
+       
     }
 }

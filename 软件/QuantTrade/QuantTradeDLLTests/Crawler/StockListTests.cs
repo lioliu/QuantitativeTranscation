@@ -17,5 +17,13 @@ namespace QuantTradeDLL.Crawler.Tests
             string[] stockList = StockList.GetCode();
             Assert.AreEqual(stockList.Length, 1248);
         }
+
+        [TestMethod()]
+        public void GetFocusCodeTest()
+        {
+            string[] stockList = StockList.GetFocusCode();
+            
+            Assert.AreEqual(stockList.Length, Convert.ToInt32(DBUtility.OleDb.GetData("select count(*) from focus_list ").Tables[0].Rows[0][0].ToString()));
+        }
     }
 }
