@@ -14,9 +14,9 @@ namespace ConsoleDemo
     {
         static void Main(string[] args)
         {
-            
-                QuantTradeDLL.Crawler.Announcement.Load();
-            
+
+            //QuantTradeDLL.Crawler.Announcement.Load();
+            QuantTradeDLL.Crawler.StockSuggest.SaveToDB(QuantTradeDLL.Crawler.StockSuggest.Get());
             return;
         }
     }

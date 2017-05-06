@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 using System.Data;
+using System.Collections;
 
 namespace QuantTradeDLL.Crawler
 {
@@ -44,15 +45,19 @@ namespace QuantTradeDLL.Crawler
 
         public static int SaveToDB(StockSuggest data)
         {
+            string[] list = StockList.GetCode();
             string insert = string.Empty;
             List<string> insertscript = new List<string>();
             DataTable dt = ToDataTable(data);
             for (int i = 0; i < dt.Rows.Count; i++)
             {
-                insert = "INSERT INTO STOCKSUGGEST VALUES" + $"('{dt.Rows[i]["CODE"]}','{dt.Rows[i]["NAME"]}','{dt.Rows[i]["PY"]}')";
-                insertscript.Add(insert);
+                if (list.Contains(dt.Rows[i]["CODE"]))
+                {
+                    insert = "INSERT INTO STOCKSUGGEST VALUES" + $"('{dt.Rows[i]["CODE"]}','{dt.Rows[i]["NAME"]}','{dt.Rows[i]["PY"]}')";
+                    insertscript.Add(insert);
+                }
             }
-            return DBUtility.OracleClient.ExecuteSQL(insertscript);
+            return DBUtility.OleDb.ExecuteSQL(insertscript);
         }
 
 

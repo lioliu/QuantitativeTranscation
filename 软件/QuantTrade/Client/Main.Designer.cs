@@ -47,7 +47,8 @@
             this.LabNowPage = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.BtnLookUp = new System.Windows.Forms.Button();
+            this.LstBoxSuggestList = new System.Windows.Forms.ListBox();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.TabPageAll.SuspendLayout();
@@ -220,8 +221,9 @@
             // 
             this.textBox1.Location = new System.Drawing.Point(78, 694);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 21);
+            this.textBox1.Size = new System.Drawing.Size(142, 21);
             this.textBox1.TabIndex = 9;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label3
             // 
@@ -232,21 +234,33 @@
             this.label3.TabIndex = 10;
             this.label3.Text = "直接查看:";
             // 
-            // button1
+            // BtnLookUp
             // 
-            this.button1.Location = new System.Drawing.Point(184, 694);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 11;
-            this.button1.Text = "查看";
-            this.button1.UseVisualStyleBackColor = true;
+            this.BtnLookUp.Location = new System.Drawing.Point(278, 694);
+            this.BtnLookUp.Name = "BtnLookUp";
+            this.BtnLookUp.Size = new System.Drawing.Size(75, 23);
+            this.BtnLookUp.TabIndex = 11;
+            this.BtnLookUp.Text = "查看";
+            this.BtnLookUp.UseVisualStyleBackColor = true;
+            this.BtnLookUp.Click += new System.EventHandler(this.BtnLookUp_Click);
+            // 
+            // LstBoxSuggestList
+            // 
+            this.LstBoxSuggestList.FormattingEnabled = true;
+            this.LstBoxSuggestList.ItemHeight = 12;
+            this.LstBoxSuggestList.Location = new System.Drawing.Point(78, 715);
+            this.LstBoxSuggestList.Name = "LstBoxSuggestList";
+            this.LstBoxSuggestList.Size = new System.Drawing.Size(142, 88);
+            this.LstBoxSuggestList.TabIndex = 12;
+            this.LstBoxSuggestList.DoubleClick += new System.EventHandler(this.LstBoxSuggestList_DoubleClick);
             // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1166, 739);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(1166, 811);
+            this.Controls.Add(this.LstBoxSuggestList);
+            this.Controls.Add(this.BtnLookUp);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.LabNowPage);
@@ -293,6 +307,7 @@
         private System.Windows.Forms.TextBox TbxPageNum;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button BtnLookUp;
+        private System.Windows.Forms.ListBox LstBoxSuggestList;
     }
 }

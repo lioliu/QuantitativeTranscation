@@ -15,11 +15,11 @@ namespace Client
     {
         private string[] AllList { set; get; }
         private string[] FocusList { set; get; }
-         private int PageNnumAll { set; get; }
+        private int PageNnumAll { set; get; }
         private int PageNnumFocus { set; get; }
-         private DataTable AllTable = new DataTable() { };
+        private DataTable AllTable = new DataTable() { };
         private DataTable FocusTable = new DataTable() { };
-         public Main()
+        public Main()
         {
             PageNnumAll = 0;
             PageNnumFocus = 0;
@@ -35,7 +35,7 @@ namespace Client
             AllTable.Columns.Add("YestodEndPri");
             AllTable.Columns.Add("TodayMax");
             AllTable.Columns.Add("TodayMin");
-             FocusTable.Columns.Add("Code");
+            FocusTable.Columns.Add("Code");
             FocusTable.Columns.Add("Name");
             FocusTable.Columns.Add("IncrePer");
             FocusTable.Columns.Add("NowPri");
@@ -45,31 +45,33 @@ namespace Client
             FocusTable.Columns.Add("YestodEndPri");
             FocusTable.Columns.Add("TodayMax");
             FocusTable.Columns.Add("TodayMin");
-             for (int i = 0; i < 25; i++)
+            for (int i = 0; i < 25; i++)
             {
                 AllTable.Rows.Add();
                 FocusTable.Rows.Add();
             }
-             //SnapData data = new SnapData();
+            //SnapData data = new SnapData();
             //data = 
-             InitializeComponent();
-             LoadList();
+            InitializeComponent();
+            LoadList();
             SetButon();
             DataViewAll.DataSource = AllTable;
             DataViewFocus.DataSource = FocusTable;
             //DataViewAll.Columns.Add(new DataGridViewButtonColumn() { Text = "Detail", Name = "Detail" });
-             //DataViewAll.Rows[0].
+            //DataViewAll.Rows[0].
             //dt.Rows[0][0] = "123123123";
-         }
-         private void TabControl1_SelectedIndexChanged(object sender, EventArgs e)
+            LstBoxSuggestList.Visible = false;
+            BtnLookUp.Enabled = false;
+        }
+        private void TabControl1_SelectedIndexChanged(object sender, EventArgs e)
         {
             LoadList();
             SetButon();
         }
-         private void SetButon()
+        private void SetButon()
         {
-             LabNowPage.Text = "第" + (tabControl1.SelectedIndex == 0 ? PageNnumAll + 1 : PageNnumFocus + 1).ToString() + "页";
-             if (tabControl1.SelectedIndex == 0)
+            LabNowPage.Text = "第" + (tabControl1.SelectedIndex == 0 ? PageNnumAll + 1 : PageNnumFocus + 1).ToString() + "页";
+            if (tabControl1.SelectedIndex == 0)
             {
                 //Set btnlastpage
                 if (PageNnumAll == 0) BtnLastPage.Enabled = false;
@@ -87,8 +89,8 @@ namespace Client
                 if (PageNnumFocus == FocusList.Length / 25 + (FocusList.Length % 25 == 0 ? 0 : 1)) BtnNextPage.Enabled = false;
                 else BtnNextPage.Enabled = true;
             }
-         }
-         /// <summary>
+        }
+        /// <summary>
         /// update data in the list
         /// </summary>
         /// <param name="sender"></param>
@@ -96,15 +98,15 @@ namespace Client
         private void Timer1_Tick(object sender, EventArgs e)
         {
             LoadList();
-         }
-         private void LoadList()
+        }
+        private void LoadList()
         {
-             DataTable dt = new DataTable();
+            DataTable dt = new DataTable();
             string stockList = string.Empty;
             if (tabControl1.SelectedIndex == 0)
             {
                 //manage the  code list 
-                 for (int i = 0; i < 25; i++)
+                for (int i = 0; i < 25; i++)
                 {
                     try
                     {
@@ -118,8 +120,8 @@ namespace Client
                 stockList = stockList.Substring(1);
                 stockList = "(" + stockList + ")";
                 Console.WriteLine(stockList);
-                 dt = OleDb.GetData($"Select * from STOCK_SNAP_DATA WHERE CODE IN {stockList}").Tables[0];
-                 for (int i = 0; i < dt.Rows.Count; i++)
+                dt = OleDb.GetData($"Select * from STOCK_SNAP_DATA WHERE CODE IN {stockList}").Tables[0];
+                for (int i = 0; i < dt.Rows.Count; i++)
                 {
                     AllTable.Rows[i]["Code"] = AllList[PageNnumAll * 25 + i];
                     AllTable.Rows[i]["Name"] = dt.Rows[i]["Name"];
@@ -132,7 +134,7 @@ namespace Client
                     AllTable.Rows[i]["TodayMax"] = dt.Rows[i]["TodayMax"];
                     AllTable.Rows[i]["TodayMin"] = dt.Rows[i]["TodayMin"];
                 }
-             }
+            }
             else
             {
                 FocusList = StockList.GetFocusCode();
@@ -151,7 +153,7 @@ namespace Client
                     stockList = stockList.Substring(1);
                 stockList = "(" + stockList + ")";
                 Console.WriteLine(stockList);
-                 try
+                try
                 {
                     dt = OleDb.GetData($"Select * from STOCK_SNAP_DATA WHERE CODE IN {stockList}").Tables[0];
                 }
@@ -159,7 +161,7 @@ namespace Client
                 {
                     ;
                 }
-                 for (int i = 0; i < dt.Rows.Count; i++)
+                for (int i = 0; i < dt.Rows.Count; i++)
                 {
                     FocusTable.Rows[i]["Code"] = AllList[PageNnumAll * 25 + i];
                     FocusTable.Rows[i]["Name"] = dt.Rows[i]["Name"];
@@ -172,9 +174,9 @@ namespace Client
                     FocusTable.Rows[i]["TodayMax"] = dt.Rows[i]["TodayMax"];
                     FocusTable.Rows[i]["TodayMin"] = dt.Rows[i]["TodayMin"];
                 }
-             }
+            }
         }
-         private void BtnLastPage_Click(object sender, EventArgs e)
+        private void BtnLastPage_Click(object sender, EventArgs e)
         {
             if (tabControl1.SelectedIndex == 0)
             {
@@ -187,7 +189,7 @@ namespace Client
             LoadList();
             SetButon();
         }
-         private void BtnNextPage_Click(object sender, EventArgs e)
+        private void BtnNextPage_Click(object sender, EventArgs e)
         {
             if (tabControl1.SelectedIndex == 0)
             {
@@ -200,7 +202,7 @@ namespace Client
             LoadList();
             SetButon();
         }
-         private void BtnJump_Click(object sender, EventArgs e)
+        private void BtnJump_Click(object sender, EventArgs e)
         {
             int targetPage;
             try
@@ -217,7 +219,7 @@ namespace Client
                 MessageBox.Show("请输入正整数");
                 return;
             }
-             if (tabControl1.SelectedIndex == 0)
+            if (tabControl1.SelectedIndex == 0)
             {
                 if (targetPage >= AllList.Length / 25 + (AllList.Length % 25 == 0 ? 0 : 1))
                 {
@@ -236,21 +238,52 @@ namespace Client
             LoadList();
             SetButon();
         }
-         private void 设置ToolStripMenuItem_Click(object sender, EventArgs e)
+        private void 设置ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             new Setting().ShowDialog();
         }
-         private void DataViewAll_DoubleClick(object sender, EventArgs e)
+        private void DataViewAll_DoubleClick(object sender, EventArgs e)
         {
-             //Console.WriteLine(DataViewAll.SelectedCells[0].RowIndex); for debug
+            //Console.WriteLine(DataViewAll.SelectedCells[0].RowIndex); for debug
             int index = DataViewAll.SelectedCells[0].RowIndex;
             new StockDetail(AllTable.Rows[index]["Code"].ToString(), AllList).ShowDialog();
         }
-         private void DataViewFocus_DoubleClick(object sender, EventArgs e)
+        private void DataViewFocus_DoubleClick(object sender, EventArgs e)
         {
             int index = DataViewFocus.SelectedCells[0].RowIndex;
             new StockDetail(FocusTable.Rows[index]["Code"].ToString(), FocusList).ShowDialog();
         }
-     }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            BtnLookUp.Enabled = false;
+            DataTable dt = OleDb.GetData($"select * from STOCKSUGGEST where code like '%{textBox1.Text}%' or name like '%{textBox1.Text}%' or py like '%{textBox1.Text}%'").Tables[0];
+            LstBoxSuggestList.Items.Clear();
+            if (dt.Rows.Count > 0)
+            {
+                LstBoxSuggestList.Visible = true;
+
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    LstBoxSuggestList.Items.Add($"{dt.Rows[i][0].ToString()} {dt.Rows[i][1].ToString()} {dt.Rows[i][2].ToString()}");
+                }
+            }
+            if (textBox1.Text.Length == 0)
+            {
+                LstBoxSuggestList.Visible = false;
+            }
+
+        }
+
+        private void LstBoxSuggestList_DoubleClick(object sender, EventArgs e)
+        {
+            textBox1.Text = LstBoxSuggestList.SelectedItem.ToString();
+            BtnLookUp.Enabled = true;
+        }
+
+        private void BtnLookUp_Click(object sender, EventArgs e)
+        {
+            new StockDetail(textBox1.Text.Substring(0, 6), AllList).ShowDialog();
+        }
+    }
 }
- 
