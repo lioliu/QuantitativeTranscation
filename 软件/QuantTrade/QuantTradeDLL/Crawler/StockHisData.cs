@@ -71,7 +71,7 @@ namespace QuantTradeDLL.Crawler
             return JsonConvert.DeserializeObject<StockHisData>(json);
         }
 
-        private static int SaveToDB(StockHisData hisData)
+        public static int SaveToDB(StockHisData hisData)
         {
             string insert = string.Empty;
             List<string> insertscript = new List<string>();
