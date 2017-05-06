@@ -5,17 +5,14 @@ using System.Text;
 using System.Threading.Tasks;
 using Oracle.DataAccess.Client;
 using System.Data;
-
 namespace QuantTradeDLL.DBUtility
 {
-
     /// <summary>
     /// unable to use under Server
     /// </summary>
     public class DataAccess
     {
         private static string PowerConnect = "Data Source=( DESCRIPTION = ( ADDRESS = ( PROTOCOL = TCP ) ( HOST = 180.169.93.178 ) ( PORT = 1521 ) ) ( CONNECT_DATA = ( SERVICE_NAME=DATACENTER ) ) );user id=WEI;password=20134831517;";
-
         #region Execute sql
         /// <summary>
         /// Execute SQL statement 
@@ -100,7 +97,6 @@ namespace QuantTradeDLL.DBUtility
                 oda.Fill(dataTable);
                 dataSet.Tables.Add(dataTable);
                 oda.Dispose();
-
             }
             catch (Exception e)
             {
@@ -113,7 +109,6 @@ namespace QuantTradeDLL.DBUtility
             }
             return dataSet;
         }
-
         /// <summary>
         /// Execute SQL statement 
         /// </summary>
@@ -143,7 +138,6 @@ namespace QuantTradeDLL.DBUtility
             }
             catch (Exception e)
             {
-
                 throw e;
             }
             finally
@@ -152,10 +146,8 @@ namespace QuantTradeDLL.DBUtility
                 oda.Dispose();
                 dataTable.Dispose();
             }
-
             return dataSet;
         }
-
         #endregion
         /// <summary>
         /// 执行存储过程返回数据存储在OracleParameter中
@@ -167,9 +159,11 @@ namespace QuantTradeDLL.DBUtility
         {
             DataTable dt = new DataTable();
             OracleConnection con = new OracleConnection(PowerConnect);
-            OracleCommand cmd = new OracleCommand();
-            cmd.CommandType = CommandType.StoredProcedure;
-            cmd.CommandText = ProName;
+            OracleCommand cmd = new OracleCommand()
+            {
+                CommandType = CommandType.StoredProcedure,
+                CommandText = ProName
+            };
             DataSet ds = new DataSet();
             try
             {
@@ -212,7 +206,6 @@ namespace QuantTradeDLL.DBUtility
                 CommandText = ProName
             };
             DataSet ds = new DataSet();
-
             try
             {
                 con.Open();
@@ -221,7 +214,6 @@ namespace QuantTradeDLL.DBUtility
                 {
                     cmd.Parameters.Add(parm[i]);
                 }
-
                 dr.SelectCommand = cmd;
                 //cmd.ExecuteNonQuery();
                 dr.Fill(ds);
@@ -240,7 +232,5 @@ namespace QuantTradeDLL.DBUtility
             }
             return ds;
         }
-
-
     }
 }

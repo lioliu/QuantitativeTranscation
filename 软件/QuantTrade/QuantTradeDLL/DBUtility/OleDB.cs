@@ -9,13 +9,12 @@ namespace QuantTradeDLL.DBUtility
     ///  connect to the database  unable to return couser
     /// </summary>
     public class OleDb
-
     {
         /// <summary>
         ///  connect string  normal for Query , power connect for Update\Delete\Insert   Oracle
         /// </summary>
         private static string PowerConnect = "Provider=OraOLEDB.Oracle.1;Server=localhost;Data Source = (DESCRIPTION = (ADDRESS_LIST = (ADDRESS = (PROTOCOL = TCP)(HOST = 180.169.93.178)(PORT = 1521)))(CONNECT_DATA = (SERVICE_NAME = DATACENTER)));User ID = WEI; Password = 20134831517; ";
-         #region Execute sql
+        #region Execute sql
         /// <summary>
         /// Execute SQL statement 
         /// </summary>
@@ -99,7 +98,6 @@ namespace QuantTradeDLL.DBUtility
                 oda.Fill(dataTable);
                 dataSet.Tables.Add(dataTable);
                 oda.Dispose();
-
             }
             catch (Exception e)
             {
@@ -112,7 +110,6 @@ namespace QuantTradeDLL.DBUtility
             }
             return dataSet;
         }
-
         /// <summary>
         /// Execute SQL statement 
         /// </summary>
@@ -142,7 +139,6 @@ namespace QuantTradeDLL.DBUtility
             }
             catch (Exception e)
             {
-
                 throw e;
             }
             finally
@@ -151,10 +147,8 @@ namespace QuantTradeDLL.DBUtility
                 oda.Dispose();
                 dataTable.Dispose();
             }
-
             return dataSet;
         }
-
         #endregion
         /// <summary>
         /// 执行存储过程返回数据存储在OleDbParameter中
@@ -196,6 +190,6 @@ namespace QuantTradeDLL.DBUtility
             }
             return parm;
         }
-       
+
     }
 }
