@@ -32,16 +32,16 @@ namespace QuantTradeDLL.Crawler
         /// Main funcation Update ECNO infor
         /// </summary>
         /// <returns>it success or not</returns>
-        public static bool Update()
+        public static bool Insert()
         {
+            // string[] stockList = StockList.GetCode();
+            // Task.Factory.StartNew(() => TaskDO(stockList[0]));
             string[] stockList = StockList.GetCode();
-            Task.Factory.StartNew(() => TaskDO(stockList[0]));
-            //string[] stockList = StockList.GetCode();
 
-            //foreach (var item in stockList)
-            //{
-            //    Task.Factory.StartNew(() => TaskDO(item));
-            //}
+            foreach (var item in stockList)
+            {
+                Task.Factory.StartNew(() => TaskDO(item));
+            }
             return true;
         }
 
@@ -86,8 +86,7 @@ namespace QuantTradeDLL.Crawler
                 Value = Convert.ToDouble(reg.Match(Value.Single().InnerText).Value),
                 UDPPS = Convert.ToDouble(reg.Match(UDPPS.Single().InnerText).Value)
             };
-            string insert = $"INSERT INTO STOCK_ECNO_DATA VALUES{$"('{data.Code}','{data.Income}','{data.PE}','{data.BVPS}','{data.PB}','{data.Revenue}','{data.RevenueYOY}','{data.NetProfit}','{data.NetProfitYOY}','{data.GrossMargin}','{data.NetMargin}','{data.ROE}','{data.DebtRatio}','{data.Equity}','{data.Value}','{data.UDPPS}',sysdate)"}";
-            //string update = $"UPDATE STOCK_ECNO_DATA SET INCOME = '{data.Income}', PE = '{data.PE}' , BVPS ='{data.BVPS}' , PB ='{data.PB}' , REVENUE ='{data.Revenue}', REVENUEYOY = '{data.RevenueYOY}' , NETPROFIT ='{data.NetProfit}', NETPROFITYOY = '{data.NetProfitYOY}' , GROSSMARGIN = '{data.GrossMargin}' , NETMARGIN = '{data.NetMargin}' , ROE = '{data.ROE}' , DEBTRATION ='{data.DebtRatio}' , EQUITY = '{data.Equity}', Value = '{data.Value}', UDPPS = '{data.UDPPS}'  WHERE CODE = '{data.Code}'";
+            string insert = $"INSERT INTO STOCK_ECNO_DATA VALUES{$"('{data.Code}',sysdate,'{data.Income}','{data.PE}','{data.BVPS}','{data.PB}','{data.Revenue}','{data.RevenueYOY}','{data.NetProfit}','{data.NetProfitYOY}','{data.GrossMargin}','{data.NetMargin}','{data.ROE}','{data.DebtRatio}','{data.Equity}','{data.Value}','{data.UDPPS}')"}";
 
             Console.WriteLine(DBUtility.OracleClient.ExecuteSQL(insert) +data.Code);
         }

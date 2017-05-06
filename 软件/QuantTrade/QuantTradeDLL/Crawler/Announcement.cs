@@ -5,6 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using QuantTradeDLL.DBUtility;
 namespace QuantTradeDLL.Crawler
 {
     public class Announcement
@@ -57,12 +58,12 @@ namespace QuantTradeDLL.Crawler
                     Console.WriteLine(e);
                     continue;
                 }
-                if (DBUtility.OracleClient.GetData($"SELECT COUNT(*) FROM Announcement where Code = '{data.Code}' and Url = '{data.Url}' ").Tables[0].Rows[0][0].ToString() == "0")
+                if (OleDb.GetData($"SELECT COUNT(*) FROM Announcement where Code = '{data.Code}' and Url = '{data.Url}' ").Tables[0].Rows[0][0].ToString() == "0")
                 {
                     //formate the date;
                     string date = DateTime.Now.Year.ToString() + "-" + data.Days;
                     //Console.WriteLine(insert);
-                    DBUtility.OleDb.ExecuteSQL($"Insert INTO Announcement VALUES ('{data.Code}','{data.Url}','{data.Title}',TO_DATE('{date}','YYYY-MM-DD'),'0')");
+                    OleDb.ExecuteSQL($"Insert INTO Announcement VALUES ('{data.Code}','{data.Url}','{data.Title}',TO_DATE('{date}','YYYY-MM-DD'),'0')");
                     Console.WriteLine(code + " " + tag  );
                 }
                 else
