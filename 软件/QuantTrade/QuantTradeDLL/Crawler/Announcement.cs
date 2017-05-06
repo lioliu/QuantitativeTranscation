@@ -5,7 +5,6 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 namespace QuantTradeDLL.Crawler
 {
     public class Announcement
@@ -14,26 +13,21 @@ namespace QuantTradeDLL.Crawler
         public string Title { get; set; }
         public string Url { get; set; }
         public string Days { get; set; }
-
-
         public static bool Load()
         {
             string[] stockList = StockList.GetCode();
-            Load(stockList[0]);
+            //Load(stockList[0]);
             //string[] stockList = StockList.GetCode();
-            //foreach (var item in stockList)
-            //{
-            //    Load(item);
-            //}
+            foreach (var item in stockList)
+            {
+                Load(item);
+            }
             return true;
         }
-
         public static DataTable Get(string Code)
         {
-
             return DBUtility.OracleClient.GetData($"Select * from (select * from announcement where code ='{Code}' order by days desc) where rownum<=10").Tables[0];
         }
-
         private static bool Load(string code)
         {
             HtmlWeb web = new HtmlWeb()
@@ -60,19 +54,15 @@ namespace QuantTradeDLL.Crawler
                 }
                 catch (Exception e)
                 {
-
                     Console.WriteLine(e);
                     continue;
                 }
-
-
                 if (DBUtility.OracleClient.GetData($"SELECT COUNT(*) FROM Announcement where Code = '{data.Code}' and Url = '{data.Url}' ").Tables[0].Rows[0][0].ToString() == "0")
                 {
-                    
                     //formate the date;
                     string date = DateTime.Now.Year.ToString() + "-" + data.Days;
                     //Console.WriteLine(insert);
-                    DBUtility.OleDb.ExecuteSQL($"Insert INTO Announcement VALUES ('{data.Code}','{data.Title}','{data.Url}',TO_DATE('{date}','YYYY-MM-DD'),'0')");
+                    DBUtility.OleDb.ExecuteSQL($"Insert INTO Announcement VALUES ('{data.Code}','{data.Url}','{data.Title}',TO_DATE('{date}','YYYY-MM-DD'),'0')");
                     Console.WriteLine(code + " " + tag  );
                 }
                 else

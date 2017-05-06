@@ -49,8 +49,14 @@ namespace QuantTradeDLL.Crawler
         {
             //remove first
             DBUtility.OleDb.ExecuteSQL($"delete from STOCK_SNAP_DATA where code = '{data.Result[0].Data.Gid.Substring(2)}'");
-            //insert to Data Base
 
+            // make the date
+            string date = data.Result[0].Data.Date + " " + data.Result[0].Data.Time;
+
+
+
+            //insert to Data Base
+            DBUtility.OleDb.ExecuteSQL($"insert into STOCK_SNAP_DATA VALUES ('{data.Result[0].Data.Gid.Substring(2)}','{Convert.ToDouble(data.Result[0].Data.BuyFive)}','{Convert.ToDouble(data.Result[0].Data.BuyFivePri)}','{Convert.ToDouble(data.Result[0].Data.BuyFour)}','{Convert.ToDouble(data.Result[0].Data.BuyFourPri)}','{Convert.ToDouble(data.Result[0].Data.BuyThree)}','{Convert.ToDouble(data.Result[0].Data.BuyThreePri)}','{Convert.ToDouble(data.Result[0].Data.BuyTwo)}','{Convert.ToDouble(data.Result[0].Data.BuyTwoPri)}','{Convert.ToDouble(data.Result[0].Data.BuyOne)}','{Convert.ToDouble(data.Result[0].Data.BuyOnePri)}','{Convert.ToDouble(data.Result[0].Data.CompetitivePri)}',to_date('{date}','YYYY-MM-DD HH24:MI:SS'),'{Convert.ToDouble(data.Result[0].Data.IncrePer)}','{Convert.ToDouble(data.Result[0].Data.Increase)}','{data.Result[0].Data.Name}','{Convert.ToDouble(data.Result[0].Data.NowPri)}','{Convert.ToDouble(data.Result[0].Data.ReservePri)}','{Convert.ToDouble(data.Result[0].Data.SellFive)}','{Convert.ToDouble(data.Result[0].Data.SellFour)}','{Convert.ToDouble(data.Result[0].Data.SellThree)}','{Convert.ToDouble(data.Result[0].Data.SellTwo)}','{Convert.ToDouble(data.Result[0].Data.SellOne)}','{Convert.ToDouble(data.Result[0].Data.SellFivePri)}','{Convert.ToDouble(data.Result[0].Data.SellFourPri)}','{Convert.ToDouble(data.Result[0].Data.SellThreePri)}','{Convert.ToDouble(data.Result[0].Data.SellTwoPri)}','{Convert.ToDouble(data.Result[0].Data.SellOnePri)}','{Convert.ToDouble(data.Result[0].Data.TodayMax)}','{Convert.ToDouble(data.Result[0].Data.TodayMin)}','{Convert.ToDouble(data.Result[0].Data.TodayStartPri)}','{Convert.ToDouble(data.Result[0].Data.TraAmount)}','{Convert.ToDouble(data.Result[0].Data.TraNumber)}','{Convert.ToDouble(data.Result[0].Data.YestodEndPri)}')");
             return true;
         }
 
