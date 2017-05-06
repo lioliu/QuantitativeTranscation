@@ -24,8 +24,11 @@ namespace QuantTradeDLL.Crawler
         public Result[] Result { set; get; }
 
 
-
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="code"></param>
+        /// <returns></returns>
         public static SnapData GetSnap(string code)
         {
             var parameters1 = new Dictionary<string, string>();
@@ -41,6 +44,16 @@ namespace QuantTradeDLL.Crawler
             return snap_data;
             
         }
+
+        public static bool SaveToDB(SnapData data)
+        {
+            //remove first
+            DBUtility.OleDb.ExecuteSQL($"delete from STOCK_SNAP_DATA where code = '{data.Result[0].Data.Gid.Substring(2)}'");
+            //insert to Data Base
+
+            return true;
+        }
+
 
 
 

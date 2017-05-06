@@ -6,7 +6,7 @@ using System.Data.OleDb;
 namespace QuantTradeDLL.DBUtility
 {
     /// <summary>
-    ///  connect to the database
+    ///  connect to the database  unable to return couser
     /// </summary>
     public class OleDb
 
@@ -14,8 +14,7 @@ namespace QuantTradeDLL.DBUtility
         /// <summary>
         ///  connect string  normal for Query , power connect for Update\Delete\Insert   Oracle
         /// </summary>
-        private static string connect_string = "Provider=OraOLEDB.Oracle.1;Server=localhost;Data Source = (DESCRIPTION = (ADDRESS_LIST = (ADDRESS = (PROTOCOL = TCP)(HOST = 10.18.3.229)(PORT = 1521)))(CONNECT_DATA = (SERVICE_NAME = ORCL)));User ID = lioliu; Password = when1994; ";
-        private static string PowerConnect = "Provider=OraOLEDB.Oracle.1;Server=localhost;Data Source = (DESCRIPTION = (ADDRESS_LIST = (ADDRESS = (PROTOCOL = TCP)(HOST = 10.18.3.229)(PORT = 1521)))(CONNECT_DATA = (SERVICE_NAME = ORCL)));User ID = lioliu; Password = when1994; ";
+        private static string PowerConnect = "Provider=OraOLEDB.Oracle.1;Server=localhost;Data Source = (DESCRIPTION = (ADDRESS_LIST = (ADDRESS = (PROTOCOL = TCP)(HOST = 180.169.93.178)(PORT = 1521)))(CONNECT_DATA = (SERVICE_NAME = DATACENTER)));User ID = WEI; Password = 20134831517; ";
          #region Execute sql
         /// <summary>
         /// Execute SQL statement 

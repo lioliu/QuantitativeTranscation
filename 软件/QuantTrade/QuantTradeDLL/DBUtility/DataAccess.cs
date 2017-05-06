@@ -14,7 +14,7 @@ namespace QuantTradeDLL.DBUtility
     /// </summary>
     public class DataAccess
     {
-        private static string PowerConnect = "Data Source=( DESCRIPTION = ( ADDRESS = ( PROTOCOL = TCP ) ( HOST = 10.18.3.229 ) ( PORT = 1521 ) ) ( CONNECT_DATA = ( SERVICE_NAME=ORCL ) ) );user id=lioliu;password=when1994;";
+        private static string PowerConnect = "Data Source=( DESCRIPTION = ( ADDRESS = ( PROTOCOL = TCP ) ( HOST = 180.169.93.178 ) ( PORT = 1521 ) ) ( CONNECT_DATA = ( SERVICE_NAME=DATACENTER ) ) );user id=WEI;password=20134831517;";
 
         #region Execute sql
         /// <summary>

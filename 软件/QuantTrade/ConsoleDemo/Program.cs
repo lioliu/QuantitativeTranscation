@@ -29,6 +29,7 @@ namespace ConsoleDemo
         public static int i = 0;
         static void Main(string[] args)
         {
+            Console.WriteLine(QuantTradeDLL.DBUtility.DataAccess.GetData("select sysdate from dual").Tables[0].Rows[0][0].ToString());
             //   Console.WriteLine(QuantTradeDLL.DBUtility.OracleClient.GetData("select sysdate from dual").Tables[0].Rows[0][0].ToString());
             //   Console.WriteLine(QuantTradeDLL.DBUtility.DataAccess.GetData("select sysdate from dual").Tables[0].Rows[0][0].ToString()); unable use under server
 
@@ -81,7 +82,7 @@ namespace ConsoleDemo
             //}
 
 
-            Message.Send("18616835920", "您预设的针对股票代码 600000的名为‘快买入’的预警被触发了，预警的说明为“当前价格上破 10.8 元 并且交易量超过1000手”。");
+           // Message.Send("18616835920", "您预设的针对股票代码 600000的名为‘快买入’的预警被触发了，预警的说明为“当前价格上破 10.8 元 并且交易量超过1000手”。");
 
 
 
