@@ -64,7 +64,7 @@ namespace QuantTradeDLL.Crawler
             HtmlNodeCollection Equity = doc.DocumentNode.SelectNodes("//*[@id=\"rtp2\"]/tbody/tr[7]/td[1]");
             HtmlNodeCollection Value = doc.DocumentNode.SelectNodes("//*[@id=\"gt7_2\"]");
             HtmlNodeCollection UDPPS = doc.DocumentNode.SelectNodes("//*[@id=\"rtp2\"]/tbody/tr[9]/td");
-            
+
             Regex reg = new Regex(@"[+-]?\d+(\.\d+)?");
 
             ECNOData data = new ECNOData()
@@ -88,7 +88,7 @@ namespace QuantTradeDLL.Crawler
             };
             string insert = $"INSERT INTO STOCK_ECNO_DATA VALUES{$"('{data.Code}',sysdate,'{data.Income}','{data.PE}','{data.BVPS}','{data.PB}','{data.Revenue}','{data.RevenueYOY}','{data.NetProfit}','{data.NetProfitYOY}','{data.GrossMargin}','{data.NetMargin}','{data.ROE}','{data.DebtRatio}','{data.Equity}','{data.Value}','{data.UDPPS}')"}";
 
-            Console.WriteLine(DBUtility.OracleClient.ExecuteSQL(insert) +data.Code);
+            Console.WriteLine(DBUtility.OleDb.ExecuteSQL(insert) + data.Code);
         }
 
     }

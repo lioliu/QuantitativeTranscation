@@ -27,7 +27,7 @@ namespace QuantTradeDLL.Crawler
         }
         public static DataTable Get(string Code)
         {
-            return DBUtility.OracleClient.GetData($"Select * from (select * from announcement where code ='{Code}' order by days desc) where rownum<=10").Tables[0];
+            return OleDb.GetData($"Select * from (select * from announcement where code ='{Code}' order by days desc) where rownum<=10").Tables[0];
         }
         private static bool Load(string code)
         {

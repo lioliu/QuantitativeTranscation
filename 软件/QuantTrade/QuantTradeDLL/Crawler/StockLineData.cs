@@ -85,7 +85,7 @@ namespace QuantTradeDLL.Crawler
                 insert = $"INSERT INTO STOCK_LINE_DATA VALUES{$"('{dt.Rows[i]["CODE"]}','{dt.Rows[i]["DAYS"]}','{dt.Rows[i]["TIME"]}','{dt.Rows[i]["PRICE"]}','{dt.Rows[i]["VOLUME"]}')"}";
                 insertscript.Add(insert);
             }
-            int result = DBUtility.OracleClient.ExecuteSQL(insertscript);
+            int result = OleDb.ExecuteSQL(insertscript);
             //Console.WriteLine(result);
             return result;
 
@@ -101,7 +101,7 @@ namespace QuantTradeDLL.Crawler
                 insert = $"INSERT INTO STOCK_LINE_DATA VALUES{$"('{dt.Rows[i]["CODE"]}','{dt.Rows[i]["DAYS"]}','{dt.Rows[i]["TIME"]}','{dt.Rows[i]["PRICE"]}','{dt.Rows[i]["VOLUME"]}')"}";
                 insertscript.Add(insert);
             }
-            int result = DBUtility.OracleClient.ExecuteSQL(insertscript);
+            int result = OleDb.ExecuteSQL(insertscript);
             //Console.WriteLine(result);
             return result;
 

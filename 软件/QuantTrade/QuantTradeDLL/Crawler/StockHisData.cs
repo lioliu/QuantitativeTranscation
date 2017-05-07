@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 using System.Data;
+using QuantTradeDLL.DBUtility;
 
 namespace QuantTradeDLL.Crawler
 {
@@ -24,7 +25,7 @@ namespace QuantTradeDLL.Crawler
         /// <returns></returns>
         private int ConvertLine()
         {
-            return  DBUtility.OracleClient.ExecuteSQL("insert into STOCK_HIS_DATA select base.code, base.days, op.price, max(base.price), min(base.price), cl.price, sum(volume)" +
+            return OleDb.ExecuteSQL("insert into STOCK_HIS_DATA select base.code, base.days, op.price, max(base.price), min(base.price), cl.price, sum(volume)" +
                     "from STOCK_LINE_DATA base left join " +
                     "(select code, price from stock_line_data where days = to_char(sysdate, 'yyyymmdd') and time = '93000') op on base.code = op.code " +
                     "left join (select code, price from stock_line_data where days = to_char(sysdate, 'yyyymmdd') and time = '150000')cl " +
@@ -37,7 +38,7 @@ namespace QuantTradeDLL.Crawler
         /// <returns></returns>
         private int ConvertLine(string date)
         {
-            return DBUtility.OracleClient.ExecuteSQL($"insert into STOCK_HIS_DATA select base.code, base.days, op.price, max(base.price), min(base.price), cl.price, sum(volume)" +
+            return OleDb.ExecuteSQL($"insert into STOCK_HIS_DATA select base.code, base.days, op.price, max(base.price), min(base.price), cl.price, sum(volume)" +
                     "from STOCK_LINE_DATA base left join " +
                     $"(select code, price from stock_line_data where days = '{date}' and time = '93000') op on base.code = op.code " +
                     $"left join (select code, price from stock_line_data where days =  '{date}' and time = '150000')cl " +
@@ -81,7 +82,7 @@ namespace QuantTradeDLL.Crawler
                 insert = "INSERT INTO STOCK_HIS_DATA VALUES" + $"('{dt.Rows[i]["CODE"]}','{dt.Rows[i]["DAYS"]}','{dt.Rows[i]["OPEN"]}','{dt.Rows[i]["HIGH"]}','{dt.Rows[i]["LOW"]}','{dt.Rows[i]["CLOSE"]}','{dt.Rows[i]["AMOUNT"]}')";
                 insertscript.Add(insert);
             }
-            return DBUtility.OracleClient.ExecuteSQL(insertscript);
+            return OleDb.ExecuteSQL(insertscript);
         }
 
         private static int SaveToDB(DataTable dt)
@@ -93,7 +94,7 @@ namespace QuantTradeDLL.Crawler
                 insert = "INSERT INTO STOCK_HIS_DATA VALUES" + $"('{dt.Rows[i]["CODE"]}','{dt.Rows[i]["DAYS"]}','{dt.Rows[i]["OPEN"]}','{dt.Rows[i]["HIGH"]}','{dt.Rows[i]["LOW"]}','{dt.Rows[i]["CLOSE"]}','{dt.Rows[i]["AMOUNT"]}')";
                 insertscript.Add(insert);
             }
-            return DBUtility.OracleClient.ExecuteSQL(insertscript);
+            return OleDb.ExecuteSQL(insertscript);
         }
 
 
