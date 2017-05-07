@@ -1,10 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.ServiceProcess;
-using System.Text;
 using System.Threading.Tasks;
-using QuantTradeDLL.DBUtility;
+using System.Windows.Forms;
+
 namespace Crawler
 {
     static class Program
@@ -12,16 +11,12 @@ namespace Crawler
         /// <summary>
         /// 应用程序的主入口点。
         /// </summary>
+        [STAThread]
         static void Main()
         {
-            ServiceBase[] ServicesToRun;
-            ServicesToRun = new ServiceBase[]
-            {
-                new Service1()
-            };
-            ServiceBase.Run(ServicesToRun);
-            OleDb.GetData("select count(*) from  dual");
-
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new Main());
         }
     }
 }

@@ -23,7 +23,7 @@ namespace QuantTradeDLL.Crawler
         /// Convert today's Line data to His data 
         /// </summary>
         /// <returns></returns>
-        private int ConvertLine()
+        public static int ConvertLine()
         {
             return OleDb.ExecuteSQL("insert into STOCK_HIS_DATA select base.code, base.days, op.price, max(base.price), min(base.price), cl.price, sum(volume)" +
                     "from STOCK_LINE_DATA base left join " +

@@ -14,11 +14,14 @@ namespace QuantTradeDLL.Crawler
         public string Title { get; set; }
         public string Url { get; set; }
         public string Days { get; set; }
+        /// <summary>
+        /// Load all announcement 
+        /// </summary>
+        /// <returns></returns>
         public static bool Load()
         {
             string[] stockList = StockList.GetCode();
-            //Load(stockList[0]);
-            //string[] stockList = StockList.GetCode();
+            
             foreach (var item in stockList)
             {
                 Load(item);
