@@ -125,6 +125,7 @@ namespace Crawler
             foreach (var item in list)
             {
                 StockLineData data = StockLineData.GetLineDataObject(item);
+                OleDb.ExecuteSQL($"DELETE FROM STOCK_LINE_DATA WHERE CODE = '{item}' and DAYS = TO_CHAR(SYSDATE,'YYYYMMDD') ");
                 Task.Factory.StartNew(() => StockLineData.SaveToDB(data));
             }
             richTextBox1.Text += $"{DateTime.Today.ToShortDateString()} {DateTime.Now.ToLongTimeString()} 结束抓取日间数据\n";
