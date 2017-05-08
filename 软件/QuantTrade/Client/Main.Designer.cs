@@ -49,6 +49,9 @@
             this.label3 = new System.Windows.Forms.Label();
             this.BtnLookUp = new System.Windows.Forms.Button();
             this.LstBoxSuggestList = new System.Windows.Forms.ListBox();
+            this.设置预警ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.查看预警ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.推送公告ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.TabPageAll.SuspendLayout();
@@ -77,6 +80,10 @@
             // 
             // 预警ToolStripMenuItem
             // 
+            this.预警ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.设置预警ToolStripMenuItem,
+            this.查看预警ToolStripMenuItem,
+            this.推送公告ToolStripMenuItem});
             this.预警ToolStripMenuItem.Name = "预警ToolStripMenuItem";
             this.预警ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
             this.预警ToolStripMenuItem.Text = "预警";
@@ -254,6 +261,27 @@
             this.LstBoxSuggestList.TabIndex = 12;
             this.LstBoxSuggestList.DoubleClick += new System.EventHandler(this.LstBoxSuggestList_DoubleClick);
             // 
+            // 设置预警ToolStripMenuItem
+            // 
+            this.设置预警ToolStripMenuItem.Name = "设置预警ToolStripMenuItem";
+            this.设置预警ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.设置预警ToolStripMenuItem.Text = "设置预警";
+            this.设置预警ToolStripMenuItem.Click += new System.EventHandler(this.设置预警ToolStripMenuItem_Click);
+            // 
+            // 查看预警ToolStripMenuItem
+            // 
+            this.查看预警ToolStripMenuItem.Name = "查看预警ToolStripMenuItem";
+            this.查看预警ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.查看预警ToolStripMenuItem.Text = "查看预警";
+            this.查看预警ToolStripMenuItem.Click += new System.EventHandler(this.查看预警ToolStripMenuItem_Click);
+            // 
+            // 推送公告ToolStripMenuItem
+            // 
+            this.推送公告ToolStripMenuItem.Name = "推送公告ToolStripMenuItem";
+            this.推送公告ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.推送公告ToolStripMenuItem.Text = "推送公告";
+            this.推送公告ToolStripMenuItem.Click += new System.EventHandler(this.推送公告ToolStripMenuItem_Click);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -309,5 +337,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button BtnLookUp;
         private System.Windows.Forms.ListBox LstBoxSuggestList;
+        private System.Windows.Forms.ToolStripMenuItem 设置预警ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 查看预警ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 推送公告ToolStripMenuItem;
     }
 }

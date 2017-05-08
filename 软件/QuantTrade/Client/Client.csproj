@@ -108,6 +108,9 @@
     <EmbeddedResource Include="StockKline.resx">
       <DependentUpon>StockKline.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="WarningAdd.resx">
+      <DependentUpon>WarningAdd.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="WarningMain.resx">
       <DependentUpon>WarningMain.cs</DependentUpon>
     </EmbeddedResource>

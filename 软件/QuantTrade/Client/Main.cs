@@ -285,5 +285,20 @@ namespace Client
         {
             new StockDetail(textBox1.Text.Substring(0, 6), AllList).ShowDialog();
         }
+
+        private void 设置预警ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void 查看预警ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void 推送公告ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
