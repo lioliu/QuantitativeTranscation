@@ -3,6 +3,7 @@ C:\Users\74459\Desktop\基于网络爬虫的股票信息预警系统的设计与
 C:\Users\74459\Desktop\基于网络爬虫的股票信息预警系统的设计与实现\软件\QuantTrade\Client\bin\Debug\Client.pdb
 C:\Users\74459\Desktop\基于网络爬虫的股票信息预警系统的设计与实现\软件\QuantTrade\Client\bin\Debug\QuantTradeDLL.dll
 C:\Users\74459\Desktop\基于网络爬虫的股票信息预警系统的设计与实现\软件\QuantTrade\Client\bin\Debug\SunyahSMS.SSPU.WebAPI.Message.dll
+C:\Users\74459\Desktop\基于网络爬虫的股票信息预警系统的设计与实现\软件\QuantTrade\Client\bin\Debug\Oracle.DataAccess.dll
 C:\Users\74459\Desktop\基于网络爬虫的股票信息预警系统的设计与实现\软件\QuantTrade\Client\bin\Debug\HtmlAgilityPack.dll
 C:\Users\74459\Desktop\基于网络爬虫的股票信息预警系统的设计与实现\软件\QuantTrade\Client\bin\Debug\Newtonsoft.Json.dll
 C:\Users\74459\Desktop\基于网络爬虫的股票信息预警系统的设计与实现\软件\QuantTrade\Client\bin\Debug\QuantTradeDLL.pdb
@@ -10,13 +11,13 @@ C:\Users\74459\Desktop\基于网络爬虫的股票信息预警系统的设计与
 C:\Users\74459\Desktop\基于网络爬虫的股票信息预警系统的设计与实现\软件\QuantTrade\Client\bin\Debug\HtmlAgilityPack.xml
 C:\Users\74459\Desktop\基于网络爬虫的股票信息预警系统的设计与实现\软件\QuantTrade\Client\bin\Debug\Newtonsoft.Json.xml
 C:\Users\74459\Desktop\基于网络爬虫的股票信息预警系统的设计与实现\软件\QuantTrade\Client\obj\Debug\Client.csprojResolveAssemblyReference.cache
+C:\Users\74459\Desktop\基于网络爬虫的股票信息预警系统的设计与实现\软件\QuantTrade\Client\obj\Debug\Client.Main.resources
 C:\Users\74459\Desktop\基于网络爬虫的股票信息预警系统的设计与实现\软件\QuantTrade\Client\obj\Debug\Client.Properties.Resources.resources
+C:\Users\74459\Desktop\基于网络爬虫的股票信息预警系统的设计与实现\软件\QuantTrade\Client\obj\Debug\Client.Setting.resources
 C:\Users\74459\Desktop\基于网络爬虫的股票信息预警系统的设计与实现\软件\QuantTrade\Client\obj\Debug\Client.StockDetail.resources
+C:\Users\74459\Desktop\基于网络爬虫的股票信息预警系统的设计与实现\软件\QuantTrade\Client\obj\Debug\Client.StockKline.resources
+C:\Users\74459\Desktop\基于网络爬虫的股票信息预警系统的设计与实现\软件\QuantTrade\Client\obj\Debug\Client.WarningAdd.resources
+C:\Users\74459\Desktop\基于网络爬虫的股票信息预警系统的设计与实现\软件\QuantTrade\Client\obj\Debug\Client.WarningMain.resources
 C:\Users\74459\Desktop\基于网络爬虫的股票信息预警系统的设计与实现\软件\QuantTrade\Client\obj\Debug\Client.csproj.GenerateResource.Cache
 C:\Users\74459\Desktop\基于网络爬虫的股票信息预警系统的设计与实现\软件\QuantTrade\Client\obj\Debug\Client.exe
 C:\Users\74459\Desktop\基于网络爬虫的股票信息预警系统的设计与实现\软件\QuantTrade\Client\obj\Debug\Client.pdb
-C:\Users\74459\Desktop\基于网络爬虫的股票信息预警系统的设计与实现\软件\QuantTrade\Client\obj\Debug\Client.StockKline.resources
-C:\Users\74459\Desktop\基于网络爬虫的股票信息预警系统的设计与实现\软件\QuantTrade\Client\bin\Debug\Oracle.DataAccess.dll
-C:\Users\74459\Desktop\基于网络爬虫的股票信息预警系统的设计与实现\软件\QuantTrade\Client\obj\Debug\Client.Main.resources
-C:\Users\74459\Desktop\基于网络爬虫的股票信息预警系统的设计与实现\软件\QuantTrade\Client\obj\Debug\Client.Setting.resources
-C:\Users\74459\Desktop\基于网络爬虫的股票信息预警系统的设计与实现\软件\QuantTrade\Client\obj\Debug\Client.WarningMain.resources

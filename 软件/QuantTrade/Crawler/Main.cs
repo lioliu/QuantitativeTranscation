@@ -138,7 +138,6 @@ namespace Crawler
         private void LoadSnap_Tick(object sender, EventArgs e)
         {
             richTextBox1.Text += $"{DateTime.Today.ToShortDateString()} {DateTime.Now.ToLongTimeString()} 开始抓取快照数据\n";
-
             foreach (var item in list)
             {
                 SnapData data = SnapData.GetSnap(item);
