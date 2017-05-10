@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Crawler", "Crawler\Crawler.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Warninger", "Warninger\Warninger.csproj", "{C38401D1-F7B2-4905-A8C3-DCBAB8BBBA0F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Warn Service", "Warn Service\Warn Service.csproj", "{038969EF-8B65-4504-8E0C-F7D95A83F2EB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{C38401D1-F7B2-4905-A8C3-DCBAB8BBBA0F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C38401D1-F7B2-4905-A8C3-DCBAB8BBBA0F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C38401D1-F7B2-4905-A8C3-DCBAB8BBBA0F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{038969EF-8B65-4504-8E0C-F7D95A83F2EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{038969EF-8B65-4504-8E0C-F7D95A83F2EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{038969EF-8B65-4504-8E0C-F7D95A83F2EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{038969EF-8B65-4504-8E0C-F7D95A83F2EB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
