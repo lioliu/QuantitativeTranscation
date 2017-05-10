@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Warninger", "Warninger\Warn
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Warn Service", "Warn Service\Warn Service.csproj", "{038969EF-8B65-4504-8E0C-F7D95A83F2EB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Clawer Service", "Clawer Service\Clawer Service.csproj", "{B76DE345-7318-444F-B9F2-73211D74FD12}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{038969EF-8B65-4504-8E0C-F7D95A83F2EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{038969EF-8B65-4504-8E0C-F7D95A83F2EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{038969EF-8B65-4504-8E0C-F7D95A83F2EB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B76DE345-7318-444F-B9F2-73211D74FD12}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B76DE345-7318-444F-B9F2-73211D74FD12}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B76DE345-7318-444F-B9F2-73211D74FD12}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B76DE345-7318-444F-B9F2-73211D74FD12}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

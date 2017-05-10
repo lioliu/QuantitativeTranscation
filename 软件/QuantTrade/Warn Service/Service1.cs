@@ -8,7 +8,7 @@ using System.ServiceProcess;
 using System.Text;
 using System.Threading.Tasks;
 using QuantTradeDLL.DBUtility;
-
+using QuantTradeDLL.Crawler;
 namespace Warn_Service
 {
     public partial class Service1 : ServiceBase
@@ -61,6 +61,8 @@ namespace Warn_Service
             DataTable warning_list = OleDb.GetData("select * from stock_warning where state = 'open'").Tables[0];
             for (int i = 0; i < warning_list.Rows.Count; i++)
             {
+                // crawl the  data imm
+                SnapData.SaveToDB( SnapData.GetSnap(warning_list.Rows[i]["CODE"].ToString()));
                 if (OleDb.GetData(warning_list.Rows[i]["LOGISTICS"].ToString()).Tables[0].Rows[0][0].ToString().Equals("1"))
                 {
                     //组织message
