@@ -288,7 +288,7 @@ namespace Client
 
         private void 设置预警ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            new WarningAdd().ShowDialog();
         }
 
         private void 查看预警ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -299,6 +299,16 @@ namespace Client
         private void 推送公告ToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void textBox1_Enter(object sender, EventArgs e)
+        {
+            LstBoxSuggestList.Visible = true;
+        }
+
+        private void textBox1_Leave(object sender, EventArgs e)
+        {
+           // LstBoxSuggestList.Visible = false;
         }
     }
 }

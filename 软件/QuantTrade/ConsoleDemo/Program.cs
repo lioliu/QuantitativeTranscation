@@ -18,9 +18,9 @@ namespace ConsoleDemo
             //QuantTradeDLL.Crawler.Announcement.Load();
             ///QuantTradeDLL.Crawler.StockSuggest.SaveToDB(QuantTradeDLL.Crawler.StockSuggest.Get());
             ///
-            QuantTradeDLL.Crawler.ECNOData.Insert();
+            //QuantTradeDLL.Crawler.ECNOData.Insert();
             //Console.Read();
-            //string[] list = QuantTradeDLL.Crawler.StockList.GetCode();
+            string[] list = QuantTradeDLL.Crawler.StockList.GetCode();
             //foreach (var item in list)
             //{
             //    QuantTradeDLL.Crawler.SnapData data = QuantTradeDLL.Crawler.SnapData.GetSnap(item);
@@ -28,14 +28,15 @@ namespace ConsoleDemo
             //}
 
 
-            //foreach (var item in list)
-            //{
-            //    QuantTradeDLL.Crawler.StockLineData data = QuantTradeDLL.Crawler.StockLineData.GetLineDataObject(item);
-            //    Task.Factory.StartNew(() =>
-            //    QuantTradeDLL.Crawler.StockLineData.SaveToDB(
-            //    data));
-            //    Console.WriteLine(item);
-            //}
+            foreach (var item in list)
+            {
+                
+                QuantTradeDLL.Crawler.StockLineData data = QuantTradeDLL.Crawler.StockLineData.GetLineDataObject(item);
+             
+                QuantTradeDLL.Crawler.StockLineData.SaveToDB(
+                data);
+                Console.WriteLine(item);
+            }
             //string target = "600059";
             //bool flag = false;
             //string[] list = QuantTradeDLL.Crawler.StockList.GetCode();

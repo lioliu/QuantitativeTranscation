@@ -45,6 +45,49 @@ namespace QuantTradeDLL.Crawler
             return true;
         }
 
+        public static ECNOData LoadData(string stock)
+        {
+            HtmlWeb web = new HtmlWeb();
+            HtmlDocument doc = web.Load($"http://quote.eastmoney.com/sh{stock}.html");
+            HtmlNodeCollection Income = doc.DocumentNode.SelectNodes("//*[@id=\"rtp2\"]/tbody/tr[1]/td[1]/text()[2]");
+            HtmlNodeCollection PE = doc.DocumentNode.SelectNodes("//*[@id=\"gt6_2\"]");
+            HtmlNodeCollection BVPS = doc.DocumentNode.SelectNodes("//*[@id=\"rtp2\"]/tbody/tr[2]/td[1]/text()");
+            HtmlNodeCollection PB = doc.DocumentNode.SelectNodes("//*[@id=\"gt13_2\"]");
+            HtmlNodeCollection Revenue = doc.DocumentNode.SelectNodes("//*[@id=\"rtp2\"]/tbody/tr[3]/td[1]");
+            HtmlNodeCollection RevenueYOY = doc.DocumentNode.SelectNodes("//*[@id=\"rtp2\"]/tbody/tr[3]/td[2]/text()");
+            HtmlNodeCollection NetProfit = doc.DocumentNode.SelectNodes("//*[@id=\"rtp2\"]/tbody/tr[4]/td[1]");
+            HtmlNodeCollection NetProfitYOY = doc.DocumentNode.SelectNodes("//*[@id=\"rtp2\"]/tbody/tr[4]/td[2]");
+            HtmlNodeCollection GrossMargin = doc.DocumentNode.SelectNodes("//*[@id=\"rtp2\"]/tbody/tr[5]/td[1]/text()");
+            HtmlNodeCollection NetMargin = doc.DocumentNode.SelectNodes("//*[@id=\"rtp2\"]/tbody/tr[5]/td[2]");
+            HtmlNodeCollection ROE = doc.DocumentNode.SelectNodes("//*[@id=\"rtp2\"]/tbody/tr[6]/td[1]/text()");
+            HtmlNodeCollection DebtRatio = doc.DocumentNode.SelectNodes("//*[@id=\"rtp2\"]/tbody/tr[6]/td[2]");
+            HtmlNodeCollection Equity = doc.DocumentNode.SelectNodes("//*[@id=\"rtp2\"]/tbody/tr[7]/td[1]");
+            HtmlNodeCollection Value = doc.DocumentNode.SelectNodes("//*[@id=\"gt7_2\"]");
+            HtmlNodeCollection UDPPS = doc.DocumentNode.SelectNodes("//*[@id=\"rtp2\"]/tbody/tr[9]/td");
+
+            Regex reg = new Regex(@"[+-]?\d+(\.\d+)?");
+
+            return  new ECNOData()
+            {
+                Code = stock,
+                Income = Convert.ToDouble(reg.Match(Income.Single().InnerText).Value),
+                PE = Convert.ToDouble(reg.Match(PE.Single().InnerText == "-" ? "0" : PE.Single().InnerText).Value),
+                BVPS = Convert.ToDouble(reg.Match(BVPS.Single().InnerText).Value),
+                PB = Convert.ToDouble(reg.Match(PB.Single().InnerText).Value),
+                Revenue = Convert.ToDouble(reg.Match(Revenue.Single().InnerText).Value),
+                RevenueYOY = Convert.ToDouble(reg.Match(RevenueYOY.Single().InnerText).Value),
+                NetProfit = Convert.ToDouble(reg.Match(NetProfit.Single().InnerText).Value),
+                NetProfitYOY = Convert.ToDouble(reg.Match(NetProfitYOY.Single().InnerText).Value),
+                GrossMargin = Convert.ToDouble(reg.Match(GrossMargin.Single().InnerText).Value),
+                NetMargin = Convert.ToDouble(reg.Match(NetMargin.Single().InnerText).Value),
+                ROE = Convert.ToDouble(reg.Match(ROE.Single().InnerText).Value),
+                DebtRatio = Convert.ToDouble(reg.Match(DebtRatio.Single().InnerText).Value),
+                Equity = Convert.ToDouble(reg.Match(Equity.Single().InnerText).Value),
+                Value = Convert.ToDouble(reg.Match(Value.Single().InnerText).Value),
+                UDPPS = Convert.ToDouble(reg.Match(UDPPS.Single().InnerText).Value)
+            };
+        }
+
         private static void TaskDO(string stock)
         {
             HtmlWeb web = new HtmlWeb();

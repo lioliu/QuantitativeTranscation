@@ -32,6 +32,9 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.设置ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.预警ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.设置预警ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.查看预警ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.推送公告ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.TabPageAll = new System.Windows.Forms.TabPage();
             this.DataViewAll = new System.Windows.Forms.DataGridView();
@@ -49,9 +52,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.BtnLookUp = new System.Windows.Forms.Button();
             this.LstBoxSuggestList = new System.Windows.Forms.ListBox();
-            this.设置预警ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.查看预警ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.推送公告ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.TabPageAll.SuspendLayout();
@@ -87,6 +87,27 @@
             this.预警ToolStripMenuItem.Name = "预警ToolStripMenuItem";
             this.预警ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
             this.预警ToolStripMenuItem.Text = "预警";
+            // 
+            // 设置预警ToolStripMenuItem
+            // 
+            this.设置预警ToolStripMenuItem.Name = "设置预警ToolStripMenuItem";
+            this.设置预警ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.设置预警ToolStripMenuItem.Text = "设置预警";
+            this.设置预警ToolStripMenuItem.Click += new System.EventHandler(this.设置预警ToolStripMenuItem_Click);
+            // 
+            // 查看预警ToolStripMenuItem
+            // 
+            this.查看预警ToolStripMenuItem.Name = "查看预警ToolStripMenuItem";
+            this.查看预警ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.查看预警ToolStripMenuItem.Text = "查看预警";
+            this.查看预警ToolStripMenuItem.Click += new System.EventHandler(this.查看预警ToolStripMenuItem_Click);
+            // 
+            // 推送公告ToolStripMenuItem
+            // 
+            this.推送公告ToolStripMenuItem.Name = "推送公告ToolStripMenuItem";
+            this.推送公告ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.推送公告ToolStripMenuItem.Text = "推送公告";
+            this.推送公告ToolStripMenuItem.Click += new System.EventHandler(this.推送公告ToolStripMenuItem_Click);
             // 
             // tabControl1
             // 
@@ -231,6 +252,8 @@
             this.textBox1.Size = new System.Drawing.Size(142, 21);
             this.textBox1.TabIndex = 9;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.textBox1.Enter += new System.EventHandler(this.textBox1_Enter);
+            this.textBox1.Leave += new System.EventHandler(this.textBox1_Leave);
             // 
             // label3
             // 
@@ -260,27 +283,6 @@
             this.LstBoxSuggestList.Size = new System.Drawing.Size(142, 88);
             this.LstBoxSuggestList.TabIndex = 12;
             this.LstBoxSuggestList.DoubleClick += new System.EventHandler(this.LstBoxSuggestList_DoubleClick);
-            // 
-            // 设置预警ToolStripMenuItem
-            // 
-            this.设置预警ToolStripMenuItem.Name = "设置预警ToolStripMenuItem";
-            this.设置预警ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.设置预警ToolStripMenuItem.Text = "设置预警";
-            this.设置预警ToolStripMenuItem.Click += new System.EventHandler(this.设置预警ToolStripMenuItem_Click);
-            // 
-            // 查看预警ToolStripMenuItem
-            // 
-            this.查看预警ToolStripMenuItem.Name = "查看预警ToolStripMenuItem";
-            this.查看预警ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.查看预警ToolStripMenuItem.Text = "查看预警";
-            this.查看预警ToolStripMenuItem.Click += new System.EventHandler(this.查看预警ToolStripMenuItem_Click);
-            // 
-            // 推送公告ToolStripMenuItem
-            // 
-            this.推送公告ToolStripMenuItem.Name = "推送公告ToolStripMenuItem";
-            this.推送公告ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.推送公告ToolStripMenuItem.Text = "推送公告";
-            this.推送公告ToolStripMenuItem.Click += new System.EventHandler(this.推送公告ToolStripMenuItem_Click);
             // 
             // Main
             // 

@@ -29,46 +29,56 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.CLBSNAP = new System.Windows.Forms.CheckedListBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.CLBECNO = new System.Windows.Forms.CheckedListBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tbxCode = new System.Windows.Forms.TextBox();
             this.listBox1 = new System.Windows.Forms.ListBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.BtnOK = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.dataGridViewSnap = new System.Windows.Forms.DataGridView();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxDayline = new System.Windows.Forms.PictureBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxKline = new System.Windows.Forms.PictureBox();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewEcno = new System.Windows.Forms.DataGridView();
+            this.dataGridViewLgst = new System.Windows.Forms.DataGridView();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.btnUpdateSet = new System.Windows.Forms.Button();
+            this.btnLoadSet = new System.Windows.Forms.Button();
+            this.btnDeleteSet = new System.Windows.Forms.Button();
+            this.btnAddSet = new System.Windows.Forms.Button();
             this.listBox4 = new System.Windows.Forms.ListBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
-            this.checkedListBox2 = new System.Windows.Forms.CheckedListBox();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.button4 = new System.Windows.Forms.Button();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.label2 = new System.Windows.Forms.Label();
+            this.tbxName = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.tbxComm = new System.Windows.Forms.RichTextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSnap)).BeginInit();
             this.groupBox4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDayline)).BeginInit();
             this.groupBox5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxKline)).BeginInit();
             this.groupBox6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEcno)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewLgst)).BeginInit();
             this.groupBox7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.checkedListBox1);
+            this.groupBox1.Controls.Add(this.CLBSNAP);
             this.groupBox1.Location = new System.Drawing.Point(12, 149);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(261, 100);
@@ -76,9 +86,18 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "交易指数";
             // 
+            // CLBSNAP
+            // 
+            this.CLBSNAP.FormattingEnabled = true;
+            this.CLBSNAP.Location = new System.Drawing.Point(10, 20);
+            this.CLBSNAP.Name = "CLBSNAP";
+            this.CLBSNAP.Size = new System.Drawing.Size(245, 68);
+            this.CLBSNAP.TabIndex = 2;
+            this.CLBSNAP.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.CLBSNAP_ItemCheck);
+            // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.checkedListBox2);
+            this.groupBox2.Controls.Add(this.CLBECNO);
             this.groupBox2.Location = new System.Drawing.Point(12, 49);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(261, 100);
@@ -86,43 +105,59 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "财务指数";
             // 
+            // CLBECNO
+            // 
+            this.CLBECNO.FormattingEnabled = true;
+            this.CLBECNO.Location = new System.Drawing.Point(10, 21);
+            this.CLBECNO.Name = "CLBECNO";
+            this.CLBECNO.Size = new System.Drawing.Size(245, 68);
+            this.CLBECNO.TabIndex = 0;
+            this.CLBECNO.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.CLBECNO_ItemCheck);
+            this.CLBECNO.DoubleClick += new System.EventHandler(this.CLBECNO_DoubleClick);
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 13);
+            this.label1.Location = new System.Drawing.Point(283, 346);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(53, 12);
             this.label1.TabIndex = 2;
             this.label1.Text = "目标股票";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // textBox1
+            // tbxCode
             // 
-            this.textBox1.Location = new System.Drawing.Point(72, 10);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(168, 21);
-            this.textBox1.TabIndex = 3;
+            this.tbxCode.Location = new System.Drawing.Point(342, 343);
+            this.tbxCode.Name = "tbxCode";
+            this.tbxCode.Size = new System.Drawing.Size(168, 21);
+            this.tbxCode.TabIndex = 3;
+            this.tbxCode.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.tbxCode.Enter += new System.EventHandler(this.textBox1_Enter);
+            this.tbxCode.Leave += new System.EventHandler(this.textBox1_Leave);
             // 
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
             this.listBox1.ItemHeight = 12;
-            this.listBox1.Location = new System.Drawing.Point(72, 31);
+            this.listBox1.Location = new System.Drawing.Point(342, 364);
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(168, 88);
             this.listBox1.TabIndex = 4;
+            this.listBox1.DoubleClick += new System.EventHandler(this.listBox1_DoubleClick);
             // 
-            // button1
+            // BtnOK
             // 
-            this.button1.Location = new System.Drawing.Point(246, 5);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(79, 28);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "确认";
-            this.button1.UseVisualStyleBackColor = true;
+            this.BtnOK.Location = new System.Drawing.Point(564, 346);
+            this.BtnOK.Name = "BtnOK";
+            this.BtnOK.Size = new System.Drawing.Size(75, 28);
+            this.BtnOK.TabIndex = 5;
+            this.BtnOK.Text = "确认";
+            this.BtnOK.UseVisualStyleBackColor = true;
+            this.BtnOK.Click += new System.EventHandler(this.BtnOK_Click);
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.dataGridView2);
+            this.groupBox3.Controls.Add(this.dataGridViewSnap);
             this.groupBox3.Location = new System.Drawing.Point(279, 49);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(180, 200);
@@ -130,9 +165,22 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "该股当前快照";
             // 
+            // dataGridViewSnap
+            // 
+            this.dataGridViewSnap.AllowUserToAddRows = false;
+            this.dataGridViewSnap.AllowUserToDeleteRows = false;
+            this.dataGridViewSnap.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewSnap.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewSnap.Location = new System.Drawing.Point(6, 20);
+            this.dataGridViewSnap.Name = "dataGridViewSnap";
+            this.dataGridViewSnap.ReadOnly = true;
+            this.dataGridViewSnap.RowTemplate.Height = 23;
+            this.dataGridViewSnap.Size = new System.Drawing.Size(167, 167);
+            this.dataGridViewSnap.TabIndex = 0;
+            // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.pictureBox1);
+            this.groupBox4.Controls.Add(this.pictureBoxDayline);
             this.groupBox4.Location = new System.Drawing.Point(651, 13);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(561, 327);
@@ -140,17 +188,17 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "该股日数据";
             // 
-            // pictureBox1
+            // pictureBoxDayline
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(6, 18);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(545, 300);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.pictureBoxDayline.Location = new System.Drawing.Point(6, 18);
+            this.pictureBoxDayline.Name = "pictureBoxDayline";
+            this.pictureBoxDayline.Size = new System.Drawing.Size(545, 300);
+            this.pictureBoxDayline.TabIndex = 0;
+            this.pictureBoxDayline.TabStop = false;
             // 
             // groupBox5
             // 
-            this.groupBox5.Controls.Add(this.pictureBox2);
+            this.groupBox5.Controls.Add(this.pictureBoxKline);
             this.groupBox5.Location = new System.Drawing.Point(651, 346);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(561, 327);
@@ -158,17 +206,17 @@
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "该股K线数据";
             // 
-            // pictureBox2
+            // pictureBoxKline
             // 
-            this.pictureBox2.Location = new System.Drawing.Point(6, 18);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(545, 300);
-            this.pictureBox2.TabIndex = 0;
-            this.pictureBox2.TabStop = false;
+            this.pictureBoxKline.Location = new System.Drawing.Point(6, 18);
+            this.pictureBoxKline.Name = "pictureBoxKline";
+            this.pictureBoxKline.Size = new System.Drawing.Size(545, 300);
+            this.pictureBoxKline.TabIndex = 0;
+            this.pictureBoxKline.TabStop = false;
             // 
             // groupBox6
             // 
-            this.groupBox6.Controls.Add(this.dataGridView3);
+            this.groupBox6.Controls.Add(this.dataGridViewEcno);
             this.groupBox6.Location = new System.Drawing.Point(465, 49);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Size = new System.Drawing.Size(180, 200);
@@ -176,19 +224,38 @@
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "当前财务数据";
             // 
-            // dataGridView1
+            // dataGridViewEcno
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 346);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(633, 245);
-            this.dataGridView1.TabIndex = 10;
+            this.dataGridViewEcno.AllowUserToAddRows = false;
+            this.dataGridViewEcno.AllowUserToDeleteRows = false;
+            this.dataGridViewEcno.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewEcno.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewEcno.Location = new System.Drawing.Point(6, 20);
+            this.dataGridViewEcno.Name = "dataGridViewEcno";
+            this.dataGridViewEcno.ReadOnly = true;
+            this.dataGridViewEcno.RowTemplate.Height = 23;
+            this.dataGridViewEcno.Size = new System.Drawing.Size(167, 167);
+            this.dataGridViewEcno.TabIndex = 1;
+            // 
+            // dataGridViewLgst
+            // 
+            this.dataGridViewLgst.AllowUserToAddRows = false;
+            this.dataGridViewLgst.AllowUserToDeleteRows = false;
+            this.dataGridViewLgst.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewLgst.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewLgst.Location = new System.Drawing.Point(12, 346);
+            this.dataGridViewLgst.Name = "dataGridViewLgst";
+            this.dataGridViewLgst.RowTemplate.Height = 23;
+            this.dataGridViewLgst.Size = new System.Drawing.Size(261, 318);
+            this.dataGridViewLgst.TabIndex = 10;
             // 
             // groupBox7
             // 
-            this.groupBox7.Controls.Add(this.button3);
-            this.groupBox7.Controls.Add(this.button2);
+            this.groupBox7.Controls.Add(this.textBox1);
+            this.groupBox7.Controls.Add(this.btnUpdateSet);
+            this.groupBox7.Controls.Add(this.btnLoadSet);
+            this.groupBox7.Controls.Add(this.btnDeleteSet);
+            this.groupBox7.Controls.Add(this.btnAddSet);
             this.groupBox7.Controls.Add(this.listBox4);
             this.groupBox7.Location = new System.Drawing.Point(15, 256);
             this.groupBox7.Name = "groupBox7";
@@ -197,132 +264,197 @@
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "个人策略组";
             // 
+            // btnUpdateSet
+            // 
+            this.btnUpdateSet.Location = new System.Drawing.Point(468, 50);
+            this.btnUpdateSet.Name = "btnUpdateSet";
+            this.btnUpdateSet.Size = new System.Drawing.Size(75, 23);
+            this.btnUpdateSet.TabIndex = 4;
+            this.btnUpdateSet.Text = "更新";
+            this.btnUpdateSet.UseVisualStyleBackColor = true;
+            // 
+            // btnLoadSet
+            // 
+            this.btnLoadSet.Location = new System.Drawing.Point(387, 50);
+            this.btnLoadSet.Name = "btnLoadSet";
+            this.btnLoadSet.Size = new System.Drawing.Size(75, 23);
+            this.btnLoadSet.TabIndex = 3;
+            this.btnLoadSet.Text = "加载";
+            this.btnLoadSet.UseVisualStyleBackColor = true;
+            this.btnLoadSet.Click += new System.EventHandler(this.btnLoadSet_Click);
+            // 
+            // btnDeleteSet
+            // 
+            this.btnDeleteSet.Location = new System.Drawing.Point(549, 50);
+            this.btnDeleteSet.Name = "btnDeleteSet";
+            this.btnDeleteSet.Size = new System.Drawing.Size(75, 23);
+            this.btnDeleteSet.TabIndex = 2;
+            this.btnDeleteSet.Text = "删除";
+            this.btnDeleteSet.UseVisualStyleBackColor = true;
+            this.btnDeleteSet.Click += new System.EventHandler(this.btnDeleteSet_Click);
+            // 
+            // btnAddSet
+            // 
+            this.btnAddSet.Location = new System.Drawing.Point(549, 20);
+            this.btnAddSet.Name = "btnAddSet";
+            this.btnAddSet.Size = new System.Drawing.Size(75, 23);
+            this.btnAddSet.TabIndex = 1;
+            this.btnAddSet.Text = "添加";
+            this.btnAddSet.UseVisualStyleBackColor = true;
+            this.btnAddSet.Click += new System.EventHandler(this.btnAddSet_Click);
+            // 
             // listBox4
             // 
             this.listBox4.FormattingEnabled = true;
             this.listBox4.ItemHeight = 12;
             this.listBox4.Location = new System.Drawing.Point(7, 21);
             this.listBox4.Name = "listBox4";
-            this.listBox4.Size = new System.Drawing.Size(449, 52);
+            this.listBox4.Size = new System.Drawing.Size(367, 52);
             this.listBox4.TabIndex = 0;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(549, 20);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "添加";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(549, 50);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "删除";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // checkedListBox1
-            // 
-            this.checkedListBox1.FormattingEnabled = true;
-            this.checkedListBox1.Location = new System.Drawing.Point(10, 20);
-            this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(245, 68);
-            this.checkedListBox1.TabIndex = 2;
-            // 
-            // checkedListBox2
-            // 
-            this.checkedListBox2.FormattingEnabled = true;
-            this.checkedListBox2.Location = new System.Drawing.Point(10, 21);
-            this.checkedListBox2.Name = "checkedListBox2";
-            this.checkedListBox2.Size = new System.Drawing.Size(245, 68);
-            this.checkedListBox2.TabIndex = 0;
-            // 
-            // dataGridView2
-            // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(6, 20);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowTemplate.Height = 23;
-            this.dataGridView2.Size = new System.Drawing.Size(167, 167);
-            this.dataGridView2.TabIndex = 0;
-            // 
-            // dataGridView3
-            // 
-            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Location = new System.Drawing.Point(6, 20);
-            this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.RowTemplate.Height = 23;
-            this.dataGridView3.Size = new System.Drawing.Size(167, 167);
-            this.dataGridView3.TabIndex = 1;
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(22, 650);
+            this.button4.Location = new System.Drawing.Point(469, 605);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(75, 23);
             this.button4.TabIndex = 12;
             this.button4.Text = "添加预警";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // radioButton1
             // 
             this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(15, 614);
+            this.radioButton1.Location = new System.Drawing.Point(342, 608);
             this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(95, 16);
+            this.radioButton1.Size = new System.Drawing.Size(47, 16);
             this.radioButton1.TabIndex = 13;
             this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "radioButton1";
+            this.radioButton1.Text = "短信";
             this.radioButton1.UseVisualStyleBackColor = true;
             // 
             // radioButton2
             // 
             this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(145, 614);
+            this.radioButton2.Location = new System.Drawing.Point(399, 608);
             this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(95, 16);
+            this.radioButton2.Size = new System.Drawing.Size(47, 16);
             this.radioButton2.TabIndex = 14;
             this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "radioButton2";
+            this.radioButton2.Text = "邮件";
             this.radioButton2.UseVisualStyleBackColor = true;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(283, 462);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(53, 12);
+            this.label2.TabIndex = 15;
+            this.label2.Text = "预警名称";
+            // 
+            // tbxName
+            // 
+            this.tbxName.Location = new System.Drawing.Point(342, 459);
+            this.tbxName.Name = "tbxName";
+            this.tbxName.Size = new System.Drawing.Size(294, 21);
+            this.tbxName.TabIndex = 16;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(283, 498);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(53, 12);
+            this.label3.TabIndex = 17;
+            this.label3.Text = "预警内容";
+            // 
+            // tbxComm
+            // 
+            this.tbxComm.Location = new System.Drawing.Point(342, 495);
+            this.tbxComm.Name = "tbxComm";
+            this.tbxComm.Size = new System.Drawing.Size(295, 96);
+            this.tbxComm.TabIndex = 18;
+            this.tbxComm.Text = "";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(283, 610);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(53, 12);
+            this.label4.TabIndex = 19;
+            this.label4.Text = "预警方式";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(20, 13);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(77, 12);
+            this.label5.TabIndex = 20;
+            this.label5.Text = "股票预警设置";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(524, 403);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(115, 27);
+            this.button1.TabIndex = 21;
+            this.button1.Text = "使用所选择逻辑";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(384, 23);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(159, 21);
+            this.textBox1.TabIndex = 5;
             // 
             // WarningAdd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1224, 736);
+            this.ClientSize = new System.Drawing.Size(1224, 682);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.tbxComm);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.tbxName);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.radioButton2);
             this.Controls.Add(this.radioButton1);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.groupBox7);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dataGridViewLgst);
             this.Controls.Add(this.groupBox6);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.BtnOK);
             this.Controls.Add(this.listBox1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.tbxCode);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "WarningAdd";
-            this.Text = "WarningAdd";
+            this.Text = "爬虫股票预警系统";
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSnap)).EndInit();
             this.groupBox4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDayline)).EndInit();
             this.groupBox5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxKline)).EndInit();
             this.groupBox6.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEcno)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewLgst)).EndInit();
             this.groupBox7.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+            this.groupBox7.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -333,26 +465,36 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tbxCode;
         private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button BtnOK;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBoxDayline;
         private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBoxKline;
         private System.Windows.Forms.GroupBox groupBox6;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.CheckedListBox checkedListBox1;
-        private System.Windows.Forms.CheckedListBox checkedListBox2;
-        private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.DataGridView dataGridView3;
+        private System.Windows.Forms.DataGridView dataGridViewLgst;
+        private System.Windows.Forms.CheckedListBox CLBSNAP;
+        private System.Windows.Forms.CheckedListBox CLBECNO;
+        private System.Windows.Forms.DataGridView dataGridViewSnap;
+        private System.Windows.Forms.DataGridView dataGridViewEcno;
         private System.Windows.Forms.GroupBox groupBox7;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnDeleteSet;
+        private System.Windows.Forms.Button btnAddSet;
         private System.Windows.Forms.ListBox listBox4;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox tbxName;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.RichTextBox tbxComm;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnUpdateSet;
+        private System.Windows.Forms.Button btnLoadSet;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
