@@ -272,6 +272,7 @@
             this.btnUpdateSet.TabIndex = 4;
             this.btnUpdateSet.Text = "更新";
             this.btnUpdateSet.UseVisualStyleBackColor = true;
+            this.btnUpdateSet.Click += new System.EventHandler(this.btnUpdateSet_Click);
             // 
             // btnLoadSet
             // 

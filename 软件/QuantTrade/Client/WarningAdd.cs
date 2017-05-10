@@ -350,9 +350,23 @@ namespace Client
             #endregion
         }
 
+        #region 自定义 策略组
         private void btnAddSet_Click(object sender, EventArgs e)
         {
-          
+            string Set_code = OleDb.GetData("Select MAX(set_code)+1 from custom_qualification_set").Tables[0].Rows[0][0].ToString();
+            string Set_name = textBox1.Text;
+            for (int i = 0; i < logistcal.Rows.Count; i++)
+            {
+                OleDb.ExecuteSQL($"insert into custom_qualification_set select '{Set_code}', ID ,'{Set_name}' from  warning_qulafication where show_name = '{logistcal.Rows[i][0].ToString()}'");
+            }
+            DataTable dt2 = OleDb.GetData("select distinct Set_Name From custom_qualification_set").Tables[0];
+            listBox4.Items.Clear();
+            for (int i = 0; i < dt2.Rows.Count; i++)
+            {
+                listBox4.Items.Add(dt2.Rows[i][0].ToString());
+            }
+            MessageBox.Show("添加成功");
+
         }
 
         private void btnDeleteSet_Click(object sender, EventArgs e)
@@ -364,6 +378,7 @@ namespace Client
             {
                 listBox4.Items.Add(dt2.Rows[i][0].ToString());
             }
+            MessageBox.Show("删除成功");
         }
 
         private void btnLoadSet_Click(object sender, EventArgs e)
@@ -414,5 +429,24 @@ namespace Client
          
             dataGridViewLgst.DataSource = logistcal;
         }
+
+        private void btnUpdateSet_Click(object sender, EventArgs e)
+        {
+            OleDb.ExecuteSQL($"delete from custom_qualification_set where set_name = '{listBox4.SelectedItem.ToString()}'");
+            string Set_code = OleDb.GetData("Select MAX(set_code)+1 from custom_qualification_set").Tables[0].Rows[0][0].ToString();
+            string Set_name = listBox4.SelectedItem.ToString();
+            for (int i = 0; i < logistcal.Rows.Count; i++)
+            {
+                OleDb.ExecuteSQL($"insert into custom_qualification_set select '{Set_code}', ID ,'{Set_name}' from  warning_qulafication where show_name = '{logistcal.Rows[i][0].ToString()}'");
+            }
+            DataTable dt2 = OleDb.GetData("select distinct Set_Name From custom_qualification_set").Tables[0];
+            listBox4.Items.Clear();
+            for (int i = 0; i < dt2.Rows.Count; i++)
+            {
+                listBox4.Items.Add(dt2.Rows[i][0].ToString());
+            }
+            MessageBox.Show("更新成功");
+        }
+        #endregion
     }
 }
