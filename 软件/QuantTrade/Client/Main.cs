@@ -293,12 +293,12 @@ namespace Client
 
         private void 查看预警ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            new WarningMain().Show();
         }
 
         private void 推送公告ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            new PushAnn().ShowDialog();
         }
 
         private void textBox1_Enter(object sender, EventArgs e)

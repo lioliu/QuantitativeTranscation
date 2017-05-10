@@ -20,8 +20,8 @@ namespace Client
 
 
 
-            ///Application.Run(new Main());
-            Application.Run(new WarningAdd());
+            Application.Run(new Main());
+            //Application.Run(new WarningAdd());
             //Application.Run(new  Setting());
         }
     }
