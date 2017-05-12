@@ -15,7 +15,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Crawler", "Crawler\Crawler.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Warninger", "Warninger\Warninger.csproj", "{C38401D1-F7B2-4905-A8C3-DCBAB8BBBA0F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Warn Service", "Warn Service\Warn Service.csproj", "{038969EF-8B65-4504-8E0C-F7D95A83F2EB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WarnService", "Warn Service\WarnService.csproj", "{038969EF-8B65-4504-8E0C-F7D95A83F2EB}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Clawer Service", "Clawer Service\Clawer Service.csproj", "{B76DE345-7318-444F-B9F2-73211D74FD12}"
 EndProject
