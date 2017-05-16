@@ -40,8 +40,5 @@
         public string Name { set; get; }
         public string NowPri { set; get; }
         public string ReservePri { set; get; }
-
-
-
     }
 }

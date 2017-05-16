@@ -5,7 +5,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 namespace QuantTradeDLL.Tests
 {
     [TestClass()]
@@ -18,7 +17,6 @@ namespace QuantTradeDLL.Tests
             Assert.IsTrue(Email.Sent("744596028@qq.com", "Unit test"));
             //wrong email adress
             Assert.IsFalse(Email.Sent("744596028@qq.com", ""));
-
           
         }
         [TestMethod()]
@@ -26,8 +24,6 @@ namespace QuantTradeDLL.Tests
         public void SentException()
         {
             Email.Sent("74459602q.com", "123");
-
         }
-
     }
 }

@@ -10,7 +10,6 @@ C:\Users\74459\Desktop\基于网络爬虫的股票信息预警系统的设计与
 C:\Users\74459\Desktop\基于网络爬虫的股票信息预警系统的设计与实现\软件\QuantTrade\Warn Service\bin\Debug\HtmlAgilityPack.pdb
 C:\Users\74459\Desktop\基于网络爬虫的股票信息预警系统的设计与实现\软件\QuantTrade\Warn Service\bin\Debug\HtmlAgilityPack.xml
 C:\Users\74459\Desktop\基于网络爬虫的股票信息预警系统的设计与实现\软件\QuantTrade\Warn Service\bin\Debug\Newtonsoft.Json.xml
-C:\Users\74459\Desktop\基于网络爬虫的股票信息预警系统的设计与实现\软件\QuantTrade\Warn Service\obj\Debug\WarnService.csprojResolveAssemblyReference.cache
 C:\Users\74459\Desktop\基于网络爬虫的股票信息预警系统的设计与实现\软件\QuantTrade\Warn Service\obj\Debug\Warn_Service.ProjectInstaller.resources
 C:\Users\74459\Desktop\基于网络爬虫的股票信息预警系统的设计与实现\软件\QuantTrade\Warn Service\obj\Debug\WarnService.csproj.GenerateResource.Cache
 C:\Users\74459\Desktop\基于网络爬虫的股票信息预警系统的设计与实现\软件\QuantTrade\Warn Service\obj\Debug\Warn Service.exe

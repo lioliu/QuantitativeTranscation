@@ -6,7 +6,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 namespace QuantTradeDLL.Crawler.Tests
 {
     [TestClass()]
@@ -18,7 +17,6 @@ namespace QuantTradeDLL.Crawler.Tests
             StockLineData lineData = StockLineData.GetLineDataObject("600000");
             Assert.AreEqual(lineData.Code, "600000");
         }
-
         [TestMethod()]
         public void SaveToDBTest()
         {
@@ -41,10 +39,8 @@ namespace QuantTradeDLL.Crawler.Tests
                 Newrow["VOLUME"] = item.Volume;
                 dt.Rows.Add(Newrow);
             }
-
             Assert.AreEqual(StockLineData.SaveToDB(dt), 241);
         }
-
         [TestMethod()]
         public void SaveToDBTest1()
         {

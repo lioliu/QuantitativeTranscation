@@ -190,6 +190,5 @@ namespace QuantTradeDLL.DBUtility
             }
             return parm;
         }
-
     }
 }

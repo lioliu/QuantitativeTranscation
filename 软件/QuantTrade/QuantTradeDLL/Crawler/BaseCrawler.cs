@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 namespace QuantTradeDLL.Crawler
 {
     public class BaseCrawler
@@ -16,9 +15,7 @@ namespace QuantTradeDLL.Crawler
             item = new HttpItem()
             {
                 URL = "http://yunhq.sse.com.cn:32041/v1/sh1/list/self/000001?select=code%2Cname%2Clast%2Cchg_rate%2Camount%2Copen%2Cprev_close",
-
                 Encoding = null,
-
                 Method = "get",//Get
                 Timeout = 100000,
                 ReadWriteTimeout = 30000,
@@ -40,20 +37,14 @@ namespace QuantTradeDLL.Crawler
         public string Run()
         {
             HttpResult result = http.GetHtml(item);
-
             string cookie = result.Cookie;
-
             string html = result.Html;
             Console.WriteLine(html);
             if (result.StatusCode == System.Net.HttpStatusCode.OK)
             {
-
             }
-
             string statusCodeDescription = result.StatusDescription;
-
             return html;
-
         }
         /// <summary>
         ///  run the crawler to get the html text from the URL givened
@@ -64,20 +55,13 @@ namespace QuantTradeDLL.Crawler
         {
             item.URL = URL;
             HttpResult result = http.GetHtml(item);
-
             string cookie = result.Cookie;
-
             string html = result.Html;
-
             if (result.StatusCode == System.Net.HttpStatusCode.OK)
             {
-
             }
-
             string statusCodeDescription = result.StatusDescription;
-
             return html;
         }
     }
-
 }

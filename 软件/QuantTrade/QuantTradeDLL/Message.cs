@@ -10,9 +10,8 @@ namespace QuantTradeDLL
 {
     public class Message
     {
-       // given url
+        // given url
         const string APIUri = "http://sms.sspu.edu.cn/api/sms/";
-
         const string SendUri = APIUri + "send";
         const string QueryReceiveUri = APIUri + "QueryReceiveStatus";
         const string QueryBalanceUri = APIUri + "QueryBalance";
@@ -26,7 +25,6 @@ namespace QuantTradeDLL
         {
             using (WebClient wc = CreateWebClient())
             {
-
                 List<string> list = new List<string>
                 {
                     telephone
@@ -42,18 +40,15 @@ namespace QuantTradeDLL
                 };
                 SetAccountInfo(msg);
                 json = JsonConvert.SerializeObject(msg);
-
                 return JsonConvert.DeserializeObject<string>(InvokeAPI(wc, SendUri, json)) == null ? true : false;
             }
         }
-
         private static WebClient CreateWebClient()
         {
             //Web request
             string url = "http://sms.sspu.edu.cn";
             WebRequest request = WebRequest.Create(url);
             request.GetResponse();
-
             WebClient c = new WebClient()
             {
                 Encoding = Encoding.UTF8
@@ -61,7 +56,6 @@ namespace QuantTradeDLL
             c.Headers[HttpRequestHeader.ContentType] = "application/json;charset=utf-8";
             return c;
         }
-
         /// <summary>
         /// use API
         /// </summary>
@@ -74,7 +68,6 @@ namespace QuantTradeDLL
             string resultJson = wc.UploadString(uri, "post", requestJson);
             return resultJson;
         }
-
         /// <summary>
         /// set account 
         /// </summary>
@@ -82,13 +75,9 @@ namespace QuantTradeDLL
         static void SetAccountInfo(BaseMessage request)
         {
             //this is a given account
-
             request.UserName = "xxjszx";
-
             string password = "sspu.edu.cn";
-
             request.UserKey = MD5Util.HashString(password);
-
             request.UserId = new Guid("103b6108-e3b4-4bb1-88c7-beae24bb1c78");
         }
     }

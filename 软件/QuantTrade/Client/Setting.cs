@@ -9,13 +9,11 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using QuantTradeDLL.DBUtility;
 using System.Text.RegularExpressions;
-
 namespace Client
 {
     public partial class Setting : Form
     {
         private bool Changed { set; get; }
-
         public Setting()
         {
             InitializeComponent();
@@ -32,7 +30,6 @@ namespace Client
                 }
             }
             BtnCancel.Enabled = false;
-
         }
         /// <summary>
         ///  check the textbox data is currect or not
@@ -43,15 +40,9 @@ namespace Client
             String regexEmail = "^[a-z0-9]+([._\\-]*[a-z0-9])*@([a-z0-9]+[-a-z0-9]*[a-z0-9]+.){1,63}[a-z0-9]+$";
             //String regexFlout = "^(([0-9]+\\.[0-9]*[1-9][0-9]*)|([0-9]*[1-9][0-9]*\\.[0-9]+)|([0-9]*[1-9][0-9]*))$";
             return Regex.IsMatch(TbxPhone.Text, regexPhone) && Regex.IsMatch(TbxEmail.Text, regexEmail);
-
         }
-
-
-
-
         private void BtnChange_Click(object sender, EventArgs e)
         {
-
             if (Changed == false)
             {
                 foreach (Control control in this.Controls)
@@ -89,14 +80,10 @@ namespace Client
                 {
                     MessageBox.Show("要修改的值错误,请填入正确的值之后再确认");
                 }
-
             }
-
         }
-
         private void BtnCancel_Click(object sender, EventArgs e)
         {
-
             Changed = false;
             DataTable tb = OleDb.GetData("Select * from Base_infor").Tables[0];
             TbxPhone.Text = tb.Rows[0][0].ToString();
@@ -110,9 +97,7 @@ namespace Client
                 }
             }
             BtnCancel.Enabled = false;
-
         }
-
         private void Setting_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (Changed)
@@ -126,8 +111,6 @@ namespace Client
                 else if (dr == DialogResult.Cancel)
                 {
                     e.Cancel = true;
-
-
                 }
             }
         }

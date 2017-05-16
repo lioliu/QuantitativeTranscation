@@ -7,10 +7,8 @@ using System.Threading.Tasks;
 using Newtonsoft.Json;
 using System.Data;
 using QuantTradeDLL.DBUtility;
-
 namespace QuantTradeDLL.Crawler
 {
-
     public class StockHisData
     {
         public string Code { set; get; }
@@ -18,7 +16,6 @@ namespace QuantTradeDLL.Crawler
         public string Begin { set; get; }
         public string End { set; get; }
         public Kline[] Kline { set; get; }
-
         /// <summary>
         /// Convert today's Line data to His data 
         /// </summary>
@@ -29,7 +26,7 @@ namespace QuantTradeDLL.Crawler
                     "from STOCK_LINE_DATA base left join " +
                     "(select code, price from stock_line_data where days = to_char(sysdate, 'yyyymmdd') and time = '93000') op on base.code = op.code " +
                     "left join (select code, price from stock_line_data where days = to_char(sysdate, 'yyyymmdd') and time = '150000')cl " +
-                    "on  base.code = cl.code where base.days = to_char(sysdate, 'yyyymmdd') group by base.code, days, op.price, cl.price");            
+                    "on  base.code = cl.code where base.days = to_char(sysdate, 'yyyymmdd') group by base.code, days, op.price, cl.price");
         }
         /// <summary>
         /// Convert Line data to His data at the given date
@@ -44,7 +41,6 @@ namespace QuantTradeDLL.Crawler
                     $"left join (select code, price from stock_line_data where days =  '{date}' and time = '150000')cl " +
                     $"on  base.code = cl.code where base.days =  '{date}' group by base.code, days, op.price, cl.price");
         }
-
         /// <summary>
         /// Get all stock Kline data by given code
         /// </summary>
@@ -64,14 +60,13 @@ namespace QuantTradeDLL.Crawler
         /// <param name="begin"></param>
         /// <param name="end"></param>
         /// <returns></returns>
-        public static StockHisData GetHisData(string code,string begin,string end)
+        public static StockHisData GetHisData(string code, string begin, string end)
         {
             BaseCrawler crawl = new BaseCrawler();
             string json = crawl.Run($"http://yunhq.sse.com.cn:32041/v1/sh1/dayk/{code}?callback=&select=date%2Copen%2Chigh%2Clow%2Cclose%2Cvolume&begin={begin}&end={end}");
             json = JsonFormater.HisData.Formater(json);
             return JsonConvert.DeserializeObject<StockHisData>(json);
         }
-
         public static int SaveToDB(StockHisData hisData)
         {
             string insert = string.Empty;
@@ -84,7 +79,6 @@ namespace QuantTradeDLL.Crawler
             }
             return OleDb.ExecuteSQL(insertscript);
         }
-
         private static int SaveToDB(DataTable dt)
         {
             string insert = string.Empty;
@@ -96,9 +90,6 @@ namespace QuantTradeDLL.Crawler
             }
             return OleDb.ExecuteSQL(insertscript);
         }
-
-
-
         private static DataTable ToDataTable(StockHisData data)
         {
             DataTable dt = new DataTable("StockData");
@@ -124,10 +115,5 @@ namespace QuantTradeDLL.Crawler
             }
             return dt;
         }
-
-
     }
-
-
-
 }

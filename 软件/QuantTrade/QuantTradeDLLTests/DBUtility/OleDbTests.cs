@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.OleDb;
-
 namespace QuantTradeDLL.DBUtility.Tests
 {
     [TestClass()]
@@ -18,7 +17,6 @@ namespace QuantTradeDLL.DBUtility.Tests
         {
             Assert.AreEqual(OleDb.ExecuteSQL("SELECT SYSDATE FROM DUAL"), 0);
         }
-
         [TestMethod()]
         public void ExecuteSQLTest1()
         {
@@ -28,13 +26,11 @@ namespace QuantTradeDLL.DBUtility.Tests
             };
             Assert.AreEqual(OleDb.ExecuteSQL(sqlList), 0);
         }
-
         [TestMethod()]
         public void GetDataTest()
         {
             StringAssert.Contains("2017-04-05", OleDb.GetData("SELECT '2017-04-05' FROM DUAL").Tables[0].Rows[0][0].ToString());
         }
-
         [TestMethod()]
         public void GetDataTest1()
         {
@@ -47,7 +43,6 @@ namespace QuantTradeDLL.DBUtility.Tests
             StringAssert.Contains("2017-04-05", dataSet.Tables[0].Rows[0][0].ToString());
             StringAssert.Contains("2017-04-06", dataSet.Tables[1].Rows[0][0].ToString());
         }
-
         [TestMethod()]
         public void ProceureToParameterTest()
         {

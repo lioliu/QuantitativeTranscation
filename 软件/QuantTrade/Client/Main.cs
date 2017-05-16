@@ -253,7 +253,6 @@ namespace Client
             int index = DataViewFocus.SelectedCells[0].RowIndex;
             new StockDetail(FocusTable.Rows[index]["Code"].ToString(), FocusList).ShowDialog();
         }
-
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
             BtnLookUp.Enabled = false;
@@ -262,7 +261,6 @@ namespace Client
             if (dt.Rows.Count > 0)
             {
                 LstBoxSuggestList.Visible = true;
-
                 for (int i = 0; i < dt.Rows.Count; i++)
                 {
                     LstBoxSuggestList.Items.Add($"{dt.Rows[i][0].ToString()} {dt.Rows[i][1].ToString()} {dt.Rows[i][2].ToString()}");
@@ -272,40 +270,32 @@ namespace Client
             {
                 LstBoxSuggestList.Visible = false;
             }
-
         }
-
         private void LstBoxSuggestList_DoubleClick(object sender, EventArgs e)
         {
             textBox1.Text = LstBoxSuggestList.SelectedItem.ToString();
             BtnLookUp.Enabled = true;
         }
-
         private void BtnLookUp_Click(object sender, EventArgs e)
         {
             new StockDetail(textBox1.Text.Substring(0, 6), AllList).ShowDialog();
         }
-
         private void 设置预警ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             new WarningAdd().ShowDialog();
         }
-
         private void 查看预警ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             new WarningMain().Show();
         }
-
         private void 推送公告ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             new PushAnn().ShowDialog();
         }
-
         private void textBox1_Enter(object sender, EventArgs e)
         {
             LstBoxSuggestList.Visible = true;
         }
-
         private void textBox1_Leave(object sender, EventArgs e)
         {
            // LstBoxSuggestList.Visible = false;

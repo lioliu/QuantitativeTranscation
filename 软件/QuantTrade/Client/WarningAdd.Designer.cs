@@ -6,7 +6,6 @@
         /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
-
         /// <summary>
         /// Clean up any resources being used.
         /// </summary>
@@ -19,9 +18,7 @@
             }
             base.Dispose(disposing);
         }
-
         #region Windows Form Designer generated code
-
         /// <summary>
         /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
@@ -46,6 +43,7 @@
             this.dataGridViewEcno = new System.Windows.Forms.DataGridView();
             this.dataGridViewLgst = new System.Windows.Forms.DataGridView();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.btnUpdateSet = new System.Windows.Forms.Button();
             this.btnLoadSet = new System.Windows.Forms.Button();
             this.btnDeleteSet = new System.Windows.Forms.Button();
@@ -61,7 +59,8 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.CLBCACU = new System.Windows.Forms.CheckedListBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -74,6 +73,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEcno)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewLgst)).BeginInit();
             this.groupBox7.SuspendLayout();
+            this.groupBox8.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -118,7 +118,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(283, 346);
+            this.label1.Location = new System.Drawing.Point(283, 373);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(53, 12);
             this.label1.TabIndex = 2;
@@ -127,7 +127,7 @@
             // 
             // tbxCode
             // 
-            this.tbxCode.Location = new System.Drawing.Point(342, 343);
+            this.tbxCode.Location = new System.Drawing.Point(342, 370);
             this.tbxCode.Name = "tbxCode";
             this.tbxCode.Size = new System.Drawing.Size(168, 21);
             this.tbxCode.TabIndex = 3;
@@ -139,7 +139,7 @@
             // 
             this.listBox1.FormattingEnabled = true;
             this.listBox1.ItemHeight = 12;
-            this.listBox1.Location = new System.Drawing.Point(342, 364);
+            this.listBox1.Location = new System.Drawing.Point(342, 391);
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(168, 88);
             this.listBox1.TabIndex = 4;
@@ -147,7 +147,7 @@
             // 
             // BtnOK
             // 
-            this.BtnOK.Location = new System.Drawing.Point(564, 346);
+            this.BtnOK.Location = new System.Drawing.Point(564, 373);
             this.BtnOK.Name = "BtnOK";
             this.BtnOK.Size = new System.Drawing.Size(75, 28);
             this.BtnOK.TabIndex = 5;
@@ -243,10 +243,10 @@
             this.dataGridViewLgst.AllowUserToDeleteRows = false;
             this.dataGridViewLgst.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewLgst.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewLgst.Location = new System.Drawing.Point(12, 346);
+            this.dataGridViewLgst.Location = new System.Drawing.Point(12, 364);
             this.dataGridViewLgst.Name = "dataGridViewLgst";
             this.dataGridViewLgst.RowTemplate.Height = 23;
-            this.dataGridViewLgst.Size = new System.Drawing.Size(261, 318);
+            this.dataGridViewLgst.Size = new System.Drawing.Size(261, 300);
             this.dataGridViewLgst.TabIndex = 10;
             // 
             // groupBox7
@@ -257,16 +257,23 @@
             this.groupBox7.Controls.Add(this.btnDeleteSet);
             this.groupBox7.Controls.Add(this.btnAddSet);
             this.groupBox7.Controls.Add(this.listBox4);
-            this.groupBox7.Location = new System.Drawing.Point(15, 256);
+            this.groupBox7.Location = new System.Drawing.Point(279, 256);
             this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(630, 84);
+            this.groupBox7.Size = new System.Drawing.Size(366, 100);
             this.groupBox7.TabIndex = 11;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "个人策略组";
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(120, 23);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(156, 21);
+            this.textBox1.TabIndex = 5;
+            // 
             // btnUpdateSet
             // 
-            this.btnUpdateSet.Location = new System.Drawing.Point(468, 50);
+            this.btnUpdateSet.Location = new System.Drawing.Point(282, 55);
             this.btnUpdateSet.Name = "btnUpdateSet";
             this.btnUpdateSet.Size = new System.Drawing.Size(75, 23);
             this.btnUpdateSet.TabIndex = 4;
@@ -276,7 +283,7 @@
             // 
             // btnLoadSet
             // 
-            this.btnLoadSet.Location = new System.Drawing.Point(387, 50);
+            this.btnLoadSet.Location = new System.Drawing.Point(120, 55);
             this.btnLoadSet.Name = "btnLoadSet";
             this.btnLoadSet.Size = new System.Drawing.Size(75, 23);
             this.btnLoadSet.TabIndex = 3;
@@ -286,7 +293,7 @@
             // 
             // btnDeleteSet
             // 
-            this.btnDeleteSet.Location = new System.Drawing.Point(549, 50);
+            this.btnDeleteSet.Location = new System.Drawing.Point(201, 55);
             this.btnDeleteSet.Name = "btnDeleteSet";
             this.btnDeleteSet.Size = new System.Drawing.Size(75, 23);
             this.btnDeleteSet.TabIndex = 2;
@@ -296,7 +303,7 @@
             // 
             // btnAddSet
             // 
-            this.btnAddSet.Location = new System.Drawing.Point(549, 20);
+            this.btnAddSet.Location = new System.Drawing.Point(282, 21);
             this.btnAddSet.Name = "btnAddSet";
             this.btnAddSet.Size = new System.Drawing.Size(75, 23);
             this.btnAddSet.TabIndex = 1;
@@ -308,14 +315,14 @@
             // 
             this.listBox4.FormattingEnabled = true;
             this.listBox4.ItemHeight = 12;
-            this.listBox4.Location = new System.Drawing.Point(7, 21);
+            this.listBox4.Location = new System.Drawing.Point(10, 23);
             this.listBox4.Name = "listBox4";
-            this.listBox4.Size = new System.Drawing.Size(367, 52);
+            this.listBox4.Size = new System.Drawing.Size(104, 64);
             this.listBox4.TabIndex = 0;
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(469, 605);
+            this.button4.Location = new System.Drawing.Point(469, 632);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(75, 23);
             this.button4.TabIndex = 12;
@@ -326,7 +333,7 @@
             // radioButton1
             // 
             this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(342, 608);
+            this.radioButton1.Location = new System.Drawing.Point(342, 635);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(47, 16);
             this.radioButton1.TabIndex = 13;
@@ -337,7 +344,7 @@
             // radioButton2
             // 
             this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(399, 608);
+            this.radioButton2.Location = new System.Drawing.Point(399, 635);
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(47, 16);
             this.radioButton2.TabIndex = 14;
@@ -348,7 +355,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(283, 462);
+            this.label2.Location = new System.Drawing.Point(283, 489);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(53, 12);
             this.label2.TabIndex = 15;
@@ -356,7 +363,7 @@
             // 
             // tbxName
             // 
-            this.tbxName.Location = new System.Drawing.Point(342, 459);
+            this.tbxName.Location = new System.Drawing.Point(342, 486);
             this.tbxName.Name = "tbxName";
             this.tbxName.Size = new System.Drawing.Size(294, 21);
             this.tbxName.TabIndex = 16;
@@ -364,7 +371,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(283, 498);
+            this.label3.Location = new System.Drawing.Point(283, 525);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(53, 12);
             this.label3.TabIndex = 17;
@@ -372,7 +379,7 @@
             // 
             // tbxComm
             // 
-            this.tbxComm.Location = new System.Drawing.Point(342, 495);
+            this.tbxComm.Location = new System.Drawing.Point(342, 522);
             this.tbxComm.Name = "tbxComm";
             this.tbxComm.Size = new System.Drawing.Size(295, 96);
             this.tbxComm.TabIndex = 18;
@@ -381,7 +388,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(283, 610);
+            this.label4.Location = new System.Drawing.Point(283, 637);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(53, 12);
             this.label4.TabIndex = 19;
@@ -399,7 +406,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(524, 403);
+            this.button1.Location = new System.Drawing.Point(524, 430);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(115, 27);
             this.button1.TabIndex = 21;
@@ -407,18 +414,31 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // textBox1
+            // groupBox8
             // 
-            this.textBox1.Location = new System.Drawing.Point(384, 23);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(159, 21);
-            this.textBox1.TabIndex = 5;
+            this.groupBox8.Controls.Add(this.CLBCACU);
+            this.groupBox8.Location = new System.Drawing.Point(12, 256);
+            this.groupBox8.Name = "groupBox8";
+            this.groupBox8.Size = new System.Drawing.Size(261, 100);
+            this.groupBox8.TabIndex = 22;
+            this.groupBox8.TabStop = false;
+            this.groupBox8.Text = "计算指数";
+            // 
+            // CLBCACU
+            // 
+            this.CLBCACU.FormattingEnabled = true;
+            this.CLBCACU.Location = new System.Drawing.Point(10, 20);
+            this.CLBCACU.Name = "CLBCACU";
+            this.CLBCACU.Size = new System.Drawing.Size(245, 68);
+            this.CLBCACU.TabIndex = 2;
+            //this.CLBCACU.SelectedIndexChanged += new System.EventHandler(this.CLBCACU_SelectedIndexChanged);
             // 
             // WarningAdd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1224, 682);
+            this.Controls.Add(this.groupBox8);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -456,13 +476,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewLgst)).EndInit();
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();
+            this.groupBox8.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
-
         #endregion
-
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label1;
@@ -497,5 +516,7 @@
         private System.Windows.Forms.Button btnUpdateSet;
         private System.Windows.Forms.Button btnLoadSet;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.GroupBox groupBox8;
+        private System.Windows.Forms.CheckedListBox CLBCACU;
     }
 }

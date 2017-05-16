@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
 namespace Client
 {
     static class Program
@@ -17,9 +16,6 @@ namespace Client
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new StockDetail("600000",new string[2] { "600000","600004"} ));
-
-
-
             Application.Run(new Main());
             //Application.Run(new WarningAdd());
             //Application.Run(new  Setting());

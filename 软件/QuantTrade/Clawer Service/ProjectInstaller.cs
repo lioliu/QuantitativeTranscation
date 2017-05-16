@@ -5,7 +5,6 @@ using System.ComponentModel;
 using System.Configuration.Install;
 using System.Linq;
 using System.Threading.Tasks;
-
 namespace Clawer_Service
 {
     [RunInstaller(true)]

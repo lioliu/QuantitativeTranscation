@@ -18,8 +18,6 @@ namespace QuantTradeDLL.Crawler.Tests
             SnapData data =  SnapData.GetSnap("600000");
             StringAssert.Contains(data.Result[0].Data.Gid, "sh600000");
         }
-
-
         [TestMethod()]
         public void GetSnapTest1()
         {
@@ -30,7 +28,5 @@ namespace QuantTradeDLL.Crawler.Tests
             SnapData data = SnapData.GetSnap("600000");
             StringAssert.Contains(data.Result[0].Data.Gid, "sh600000");
         }
-
-
     }
 }

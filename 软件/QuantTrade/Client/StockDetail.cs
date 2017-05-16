@@ -45,6 +45,7 @@ namespace Client
             ChartMain.Invalidate();
             #region Chart
             DataTable line = StockLineData.ForCharts(StockLineData.GetLineDataObject(Code));
+
             ChartMain.DataSource = line;
             ChartMain.DataBind();
             ChartMain.Series[0].YValueMembers = "PRICE";

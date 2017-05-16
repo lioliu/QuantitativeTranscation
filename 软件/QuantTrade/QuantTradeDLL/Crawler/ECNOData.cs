@@ -5,7 +5,6 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
-
 namespace QuantTradeDLL.Crawler
 {
     public class ECNOData
@@ -26,8 +25,6 @@ namespace QuantTradeDLL.Crawler
         public double Equity { get; set; }
         public double Value { get; set; }
         public double UDPPS { get; set; }
-
-
         /// <summary>
         /// Main funcation Update ECNO infor
         /// </summary>
@@ -37,14 +34,12 @@ namespace QuantTradeDLL.Crawler
             // string[] stockList = StockList.GetCode();
             // Task.Factory.StartNew(() => TaskDO(stockList[0]));
             string[] stockList = StockList.GetCode();
-
             foreach (var item in stockList)
             {
                 Task.Factory.StartNew(() => TaskDO(item));
             }
             return true;
         }
-
         public static ECNOData LoadData(string stock)
         {
             HtmlWeb web = new HtmlWeb();
@@ -64,9 +59,7 @@ namespace QuantTradeDLL.Crawler
             HtmlNodeCollection Equity = doc.DocumentNode.SelectNodes("//*[@id=\"rtp2\"]/tbody/tr[7]/td[1]");
             HtmlNodeCollection Value = doc.DocumentNode.SelectNodes("//*[@id=\"gt7_2\"]");
             HtmlNodeCollection UDPPS = doc.DocumentNode.SelectNodes("//*[@id=\"rtp2\"]/tbody/tr[9]/td");
-
             Regex reg = new Regex(@"[+-]?\d+(\.\d+)?");
-
             return  new ECNOData()
             {
                 Code = stock,
@@ -87,7 +80,6 @@ namespace QuantTradeDLL.Crawler
                 UDPPS = Convert.ToDouble(reg.Match(UDPPS.Single().InnerText).Value)
             };
         }
-
         private static void TaskDO(string stock)
         {
             HtmlWeb web = new HtmlWeb();
@@ -107,9 +99,7 @@ namespace QuantTradeDLL.Crawler
             HtmlNodeCollection Equity = doc.DocumentNode.SelectNodes("//*[@id=\"rtp2\"]/tbody/tr[7]/td[1]");
             HtmlNodeCollection Value = doc.DocumentNode.SelectNodes("//*[@id=\"gt7_2\"]");
             HtmlNodeCollection UDPPS = doc.DocumentNode.SelectNodes("//*[@id=\"rtp2\"]/tbody/tr[9]/td");
-
             Regex reg = new Regex(@"[+-]?\d+(\.\d+)?");
-
             ECNOData data = new ECNOData()
             {
                 Code = stock,
@@ -130,9 +120,7 @@ namespace QuantTradeDLL.Crawler
                 UDPPS = Convert.ToDouble(reg.Match(UDPPS.Single().InnerText).Value)
             };
             string insert = $"INSERT INTO STOCK_ECNO_DATA VALUES{$"('{data.Code}',sysdate,'{data.Income}','{data.PE}','{data.BVPS}','{data.PB}','{data.Revenue}','{data.RevenueYOY}','{data.NetProfit}','{data.NetProfitYOY}','{data.GrossMargin}','{data.NetMargin}','{data.ROE}','{data.DebtRatio}','{data.Equity}','{data.Value}','{data.UDPPS}')"}";
-
             Console.WriteLine(DBUtility.OleDb.ExecuteSQL(insert) + data.Code);
         }
-
     }
 }

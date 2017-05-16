@@ -14,3 +14,4 @@ C:\Users\74459\Desktop\基于网络爬虫的股票信息预警系统的设计与
 C:\Users\74459\Desktop\基于网络爬虫的股票信息预警系统的设计与实现\软件\QuantTrade\Clawer Service\obj\Debug\Clawer Service.csproj.GenerateResource.Cache
 C:\Users\74459\Desktop\基于网络爬虫的股票信息预警系统的设计与实现\软件\QuantTrade\Clawer Service\obj\Debug\Clawer Service.exe
 C:\Users\74459\Desktop\基于网络爬虫的股票信息预警系统的设计与实现\软件\QuantTrade\Clawer Service\obj\Debug\Clawer Service.pdb
+C:\Users\74459\Desktop\基于网络爬虫的股票信息预警系统的设计与实现\软件\QuantTrade\Clawer Service\obj\Debug\Clawer Service.csprojResolveAssemblyReference.cache

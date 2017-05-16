@@ -66,6 +66,7 @@
     <Compile Include="Crawler\StockLineData.cs" />
     <Compile Include="Crawler\StockSuggest.cs" />
     <Compile Include="Line.cs" />
+    <Compile Include="StockCACUData.cs" />
     <Compile Include="Suggest.cs" />
     <Compile Include="DBUtility\OleDb.cs" />
     <Compile Include="DBUtility\DataAccess.cs" />

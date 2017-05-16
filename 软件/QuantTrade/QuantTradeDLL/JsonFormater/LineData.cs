@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 namespace QuantTradeDLL.JsonFormater
 {
     public class LineData
@@ -17,7 +16,6 @@ namespace QuantTradeDLL.JsonFormater
             int state = -1;
             for (int i = 5; i < str.Length; i++)
             {
-
                 if (str[i] == '{')
                 {
                     str = str.Insert(i + 1, "\"time\":\"");

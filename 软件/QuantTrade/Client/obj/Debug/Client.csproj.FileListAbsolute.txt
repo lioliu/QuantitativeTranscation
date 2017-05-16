@@ -10,7 +10,6 @@ C:\Users\74459\Desktop\基于网络爬虫的股票信息预警系统的设计与
 C:\Users\74459\Desktop\基于网络爬虫的股票信息预警系统的设计与实现\软件\QuantTrade\Client\bin\Debug\HtmlAgilityPack.pdb
 C:\Users\74459\Desktop\基于网络爬虫的股票信息预警系统的设计与实现\软件\QuantTrade\Client\bin\Debug\HtmlAgilityPack.xml
 C:\Users\74459\Desktop\基于网络爬虫的股票信息预警系统的设计与实现\软件\QuantTrade\Client\bin\Debug\Newtonsoft.Json.xml
-C:\Users\74459\Desktop\基于网络爬虫的股票信息预警系统的设计与实现\软件\QuantTrade\Client\obj\Debug\Client.csprojResolveAssemblyReference.cache
 C:\Users\74459\Desktop\基于网络爬虫的股票信息预警系统的设计与实现\软件\QuantTrade\Client\obj\Debug\Client.Main.resources
 C:\Users\74459\Desktop\基于网络爬虫的股票信息预警系统的设计与实现\软件\QuantTrade\Client\obj\Debug\Client.Properties.Resources.resources
 C:\Users\74459\Desktop\基于网络爬虫的股票信息预警系统的设计与实现\软件\QuantTrade\Client\obj\Debug\Client.Setting.resources
@@ -22,3 +21,4 @@ C:\Users\74459\Desktop\基于网络爬虫的股票信息预警系统的设计与
 C:\Users\74459\Desktop\基于网络爬虫的股票信息预警系统的设计与实现\软件\QuantTrade\Client\obj\Debug\Client.exe
 C:\Users\74459\Desktop\基于网络爬虫的股票信息预警系统的设计与实现\软件\QuantTrade\Client\obj\Debug\Client.pdb
 C:\Users\74459\Desktop\基于网络爬虫的股票信息预警系统的设计与实现\软件\QuantTrade\Client\obj\Debug\Client.PushAnn.resources
+C:\Users\74459\Desktop\基于网络爬虫的股票信息预警系统的设计与实现\软件\QuantTrade\Client\obj\Debug\Client.csprojResolveAssemblyReference.cache

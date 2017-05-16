@@ -5,7 +5,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 namespace QuantTradeDLL.Crawler.Tests
 {
     [TestClass()]
@@ -17,7 +16,6 @@ namespace QuantTradeDLL.Crawler.Tests
             StockHisData temp = StockHisData.GetHisData("600000");
             StringAssert.Equals("600000", temp.Code);
         }
-
         [TestMethod()]
         public void GetHisDataTest1()
         {
@@ -25,17 +23,13 @@ namespace QuantTradeDLL.Crawler.Tests
             StringAssert.Equals("600004", temp.Code);
             Assert.AreEqual(temp.Kline.Length, 1);
         }
-
         [TestMethod()]
         public void ConvertLineTest()
         {
-
         }
-
         [TestMethod()]
         public void ConvertLineTest1()
         {
-
         }
     }
 }

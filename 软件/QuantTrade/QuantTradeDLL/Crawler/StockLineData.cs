@@ -5,7 +5,6 @@ using System.Data;
 using System.Threading.Tasks;
 using System.Threading;
 using QuantTradeDLL.DBUtility;
-
 namespace QuantTradeDLL.Crawler
 {
     public class StockLineData
@@ -20,7 +19,6 @@ namespace QuantTradeDLL.Crawler
         public Line[] Line { set; get; }
         //take 4 mins
         
-
         public static DataTable ToDataTable(StockLineData data)
         {
             DataTable dt = new DataTable("Line_data");
@@ -42,7 +40,6 @@ namespace QuantTradeDLL.Crawler
             }
             return dt;
         }
-
         public static DataTable ForCharts(StockLineData data)
         {
             DataTable dt = new DataTable("Line_data");
@@ -62,9 +59,6 @@ namespace QuantTradeDLL.Crawler
             }
             return dt;
         }
-
-
-
         public static StockLineData GetLineDataObject(string code)
         {
             Random rnd = new Random();
@@ -75,7 +69,6 @@ namespace QuantTradeDLL.Crawler
             json = JsonFormater.LineData.Formater(json);
             return JsonConvert.DeserializeObject<StockLineData>(json);
         }
-
         public static int SaveToDB(DataTable dt)
         {
             string insert = string.Empty;
@@ -88,9 +81,7 @@ namespace QuantTradeDLL.Crawler
             int result = OracleClient.ExecuteSQL(insertscript);
             //Console.WriteLine(result);
             return result;
-
         }
-
         public static int SaveToDB(StockLineData data)
         {
             string insert = string.Empty;
@@ -104,9 +95,6 @@ namespace QuantTradeDLL.Crawler
             int result = OracleClient.ExecuteSQL(insertscript);
             //Console.WriteLine(result);
             return result;
-
         }
-
-
     }
 }

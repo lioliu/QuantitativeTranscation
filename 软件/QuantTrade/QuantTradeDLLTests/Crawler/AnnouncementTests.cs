@@ -6,7 +6,6 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 namespace QuantTradeDLL.Crawler.Tests
 {
     [TestClass()]
@@ -17,7 +16,6 @@ namespace QuantTradeDLL.Crawler.Tests
         {
             Assert.AreEqual(Announcement.Load(), true);
         }
-
         [TestMethod()]
         public void GetTest()
         {

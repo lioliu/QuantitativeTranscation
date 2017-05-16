@@ -8,6 +8,5 @@
         public string Rate { set; get; }
         public string TraAmount { set; get; }
         public string TraNumber { set; get; }
-
     }
 }

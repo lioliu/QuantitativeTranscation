@@ -6,30 +6,24 @@ using System.Threading.Tasks;
 using Newtonsoft.Json;
 using System.Data;
 using System.Collections;
-
 namespace QuantTradeDLL.Crawler
 {
     public class StockSuggest
     {
         public Suggest[] suggest { set; get; }
-
-
         public static StockSuggest Get()
         {
             BaseCrawler crawler = new BaseCrawler();
             string json = crawler.Run("http://www.sse.com.cn/js/common/ssesuggestdata.js");
             json = JsonFormater.SuggestList.Formater(json);
             return JsonConvert.DeserializeObject<StockSuggest>(json);
-
         }
-
         private static DataTable ToDataTable(StockSuggest data)
         {
             DataTable dt = new DataTable("StockSuggest");
             dt.Columns.Add("CODE", Type.GetType("System.String"));
             dt.Columns.Add("NAME", Type.GetType("System.String"));
             dt.Columns.Add("PY", Type.GetType("System.String"));
-      
             DataRow Newrow;
             foreach (var item in data.suggest)
             {
@@ -37,12 +31,10 @@ namespace QuantTradeDLL.Crawler
                 Newrow["CODE"] = item.code;
                 Newrow["NAME"] = item.name;
                 Newrow["PY"] = item.py;
-              
                 dt.Rows.Add(Newrow);
             }
             return dt;
         }
-
         public static int SaveToDB(StockSuggest data)
         {
             string[] list = StockList.GetCode();
@@ -59,11 +51,5 @@ namespace QuantTradeDLL.Crawler
             }
             return DBUtility.OleDb.ExecuteSQL(insertscript);
         }
-
-
-
     }
-
- 
-
 }
