@@ -302,6 +302,11 @@ namespace Client
             LabIncrePer2.ForeColor = Color.Black;
             #endregion
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void StockDetail_Shown(object sender, EventArgs e)
         {
             InitDetail();
