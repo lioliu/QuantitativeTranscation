@@ -18,7 +18,7 @@ namespace ConsoleDemo
         //static System.Timers.Timer timer1;
         static void Main(string[] args)
         {
-            StockCACUData.Load(); 
+            //StockCACUData.Load(); 
 
             //QuantTradeDLL.Crawler.Announcement.Load();
             ///QuantTradeDLL.Crawler.StockSuggest.SaveToDB(QuantTradeDLL.Crawler.StockSuggest.Get());
@@ -65,7 +65,7 @@ namespace ConsoleDemo
             //    }
 
             //}
-            //              QuantTradeDLL.Crawler.StockHisData.ConvertLine();
+                          QuantTradeDLL.Crawler.StockHisData.ConvertLine();
             //QuantTradeDLL.Crawler.StockHisData data = QuantTradeDLL.Crawler.StockHisData.GetHisData("600112");
             //QuantTradeDLL.Crawler.StockHisData.SaveToDB(data);
 

@@ -1,5 +1,6 @@
 ﻿using QuantTradeDLL.Crawler;
 using QuantTradeDLL.DBUtility;
+using QuantTradeDLL;
 using System;
 using System.Data;
 using System.ServiceProcess;
@@ -24,7 +25,7 @@ namespace Warn_Service
             {
                 sw.WriteLine(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss ") + "Start.");
             }
-           
+
             timer1.Enabled = true;
         }
         protected override void OnStop()
@@ -49,7 +50,7 @@ namespace Warn_Service
             for (int i = 0; i < stock_list.Rows.Count; i++)
             {
                 message = $"股票公告通知:\n 股票代码:{stock_list.Rows[i]["CODE"].ToString()} \n 标题为: {stock_list.Rows[i]["TITLE"].ToString()} \n 点击链接查看详情:{stock_list.Rows[i]["URL"].ToString()}";
-                QuantTradeDLL.Email.Sent(EmailAdress, message);
+                Email.Sent(EmailAdress, message);
             }
             OleDb.GetData("update ANNOUNCEMENT set alarmed = 1");
             //股票预警
@@ -61,7 +62,9 @@ namespace Warn_Service
             for (int i = 0; i < warning_list.Rows.Count; i++)
             {
                 // crawl the  data imm
-                SnapData.SaveToDB( SnapData.GetSnap(warning_list.Rows[i]["CODE"].ToString()));
+                SnapData.SaveToDB(SnapData.GetSnap(warning_list.Rows[i]["CODE"].ToString()));
+                //caculate the MA
+                StockCACUData.Load(warning_list.Rows[i]["CODE"].ToString());
                 if (OleDb.GetData(warning_list.Rows[i]["LOGISTICS"].ToString()).Tables[0].Rows[0][0].ToString().Equals("1"))
                 {
                     //组织message
@@ -70,10 +73,10 @@ namespace Warn_Service
                     switch (warning_list.Rows[i]["ways"].ToString())
                     {
                         case "phone":
-                            QuantTradeDLL.Message.Send(PhoneNumber, message);
+                            Message.Send(PhoneNumber, message);
                             break;
                         case "email":
-                            QuantTradeDLL.Email.Sent(EmailAdress, message);
+                            Email.Sent(EmailAdress, message);
                             break;
                         default:
                             break;
